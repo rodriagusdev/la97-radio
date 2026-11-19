@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="h-full bg-slate-950 text-white overflow-x-hidden selection:bg-cyan-500 selection:text-black">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La 97 FM — Quantum Studio HUD Concept</title>
+  <!-- TailwindCSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', -apple-system, sans-serif;
+    }
+    .font-hud {
+      font-family: 'Orbitron', monospace;
+    }
+    
+    /* Studio Backdrop with Depth of Field */
+    .studio-bg {
+      background-image: 
+        radial-gradient(ellipse at 70% 30%, rgba(3, 102, 162, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 70%, rgba(226, 5, 29, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.4) 0%, rgba(2, 6, 23, 0.95) 100%),
+        url('./design_client_idea/concept-cyber.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Holographic Glassmorphism Panels */
+    .holo-panel {
+      background: linear-gradient(135deg, rgba(8, 28, 54, 0.72) 0%, rgba(4, 15, 30, 0.88) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 30px rgba(14, 165, 233, 0.15);
+      position: relative;
+    }
+
+    .holo-glow {
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Diagonal Brand Accent Ribbons */
+    .corner-stripes-tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .corner-stripes-tr::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140%;
+      height: 7px;
+      background: #E2051D;
+      transform: rotate(45deg) translate(8px, -24px);
+      box-shadow: 0 0 10px #E2051D;
+    }
+    .corner-stripes-tr::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140%;
+      height: 7px;
+      background: #F4B70D;
+      transform: rotate(45deg) translate(14px, -14px);
+      box-shadow: 0 0 10px #F4B70D;
+    }
+
+    .corner-stripes-bl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .corner-stripes-bl::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 140%;
+      height: 6px;
+      background: #0366A2;
+      transform: rotate(45deg) translate(-22px, 12px);
+    }
+    .corner-stripes-bl::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 140%;
+      height: 6px;
+      background: #E2051D;
+      transform: rotate(45deg) translate(-14px, 20px);
+    }
+
+    /* 3D Perspective Tilt on Lower Desk Cards */
+    .desk-tilt {
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+    @media (min-width: 1024px) {
+      .desk-3d-left {
+        transform: perspective(900px) rotateX(12deg) rotateY(8deg) translateZ(0);
+      }
+      .desk-3d-center {
+        transform: perspective(900px) rotateX(14deg) translateZ(0);
+      }
+      .desk-3d-right {
+        transform: perspective(900px) rotateX(12deg) rotateY(-8deg) translateZ(0);
+      }
+      .desk-3d-left:hover, .desk-3d-center:hover, .desk-3d-right:hover {
+        transform: perspective(900px) rotateX(4deg) translateZ(20px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.35);
+      }
+    }
+
+    /* Segmented Cyber Progress Bars */
+    .segmented-bar {
+      display: flex;
+      gap: 3px;
+      height: 6px;
+      width: 100%;
+    }
+    .segmented-bar span {
+      flex: 1;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1px;
+    }
+    .segmented-bar.red span.active {
+      background: #E2051D;
+      box-shadow: 0 0 8px #E2051D;
+    }
+    .segmented-bar.cyan span.active {
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    /* Glowing Badge Ring */
+    .logo-ring {
+      box-shadow: 
+        0 0 0 2px rgba(56, 189, 248, 0.5),
+        0 0 20px rgba(56, 189, 248, 0.6),
+        0 0 45px rgba(244, 183, 13, 0.4),
+        inset 0 0 15px rgba(226, 5, 29, 0.3);
+      animation: ring-pulse 3s infinite alternate ease-in-out;
+    }
+    @keyframes ring-pulse {
+      0%   { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(35deg); }
+    }
+  </style>
+</head>
+<body class="min-h-screen studio-bg flex flex-col justify-between p-4 sm:p-6 lg:p-8 relative selection:bg-cyan-500 selection:text-black">
+
+  <!-- Top Floating Bar: Navigation back to standard theme & live stream toggle -->
+  <div class="w-full flex items-center justify-between gap-4 mb-6 z-50">
+    <a href="./preview-tema.html" class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-xs font-bold text-cyan-400 border border-cyan-500/30 px-3.5 py-1.5 rounded-lg shadow-lg backdrop-blur transition-all">
+      <span>← Volver a Vista Previa Tradicional</span>
+    </a>
+
+    <div class="flex items-center gap-2 text-xs font-hud font-bold">
+      <a href="./concept-hud-brand.html" class="bg-[#273547] border border-[#F4B70D] text-[#F4B70D] hover:opacity-90 px-2.5 py-1 rounded transition-opacity">🛡️ HUD Paleta La 97</a>
+      <a href="./concept-mediakit.html" class="bg-sky-600 hover:bg-sky-500 text-white px-2.5 py-1 rounded transition-colors">📊 Media Kit</a>
+      <a href="./concept-art.html" class="bg-rose-600 hover:bg-rose-500 text-white px-2.5 py-1 rounded transition-colors">⚡ Ver Concepto Art</a>
+      <a href="./concept-split.html" class="bg-amber-400 hover:bg-amber-300 text-slate-950 px-2.5 py-1 rounded transition-colors">🎨 Ver Concepto Split</a>
+      <span class="text-cyan-400 hidden sm:inline">MODO CONCEPTO:</span>
+      <span class="bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 px-2.5 py-1 rounded">HUD QUANTUM ON-AIR</span>
+    </div>
+  </div>
+
+  <!-- Audio Element connecting to real ShockMedia stream -->
+  <audio id="liveAudio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- =========================================================================
+       MAIN QUANTUM HUD INTERFACE
+       ========================================================================= -->
+  <div class="max-w-7xl w-full mx-auto flex-1 flex flex-col justify-center space-y-6 lg:space-y-8 my-auto relative z-30">
+    
+    <!-- Top Row: Floating Glowing Logo Badge + Quantum Audio Tuner Screen -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+      
+      <!-- Glowing Circular Logo Badge (Left) -->
+      <div class="lg:col-span-3 flex justify-center lg:justify-start">
+        <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full logo-ring bg-slate-950/80 p-2 flex flex-col items-center justify-center text-center backdrop-blur-md">
+          <div class="absolute inset-0 rounded-full border border-cyan-400/40 animate-spin" style="animation-duration: 20s;"></div>
+          <!-- Internal Logo Typography -->
+          <div class="relative z-10">
+            <span class="italic text-base font-black text-cyan-300 block -mb-1 tracking-wider">la</span>
+            <div class="text-4xl sm:text-5xl font-black text-white tracking-tighter leading-none" style="text-shadow: 0 0 15px rgba(255,255,255,0.8);">
+              97
+            </div>
+            <div class="text-[11px] font-black uppercase text-amber-400 tracking-widest mt-1">
+              FM Siempre!
+            </div>
+            <div class="text-[10px] font-mono text-cyan-400 font-bold tracking-widest mt-0.5">
+              97.3 MHz
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Transparent Glass HUD Center Panel (Right) -->
+      <div class="lg:col-span-9 holo-panel rounded-2xl p-5 sm:p-7">
+        
+        <!-- Top Nav Inside HUD -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-cyan-500/20 text-xs sm:text-sm font-hud font-bold tracking-widest">
+          <div class="flex items-center gap-6 text-slate-300">
+            <a href="#" class="text-cyan-400 hover:text-white transition-colors">INICIO</a>
+            <a href="#" class="hover:text-cyan-400 transition-colors">PROGRAMACIÓN</a>
+            <a href="#" class="hover:text-cyan-400 transition-colors">PODCASTS</a>
+            <a href="#" class="hover:text-cyan-400 transition-colors">NOTICIAS</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-rose-500 font-black">
+            <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+            <span>● EN VIVO</span>
+          </div>
+        </div>
+
+        <!-- Tuner Header -->
+        <div class="text-[11px] font-hud text-cyan-400/80 font-bold tracking-[0.2em] uppercase mt-3 mb-1">
+          QUANTUM AUDIO TUNER / ON-AIR
+        </div>
+
+        <!-- Glowing Interactive Particle Waveform Canvas -->
+        <div class="relative w-full h-36 sm:h-44 flex items-center justify-center my-2 overflow-hidden rounded-xl bg-slate-950/40 border border-cyan-500/15">
+          <canvas id="quantumWaveform" class="w-full h-full block"></canvas>
+        </div>
+
+        <!-- Track & Audio Telemetry Info -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
+          <div>
+            <h2 id="hudTrackTitle" class="text-lg sm:text-xl font-black text-white tracking-wide">
+              La 97 FM — En Directo (97.3 MHz)
+            </h2>
+            <div class="flex items-center gap-3 text-xs text-slate-400 font-mono mt-0.5">
+              <span>03:00</span>
+              <span class="text-cyan-400 font-bold">Telemetría de audio ShockMedia</span>
+              <span>02:00</span>
+            </div>
+          </div>
+
+          <!-- Futuristic Player Controls -->
+          <div class="flex items-center gap-4 text-cyan-400">
+            <!-- Shuffle -->
+            <button class="hover:text-white transition-colors" title="Aleatorio">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+            </button>
+            <!-- Prev -->
+            <button class="hover:text-white transition-colors" title="Anterior">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <!-- Big Glowing Holographic Play/Pause -->
+            <button id="hudPlayBtn" onclick="toggleHudAudio()" class="w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-400 hover:text-black border border-cyan-400 text-cyan-300 flex items-center justify-center shadow-lg transition-all hover:scale-105 holo-glow cursor-pointer">
+              <span id="hudPlayIcon" class="text-lg">▶</span>
+            </button>
+            <!-- Next -->
+            <button class="hover:text-white transition-colors" title="Siguiente">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+            <!-- Repeat -->
+            <button class="hover:text-white transition-colors" title="Repetir">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Row: 3 Floating Tilted Desk Hologram Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+      
+      <!-- Card 1: AGENDA / CRONOGRAMA (Left 3D Tilt) -->
+      <div class="holo-panel desk-tilt desk-3d-left rounded-xl p-5 relative">
+        <div class="corner-stripes-tr"></div>
+        <div class="corner-stripes-bl"></div>
+
+        <h3 class="font-hud text-xs font-black tracking-widest text-cyan-400 mb-4 uppercase">
+          AGENDA / CRONOGRAMA
+        </h3>
+
+        <div class="space-y-4">
+          <!-- Item 1 -->
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-white mb-1">
+              <span>Quilmes Rock 2070</span>
+              <span class="text-rose-400 text-[10px]">EN VIVO</span>
+            </div>
+            <div class="text-[11px] text-slate-400 mb-1.5">Transmisión en directo por La 97</div>
+            <div class="segmented-bar red">
+              <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-white mb-1">
+              <span>Lollapalooza Neo-Argentina</span>
+              <span class="text-cyan-400 text-[10px]">PRÓXIMO</span>
+            </div>
+            <div class="text-[11px] text-slate-400 mb-1.5">Especial con móviles en vivo</div>
+            <div class="segmented-bar cyan">
+              <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: MÚSICA Y NOTICIAS (Center 3D Tilt) -->
+      <div class="holo-panel desk-tilt desk-3d-center rounded-xl p-5">
+        <h3 class="font-hud text-xs font-black tracking-widest text-cyan-400 mb-3 uppercase">
+          MÚSICA Y NOTICIAS
+        </h3>
+
+        <div class="grid grid-cols-3 gap-2.5">
+          <!-- Mini Card 1 -->
+          <div class="bg-slate-900/60 rounded-lg p-2 border border-cyan-500/20 group hover:border-cyan-400 transition-colors flex flex-col justify-between">
+            <div class="h-16 rounded overflow-hidden mb-2 bg-slate-800">
+              <img src="./card1.webp" alt="Serú Girán Quilmes Rock" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <span class="bg-cyan-900/80 text-cyan-300 text-[9px] font-bold px-1.5 py-0.5 rounded font-mono uppercase">SERÚ GIRÁN</span>
+            <h4 class="text-[11px] font-bold text-white mt-1 leading-snug line-clamp-2">Homenaje en Quilmes Rock</h4>
+          </div>
+
+          <!-- Mini Card 2 -->
+          <div class="bg-slate-900/60 rounded-lg p-2 border border-cyan-500/20 group hover:border-cyan-400 transition-colors flex flex-col justify-between">
+            <div class="h-16 rounded overflow-hidden mb-2 bg-slate-800 relative">
+              <img src="./card2.jpg" alt="Lollapalooza Argentina" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <span class="bg-rose-900/80 text-rose-300 text-[9px] font-bold px-1.5 py-0.5 rounded font-mono uppercase">LOLLAPALOOZA</span>
+            <h4 class="text-[11px] font-bold text-white mt-1 leading-snug line-clamp-2">Grilla oficial confirmada</h4>
+          </div>
+
+          <!-- Mini Card 3 -->
+          <div class="bg-slate-900/60 rounded-lg p-2 border border-cyan-500/20 group hover:border-cyan-400 transition-colors flex flex-col justify-between">
+            <div class="h-16 rounded overflow-hidden mb-2 bg-slate-800">
+              <img src="./card3.jpg" alt="Benson Boone" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <span class="bg-amber-900/80 text-amber-300 text-[9px] font-bold px-1.5 py-0.5 rounded font-mono uppercase">BENSON BOONE</span>
+            <h4 class="text-[11px] font-bold text-white mt-1 leading-snug line-clamp-2">Nuevo hit en el 40X40</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: PLAYLIST IA / PROGRAMACIÓN (Right 3D Tilt) -->
+      <div class="holo-panel desk-tilt desk-3d-right rounded-xl p-5 relative">
+        <div class="corner-stripes-tr"></div>
+        <div class="corner-stripes-bl"></div>
+
+        <h3 class="font-hud text-xs font-black tracking-widest text-cyan-400 mb-4 uppercase">
+          PLAYLIST IA / PROGRAMACIÓN
+        </h3>
+
+        <div class="space-y-3 text-xs font-mono">
+          <div class="flex items-center justify-between text-slate-300 pb-2 border-b border-cyan-500/15">
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">▶</span>
+              <span>Flujos de canciones automáticas</span>
+            </div>
+            <span class="text-slate-400 text-[10px]">05:13</span>
+          </div>
+
+          <div class="flex items-center justify-between text-slate-300 pb-2 border-b border-cyan-500/15">
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">▶</span>
+              <span>Tate Mcrae — Automática</span>
+            </div>
+            <span class="text-slate-400 text-[10px]">03:00</span>
+          </div>
+
+          <!-- Bottom Waveform Line -->
+          <div class="flex items-center justify-between pt-1 text-[11px] text-cyan-400">
+            <span>MODULACIÓN DSP</span>
+            <span class="font-bold">97.3 MHz ACTIVE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom Technical Legend -->
+  <div class="text-center text-xs text-slate-500 font-mono tracking-wider z-20 pt-4">
+    LA 97 FM — CONCEPTO EXPERIMENTAL HUD • TRANSMITIENDO EN VIVO DESDE MAR DEL PLATA
+  </div>
+
+  <!-- =========================================================================
+       AUDIO & QUANTUM WAVEFORM CANVAS SCRIPT
+       ========================================================================= -->
+  <script>
+    var audio = document.getElementById('liveAudio');
+    var playBtn = document.getElementById('hudPlayBtn');
+    var playIcon = document.getElementById('hudPlayIcon');
+    var canvas = document.getElementById('quantumWaveform');
+    var ctx = canvas.getContext('2d');
+    var isPlaying = false;
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.parentElement.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function toggleHudAudio() {
+      if (!audio) return;
+      if (audio.paused) {
+        var s = audio.src;
+        audio.src = '';
+        audio.src = s;
+        audio.play().then(function() {
+          isPlaying = true;
+          playIcon.innerHTML = '❚❚';
+          playBtn.classList.add('bg-rose-500/20', 'border-rose-400', 'text-rose-300');
+        }).catch(function(e) { console.warn(e); });
+      } else {
+        audio.pause();
+        isPlaying = false;
+        playIcon.innerHTML = '▶';
+        playBtn.classList.remove('bg-rose-500/20', 'border-rose-400', 'text-rose-300');
+      }
+    }
+
+    // Dynamic Futuristic Canvas Waveform & Quantum Particle Rings
+    var time = 0;
+    function renderVisualizer() {
+      var w = canvas.width / window.devicePixelRatio;
+      var h = canvas.height / window.devicePixelRatio;
+      ctx.clearRect(0, 0, w, h);
+
+      var cx = w * 0.42;
+      var cy = h * 0.5;
+      time += isPlaying ? 0.05 : 0.015;
+
+      // 1. Concentric Quantum Rings (Yellow/Red glowing arcs on left)
+      var ringRadius = Math.min(h * 0.35, 55);
+      
+      // Outer Yellow Arc
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius, time * 0.8, time * 0.8 + Math.PI * 1.4);
+      ctx.strokeStyle = '#F4B70D';
+      ctx.lineWidth = 3;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = '#F4B70D';
+      ctx.stroke();
+
+      // Middle Red Ring
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius * 0.72, -time * 1.2, -time * 1.2 + Math.PI * 1.2);
+      ctx.strokeStyle = '#E2051D';
+      ctx.lineWidth = 2.5;
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = '#E2051D';
+      ctx.stroke();
+
+      // Inner Cyan Ring
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius * 0.45, time * 1.6, time * 1.6 + Math.PI * 1.5);
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = '#38bdf8';
+      ctx.stroke();
+
+      // 2. Soundwave particles expanding from center to right
+      var startX = cx - 35;
+      var endX = w - 40;
+      var bars = 64;
+      var step = (endX - startX) / bars;
+
+      for (var i = 0; i < bars; i++) {
+        var x = startX + i * step;
+        var progress = i / bars;
+        
+        // Multi-frequency wave envelope
+        var freq1 = Math.sin(time * 3 + progress * 8);
+        var freq2 = Math.cos(time * 2 + progress * 14);
+        var freq3 = Math.sin(time * 4 - progress * 4);
+        var envelope = Math.sin(progress * Math.PI); // Pinched at ends, high in middle
+        
+        var amp = (freq1 * 0.5 + freq2 * 0.3 + freq3 * 0.2) * (isPlaying ? 45 : 16) * envelope;
+        
+        // Color transition from Gold (#F4B70D) to Red (#E2051D) to Cyan (#38bdf8)
+        var col = progress < 0.4 ? '#F4B70D' : (progress < 0.75 ? '#E2051D' : '#38bdf8');
+        
+        ctx.beginPath();
+        ctx.moveTo(x, cy - amp);
+        ctx.lineTo(x, cy + amp);
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 2;
+        ctx.shadowBlur = isPlaying ? 10 : 4;
+        ctx.shadowColor = col;
+        ctx.stroke();
+
+        // Particle sparks
+        if (isPlaying && Math.random() > 0.85) {
+          ctx.fillStyle = col;
+          ctx.fillRect(x, cy + (Math.random() - 0.5) * amp * 2.5, 2, 2);
+        }
+      }
+
+      ctx.shadowBlur = 0;
+      requestAnimationFrame(renderVisualizer);
+    }
+    renderVisualizer();
+  </script>
+</body>
+</html>
+

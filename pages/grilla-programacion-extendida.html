@@ -1,0 +1,414 @@
+﻿<!--
+================================================================================
+  LA 97 FM (97.3 MHz - MAR DEL PLATA) | GRILLA DE PROGRAMACIÓN (EDICIÓN EXTENDIDA)
+================================================================================
+-->
+
+<style>
+  .entry-content { padding-top: 0 !important; margin-top: 0 !important; }
+  .entry-content > p:empty, .entry-content > br { display: none !important; }
+  .la97-nav-pill { display: inline-flex !important; align-items: center !important; justify-content: center !important; height: auto !important; min-height: unset !important; line-height: 1 !important; text-align: center !important; box-sizing: border-box !important; vertical-align: middle !important; }
+  .la97-pulse-dot { width: 7px; height: 7px; background: #ffffff; border-radius: 50%; display: inline-block; margin-right: 6px; }
+</style>
+
+<div id="la97-grilla-wrapper" style="max-width: 1120px; margin: 0 auto 30px auto; padding-top: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #273547; box-sizing: border-box;">
+
+  <!-- REPRODUCTOR DE STREAMING NATIVO -->
+  <audio id="la97-stream-audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- CABECERA INSTITUCIONAL CON BOTÓN EN VIVO INTEGRADO -->
+  <div style="background: #273547; border-radius: 12px; padding: 14px 20px; margin: 0 0 20px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 15px rgba(7, 13, 30, 0.08); box-sizing: border-box;">
+    
+    <!-- Branding Oficial -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://la97.com.ar/wp-content/uploads/2019/10/cropped-logo97-1-300x300.png" alt="La 97 FM" style="width: 44px; height: 44px; object-fit: contain; background: #ffffff; border-radius: 8px; padding: 3px; display: block;">
+      <div>
+        <h2 style="margin: 0; font-size: 18px; font-weight: 900; color: #ffffff; letter-spacing: -0.3px; text-transform: uppercase; line-height: 1.1;">GRILLA DE PROGRAMACIÓN</h2>
+        <span style="color: #F4B70D; font-size: 12px; font-weight: 700; letter-spacing: 0.5px;">97.3 MHz • MAR DEL PLATA</span>
+      </div>
+    </div>
+
+    <!-- Controles superiores: Botón EN VIVO sin inline onclick (controlado 100% por addEventListener) -->
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+      <a href="javascript:void(0)" id="la97-play-stream-btn" class="la97-nav-pill" style="background: #E2051D; color: #ffffff !important; text-decoration: none; font-size: 12px; font-weight: 800; padding: 9px 18px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.4px; border: none; box-shadow: 0 4px 14px rgba(229, 27, 36, 0.35); cursor: pointer;"><span id="la97-play-icon" style="margin-right: 6px;">▶</span><span id="la97-play-text">EN VIVO</span></a>
+      <a href="#semana" class="la97-nav-pill" style="background: rgba(255,255,255,0.14); color: #ffffff !important; text-decoration: none; font-size: 12px; font-weight: 800; padding: 9px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; border: 1px solid rgba(255,255,255,0.22);">LUNES A VIERNES</a>
+      <a href="#sabado" class="la97-nav-pill" style="background: rgba(255,255,255,0.14); color: #ffffff !important; text-decoration: none; font-size: 12px; font-weight: 800; padding: 9px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; border: 1px solid rgba(255,255,255,0.22);">SÁBADOS</a>
+      <a href="#domingo" class="la97-nav-pill" style="background: rgba(255,255,255,0.14); color: #ffffff !important; text-decoration: none; font-size: 12px; font-weight: 800; padding: 9px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; border: 1px solid rgba(255,255,255,0.22);">DOMINGOS</a>
+    </div>
+
+  </div>
+
+  <!-- SECCIÓN 1: LUNES A VIERNES -->
+  <section id="semana" style="margin-bottom: 30px; box-sizing: border-box;">
+    <div style="display: flex; gap: 18px; flex-wrap: wrap; align-items: stretch;">
+
+      <!-- Banner lateral -->
+      <div style="flex: 1 1 240px; min-width: 240px; background: linear-gradient(145deg, #273547 0%, #0366A2 100%); border-top: 5px solid #F4B70D; border-radius: 12px; padding: 22px 18px; color: #ffffff; box-shadow: 0 4px 14px rgba(7, 13, 30, 0.06); display: flex; flex-direction: column; justify-content: space-between; gap: 18px; box-sizing: border-box;">
+        <div>
+          <span style="display: inline-block; background: #F4B70D; color: #273547; font-size: 11px; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px;">LUNES A VIERNES</span>
+          <h3 style="margin: 0 0 8px 0; font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1.2;">Tu compañía de cada día</h3>
+          <p style="margin: 0; font-size: 13.5px; color: #E3E1E3; line-height: 1.5; font-style: italic;">Te acompañamos durante toda tu jornada. <strong style="color: #F4B70D;">¡Juntos, siempre!</strong></p>
+        </div>
+        <div style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; color: #94a3b8; font-weight: 700;">7 PROGRAMAS EN VIVO</div>
+      </div>
+
+      <!-- Tarjetas de Programas -->
+      <div style="flex: 3 1 500px; display: flex; flex-direction: column; gap: 10px;">
+        
+        <div class="la97-prog-row" data-day="semana" data-start="0" data-end="6" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">00 a 06 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-trasnoche.jpg" alt="La Trasnoche" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Trasnoche</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">La música necesaria para el comienzo de un nuevo día.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="6" data-end="9" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">06 a 09 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/bim-bam-bum.jpg" alt="Bim Bam Bum" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Bim Bam Bum</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Todo lo que necesitás saber para estar bien informado, acompañado de clásicos cargados de energía. <strong style="color: #E2051D;">¡Buen día, audiencia!</strong></p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="9" data-end="13" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">09 a 13 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/ranking-40.jpg" alt="Ranking 40X40" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Ranking 40X40</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">El listado de los 40 éxitos más votados, <strong style="color: #E2051D;">¡Arriba la energía!</strong> A jugar y divertirnos.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="13" data-end="18" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">13 a 18 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/musica-express.jpg" alt="Música Express" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Música Express</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="18" data-end="21" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">18 a 21 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/el_regreso.jpg" alt="El Regreso" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">El Regreso</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">La compañía ideal para finalizar la jornada laboral o de estudio. Para volver a informarnos, a jugar y seguir escuchando la mejor música.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="21" data-end="22" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">21 a 22 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/top-ten.jpg" alt="Top Ten" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Top Ten</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Las 10 canciones más votadas del Ranking 40X40.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="semana" data-start="22" data-end="24" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">22 a 00 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-noche.jpg" alt="La Noche" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Noche</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Nuestra mejor selección de canciones para finalizar el día, porque sabemos lo que te gusta.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: SÁBADOS -->
+  <section id="sabado" style="margin-bottom: 30px; box-sizing: border-box;">
+    <div style="display: flex; gap: 18px; flex-wrap: wrap; align-items: stretch;">
+
+      <!-- Banner lateral -->
+      <div style="flex: 1 1 240px; min-width: 240px; background: linear-gradient(145deg, #273547 0%, #273547 100%); border-top: 5px solid #E2051D; border-radius: 12px; padding: 22px 18px; color: #ffffff; box-shadow: 0 4px 14px rgba(7, 13, 30, 0.06); display: flex; flex-direction: column; justify-content: space-between; gap: 18px; box-sizing: border-box;">
+        <div>
+          <span style="display: inline-block; background: #E2051D; color: #ffffff; font-size: 11px; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px;">SÁBADOS</span>
+          <h3 style="margin: 0 0 8px 0; font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1.2;">El ritmo del fin de semana</h3>
+          <p style="margin: 0; font-size: 13.5px; color: #E3E1E3; line-height: 1.5; font-style: italic;">Si trabajás, estudiás o te relajás. <strong style="color: #ffffff;">¡La 97 siempre con vos!</strong></p>
+        </div>
+        <div style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; color: #94a3b8; font-weight: 700;">5 PROGRAMAS EN VIVO</div>
+      </div>
+
+      <!-- Tarjetas -->
+      <div style="flex: 3 1 500px; display: flex; flex-direction: column; gap: 10px;">
+        
+        <div class="la97-prog-row" data-day="sabado" data-start="0" data-end="6" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">00 a 06 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-trasnoche.jpg" alt="La Trasnoche" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Trasnoche</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Palabras justas y la música necesaria para el comienzo de un nuevo día.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="sabado" data-start="6" data-end="10" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">06 a 10 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/super-clasicos.jpg" alt="Súper Clásicos" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Súper Clásicos</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Éxitos indiscutibles que jamás nos cansamos de escuchar. Un repaso de la mejor música desde los '80s en adelante.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="sabado" data-start="10" data-end="14" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">10 a 14 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/ranking-40.jpg" alt="Ranking 40X40" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Ranking 40X40</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">El listado de los 40 éxitos más votados, <strong style="color: #E2051D;">¡Arriba la energía!</strong> A jugar y divertirnos.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="sabado" data-start="14" data-end="20" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">14 a 20 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/musica-express.jpg" alt="Música Express" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Música Express</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="sabado" data-start="20" data-end="2" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">20 a 02 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/conexion-sabado.jpg" alt="Conexión Sábado" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Conexión Sábado</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Lo mejor del fin de semana. Comenzamos la previa de una noche espectacular, con música que nos recarga de energía.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: DOMINGOS -->
+  <section id="domingo" style="margin-bottom: 30px; box-sizing: border-box;">
+    <div style="display: flex; gap: 18px; flex-wrap: wrap; align-items: stretch;">
+
+      <!-- Banner lateral -->
+      <div style="flex: 1 1 240px; min-width: 240px; background: linear-gradient(145deg, #273547 0%, #273547 100%); border-top: 5px solid #0366A2; border-radius: 12px; padding: 22px 18px; color: #ffffff; box-shadow: 0 4px 14px rgba(7, 13, 30, 0.06); display: flex; flex-direction: column; justify-content: space-between; gap: 18px; box-sizing: border-box;">
+        <div>
+          <span style="display: inline-block; background: #0366A2; color: #ffffff; font-size: 11px; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px;">DOMINGOS</span>
+          <h3 style="margin: 0 0 8px 0; font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1.2;">Música para disfrutar</h3>
+          <p style="margin: 0; font-size: 13.5px; color: #E3E1E3; line-height: 1.5; font-style: italic;">Si trabajás, estudiás o te relajás. <strong style="color: #ffffff;">¡La 97 siempre con vos!</strong></p>
+        </div>
+        <div style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; color: #94a3b8; font-weight: 700;">5 PROGRAMAS EN VIVO</div>
+      </div>
+
+      <!-- Tarjetas -->
+      <div style="flex: 3 1 500px; display: flex; flex-direction: column; gap: 10px;">
+        
+        <div class="la97-prog-row" data-day="domingo" data-start="2" data-end="6" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">02 a 06 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-trasnoche.jpg" alt="La Trasnoche" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Trasnoche</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">La mejor música.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="domingo" data-start="6" data-end="15" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">06 a 15 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/super-clasicos.jpg" alt="Súper Clásicos" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Súper Clásicos</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Disfrutemos juntos de nuestros recuerdos, te proponemos un recorrido por los éxitos desde los '80s en adelante.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="domingo" data-start="15" data-end="17" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">15 a 17 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/top-latino.jpg" alt="Top Latino" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">Top Latino</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">Suenan las 20 canciones en español más votadas en la radio. <strong style="color: #E2051D;">¡Cantá fuerte! ¡La letra seguro la sabés!</strong></p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="domingo" data-start="17" data-end="20" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">17 a 20 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-tarde-del-domingo.jpg" alt="La Tarde del Domingo" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Tarde del Domingo</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">No te damos tiempo para que pienses que llega el lunes, escuchando música para disfrutar.</p>
+          </div>
+        </div>
+
+        <div class="la97-prog-row" data-day="domingo" data-start="20" data-end="24" style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 6px rgba(7, 13, 30, 0.03); box-sizing: border-box;">
+          <div style="background: #E3E1E3; color: #273547; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-width: 105px; text-align: center;">20 a 00 hs</div>
+          <div style="background: #f8fafc; border: 1px solid #E3E1E3; border-radius: 6px; padding: 4px; width: 110px; height: 50px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://la97.com.ar/wp-content/uploads/2023/01/la-noche.jpg" alt="La Noche del Domingo" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" loading="lazy">
+          </div>
+          <div style="flex: 1 1 240px;">
+            <h4 style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #273547;">La Noche del Domingo</h4>
+            <p style="margin: 0; font-size: 13.5px; color: #475569; line-height: 1.45;">El cierre del fin de semana no es un bajón porque estamos con vos, <strong style="color: #E2051D;">¡siempre!</strong></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIE DE COMPONENTE -->
+  <footer style="background: #ffffff; border: 1px solid #E3E1E3; border-radius: 12px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 8px rgba(7, 13, 30, 0.04); box-sizing: border-box;">
+    <div style="font-size: 13.5px; color: #64748b;">
+      <strong style="color: #273547;">La 97 FM • 97.3 MHz</strong> — Mar del Plata, Argentina. Transmitiendo las 24 horas.
+    </div>
+    <a href="javascript:void(0)" id="la97-bottom-play-btn" style="display: inline-flex; align-items: center; gap: 6px; background: #E2051D; color: #ffffff !important; padding: 8px 18px; border-radius: 999px; font-weight: 800; font-size: 12.5px; text-decoration: none; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(229, 27, 36, 0.25); cursor: pointer;">
+      ▶ ESCUCHAR EN VIVO
+    </a>
+  </footer>
+
+  <script type="text/javascript">
+(function(){
+  var isToggling = false;
+  window.la97GetAudio = function() {
+    return document.getElementById('la97Audio') || document.getElementById('la97-stream-audio');
+  };
+  window.la97UpdatePlayerUI = function(isPlaying) {
+    var topBtn = document.getElementById('la97-play-stream-btn');
+    var topIcon = document.getElementById('la97-play-icon');
+    var topText = document.getElementById('la97-play-text');
+    var bottomBtn = document.getElementById('la97-bottom-play-btn');
+    if (isPlaying) {
+      if (topIcon) topIcon.textContent = '⏸';
+      if (topText) topText.textContent = 'EN VIVO';
+      if (topBtn) {
+        topBtn.style.background = '#16a34a';
+        topBtn.style.boxShadow = '0 4px 14px rgba(22, 163, 74, 0.45)';
+      }
+      if (bottomBtn) bottomBtn.textContent = '⏸ PAUSAR EN VIVO';
+    } else {
+      if (topIcon) topIcon.textContent = '▶';
+      if (topText) topText.textContent = 'EN VIVO';
+      if (topBtn) {
+        topBtn.style.background = '#E2051D';
+        topBtn.style.boxShadow = '0 4px 14px rgba(229, 27, 36, 0.35)';
+      }
+      if (bottomBtn) bottomBtn.textContent = '▶ ESCUCHAR EN VIVO';
+    }
+  };
+  window.la97ToggleStream = function() {
+    var audio = window.la97GetAudio();
+    if (!audio || isToggling) return;
+    if (audio.paused) {
+      isToggling = true;
+      var p = audio.play();
+      if (p !== undefined) {
+        p.then(function() {
+          isToggling = false;
+          window.la97UpdatePlayerUI(true);
+        }).catch(function(err) {
+          isToggling = false;
+          if (err.name !== 'AbortError') {
+            console.warn('Playback error:', err);
+          }
+          window.la97UpdatePlayerUI(false);
+        });
+      } else {
+        isToggling = false;
+        window.la97UpdatePlayerUI(true);
+      }
+    } else {
+      audio.pause();
+      isToggling = false;
+      window.la97UpdatePlayerUI(false);
+    }
+  };
+  try {
+    var audio = window.la97GetAudio();
+    if (audio) {
+      audio.addEventListener('play', function() { window.la97UpdatePlayerUI(true); });
+      audio.addEventListener('playing', function() { window.la97UpdatePlayerUI(true); });
+      audio.addEventListener('pause', function() { window.la97UpdatePlayerUI(false); });
+    }
+    var topBtn = document.getElementById('la97-play-stream-btn');
+    if (topBtn) {
+      topBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.la97ToggleStream();
+      });
+    }
+    var bottomBtn = document.getElementById('la97-bottom-play-btn');
+    if (bottomBtn) {
+      bottomBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.la97ToggleStream();
+      });
+    }
+    var now = new Date();
+    var day = now.getDay();
+    var hour = now.getHours();
+    var currentDay = (day === 0) ? 'domingo' : (day === 6 ? 'sabado' : 'semana');
+    var rows = document.querySelectorAll('.la97-prog-row[data-day="' + currentDay + '"]');
+    for (var i = 0; rows.length > i; i++) {
+      var row = rows[i];
+      var start = parseInt(row.getAttribute('data-start'), 10);
+      var end = parseInt(row.getAttribute('data-end'), 10);
+      var isLive = (end > start) ? (hour >= start && end > hour) : (hour >= start || end > hour);
+      if (isLive) {
+        row.style.border = '2px solid #E2051D';
+        row.style.background = 'linear-gradient(to right, #fff5f5, #ffffff)';
+        row.style.boxShadow = '0 4px 16px rgba(229, 27, 36, 0.12)';
+        var timeBadge = row.firstElementChild;
+        if (timeBadge && !timeBadge.querySelector('.la97-live-badge')) {
+          timeBadge.style.background = '#E2051D';
+          timeBadge.style.color = '#ffffff';
+          var liveBadge = document.createElement('span');
+          liveBadge.className = 'la97-live-badge';
+          liveBadge.style.display = 'inline-block';
+          liveBadge.style.marginLeft = '4px';
+          liveBadge.style.fontSize = '11px';
+          liveBadge.textContent = '● VIVO';
+          timeBadge.appendChild(liveBadge);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Init error:', e);
+  }
+})();
+  </script>
+</div>

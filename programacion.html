@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación Oficial — La 97 FM (97.3 MHz Mar del Plata)</title>
+  <meta name="description" content="Grilla oficial de La 97 FM (97.3 MHz Mar del Plata). Conocé los horarios de Lunes a Viernes, Sábados y Domingos, conductores y qué programa suena ahora al aire.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="La 97 FM — 97.3 MHz">
+  <meta property="og:title" content="Programación Oficial — La 97 FM (97.3 MHz)">
+  <meta property="og:description" content="Todos los programas de la semana en La 97 FM, en vivo las 24 hs desde Mar del Plata.">
+  <meta property="og:image" content="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <link rel="icon" type="image/png" href="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <link rel="apple-touch-icon" href="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://la97.com.ar/programacion/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            la97: {
+              navy: '#273547',
+              blue: '#0366A2',
+              yellow: '#F4B70D',
+              red: '#E2051D',
+              gray: '#E3E1E3',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./tema-la97/style.css">
+  <style>
+    .page-default-bg {
+      background: linear-gradient(180deg, #1b2636 0%, #273547 50%, #1a2433 100%);
+    }
+
+    .mk-glass {
+      background: linear-gradient(135deg, rgba(39, 53, 71, 0.80) 0%, rgba(22, 32, 46, 0.90) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(3, 102, 162, 0.55);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(227, 225, 227, 0.14);
+    }
+
+    .mk-yellow-slashes {
+      background: repeating-linear-gradient(
+        -62deg,
+        #F4B70D,
+        #F4B70D 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    }
+
+    .mk-dot-circle {
+      display: inline-block;
+      width: 0.72em;
+      height: 0.72em;
+      border-radius: 9999px;
+      background-color: currentColor;
+      vertical-align: baseline;
+      margin-inline: 0.03em;
+    }
+
+    .mk-sched-row.is-on-air {
+      background: linear-gradient(135deg, rgba(3, 102, 162, 0.42) 0%, rgba(39, 53, 71, 0.92) 100%) !important;
+      border-color: rgba(244, 183, 13, 0.55) !important;
+      border-left: 6px solid #E2051D !important;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    .mk-sched-row .mk-live-pill {
+      display: none;
+    }
+    .mk-sched-row.is-on-air .mk-live-pill {
+      display: inline-flex;
+    }
+  </style>
+</head>
+<body class="page-default-bg text-white antialiased selection:bg-[#E2051D] selection:text-white min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- Persistent Live Audio Stream (ShockMedia) -->
+  <audio id="la97Audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- MOBILE SWIPEABLE NAVIGATION DRAWER -->
+  <div class="Drawer" id="drawer" popover="manual">
+    <div class="Drawer-scroller">
+      <nav class="Drawer-sheet p-6" tabindex="-1" aria-label="Menú móvil">
+        <div>
+          <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="bg-white rounded-lg p-1 w-10 h-10 flex items-center justify-center shrink-0">
+                <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <div class="text-white text-base font-black tracking-wide leading-tight">LA 97 FM</div>
+                <div class="text-la97-yellow text-[10px] font-bold tracking-wider uppercase">97.3 MHz • RADIO N°1</div>
+              </div>
+            </div>
+            <button type="button" id="drawer-close" class="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-la97-red transition-colors" aria-label="Cerrar menú">
+              ✕
+            </button>
+          </div>
+
+          <ul class="space-y-2 text-sm font-extrabold tracking-wide">
+            <li><a href="./concept-mediakit.html" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">INICIO</a></li>
+            <li><a href="./programacion.html" class="block px-4 py-3 rounded-xl bg-white/10 text-white hover:bg-la97-blue transition-colors">PROGRAMACIÓN OFICIAL</a></li>
+            <li><a href="./concept-mediakit.html#productos-comerciales" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PRODUCTOS & AUSPICIOS</a></li>
+            <li><a href="./contacto.html" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">CONTACTO COMERCIAL</a></li>
+          </ul>
+        </div>
+
+        <div class="pt-6 border-t border-white/10 space-y-3">
+          <div class="text-[11px] font-bold text-la97-gray/80 uppercase tracking-wider">Estudios Moreno 2976</div>
+          <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="flex items-center justify-between bg-la97-yellow text-la97-navy px-4 py-2.5 rounded-xl text-xs font-black">
+            <span>WhatsApp Oyentes</span>
+            <span>223 615-0000</span>
+          </a>
+          <a href="tel:02234916607" class="flex items-center justify-between bg-white/10 text-white px-4 py-2.5 rounded-xl text-xs font-bold">
+            <span>Comercial MDP</span>
+            <span class="text-la97-yellow">223 491-6607</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TOP INSTITUTIONAL HEADER -->
+  <header class="bg-la97-navy/80 backdrop-blur-xl sticky top-0 z-40 border-b-2 border-la97-blue/60 shadow-xl w-full">
+    <div class="w-full px-6 lg:px-12 xl:px-16 py-3.5 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <button type="button" id="drawer-open" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer"
+          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 hover:bg-la97-red text-white flex items-center justify-center transition-colors cursor-pointer">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <a href="./concept-mediakit.html" class="flex items-center gap-3.5 group">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1.5 border-2 border-la97-yellow shadow-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM 97.3 MHz" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white text-lg sm:text-xl font-black tracking-tight uppercase leading-none">LA 97 SIEMPRE!</span>
+              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2 py-0.5 rounded uppercase">RADIO N°1</span>
+            </div>
+            <div class="text-la97-gray text-[11px] font-bold tracking-wider uppercase mt-1">
+              97.3 MHz • MORENO 2976 • MAR DEL PLATA
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-6 text-xs font-black uppercase tracking-wider text-la97-gray">
+        <a href="./concept-mediakit.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Inicio</a>
+        <a href="./programacion.html" data-la97-nav class="text-la97-yellow transition-colors">Programación</a>
+        <a href="./concept-mediakit.html#productos-comerciales" data-la97-nav class="hover:text-la97-yellow transition-colors">Publicidad</a>
+        <a href="./contacto.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Contacto</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <div class="hidden xl:inline-flex items-center gap-2 text-[11px] font-bold text-la97-gray bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+          <span class="w-1.5 h-1.5 rounded-full bg-la97-yellow"></span>
+          <span>Al aire: <strong id="la97HeaderShow" class="text-white font-black">La 97 FM</strong></span>
+        </div>
+        <button type="button" id="topPlayMirrorBtn"
+          class="inline-flex items-center gap-2 bg-la97-red hover:bg-la97-yellow hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-lg transition-all cursor-pointer">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span id="topPlayMirrorText">EN VIVO 97.3</span>
+        </button>
+        <a href="./contacto.html" data-la97-nav
+          class="hidden sm:inline-flex items-center bg-la97-blue hover:bg-white hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full transition-colors">
+          ¡SUMATE!
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-1 w-full">
+    <section id="programacion-oficial" class="w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16 text-white">
+
+      <!-- Header Banner -->
+      <div class="mk-glass text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden mb-10 shadow-xl">
+        <div class="w-44 h-28 mk-yellow-slashes absolute top-0 right-6 opacity-95 pointer-events-none hidden sm:block"></div>
+
+        <div class="max-w-3xl relative z-10">
+          <span class="text-xs font-black uppercase tracking-widest text-la97-gray">CONTENIDO Y REALIZACIÓN 100% LOCAL</span>
+          <h1 class="text-3xl sm:text-5xl font-black text-la97-yellow tracking-tight uppercase mt-1">
+            PROGRAMACIÓN
+          </h1>
+          <p class="text-sm sm:text-base text-la97-gray mt-2 leading-relaxed">
+            Conocemos la personalidad y preferencias de nuestros oyentes, y diagramamos una grilla con contenido y realización 100% local.
+          </p>
+        </div>
+      </div>
+
+      <!-- Day Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filtrar programación por día">
+        <button type="button" data-sched-tab="all" class="sched-tab-btn bg-la97-yellow text-la97-navy text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
+          Toda la Semana
+        </button>
+        <button type="button" data-sched-tab="semana" class="sched-tab-btn bg-white/10 hover:bg-white/20 text-white text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
+          Lunes a Viernes
+        </button>
+        <button type="button" data-sched-tab="sabado" class="sched-tab-btn bg-white/10 hover:bg-white/20 text-white text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
+          Sábado
+        </button>
+        <button type="button" data-sched-tab="domingo" class="sched-tab-btn bg-white/10 hover:bg-white/20 text-white text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
+          Domingo
+        </button>
+      </div>
+
+      <!-- Schedule Table Grid -->
+      <div class="space-y-10">
+
+        <!-- LUNES A VIERNES -->
+        <div data-sched-block="semana" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-yellow lg:sticky lg:top-28">
+            <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Lunes a Viernes</h2>
+            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">24 HS EN VIVO • 97.3 MHz</p>
+          </div>
+          <div class="lg:col-span-9 space-y-3">
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="0" data-end="6">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">00 A 06HS.</div>
+                <img src="./design_client_idea/latrasnoche.jpg" alt="La Trasnoche" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">La Trasnoche</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marisa Pappalardo</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Palabras justas y la música necesaria para el comienzo del día.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Marisa Pappalardo">
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">MP</div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Marisa Pappalardo</span>
+              </div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="6" data-end="9">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">06 A 09HS.</div>
+                <img src="./design_client_idea/bimbambum.jpg" alt="Bim Bam Bum" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Bim Bam Bum</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marina Gorosito</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Todo lo que necesitás saber para estar bien informado, acompañado de clásicos cargados de energía.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Marina Gorosito">
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">MG</div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Marina Gorosito</span>
+              </div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="9" data-end="13">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">09 A 13HS.</div>
+                <img src="./design_client_idea/40x40.jpg" alt="Ranking 40 x 40" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Ranking 40 x 40</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Christian Carballo y Eugenia Martinez</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El listado de los 40 éxitos más votados, ¡arriba la energía! A jugar y divertirnos.</p>
+                </div>
+              </div>
+              <div class="flex items-center -space-x-2 shrink-0" title="Espacio para fotos de Christian Carballo y Eugenia Martinez">
+                <div class="w-11 h-11 rounded-full bg-la97-blue/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">CC</div>
+                <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white">EM</div>
+              </div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="13" data-end="18">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">13 A 18HS.</div>
+                <img src="./design_client_idea/musicaexpress.jpg" alt="Música Express" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Música Express</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Gerardo Reboredo</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Gerardo Reboredo">
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">GR</div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Gerardo Reboredo</span>
+              </div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="18" data-end="24">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">18 A 00HS.</div>
+                <img src="./design_client_idea/elregreso.jpg" alt="El Regreso" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">El Regreso</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Pablo Larsen</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La compañía ideal para finalizar la jornada. Para volver a informarnos, a jugar y seguir escuchando la mejor música.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Pablo Larsen">
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">PL</div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Pablo Larsen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SÁBADO -->
+        <div data-sched-block="sabado" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-6 border-t border-white/15">
+          <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-red lg:sticky lg:top-28">
+            <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Sábado</h2>
+            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">FIN DE SEMANA • 97.3 MHz</p>
+          </div>
+          <div class="lg:col-span-9 space-y-3">
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="0" data-end="6">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">00 A 06HS.</div>
+                <img src="./design_client_idea/latrasnoche.jpg" alt="La Trasnoche de La 97" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">La Trasnoche de La 97!</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marisa Pappalardo</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Palabras justas y la música necesaria para el comienzo de un nuevo día.</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Marisa Pappalardo">MP</div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="6" data-end="10">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">06 A 10HS.</div>
+                <img src="./design_client_idea/superclasicos.jpg" alt="Superclásicos" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Superclásicos</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Eugenia Martinez</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Éxitos indiscutibles que jamás nos cansamos de escuchar. Un repaso de la mejor música desde los 80' en adelante.</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="10" data-end="14">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">10 A 14HS.</div>
+                <img src="./design_client_idea/40x40.jpg" alt="Ranking 40 x 40" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Ranking 40 x 40</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Eugenia Martinez</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El listado de los 40 éxitos más votados. ¡Arriba la energía! ¡Llegó el fin de semana! ¡A distendernos, jugando y bailando!</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="14" data-end="20">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">14 A 20HS.</div>
+                <img src="./design_client_idea/musicaexpress.jpg" alt="Música Express" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Música Express</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marisa Pappalardo</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Marisa Pappalardo">MP</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOMINGO -->
+        <div data-sched-block="domingo" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-6 border-t border-white/15">
+          <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-blue lg:sticky lg:top-28">
+            <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Domingo</h2>
+            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">CLÁSICOS & COMPAÑÍA</p>
+          </div>
+          <div class="lg:col-span-9 space-y-3">
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="0" data-start="8" data-end="15">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">08 A 15HS.</div>
+                <img src="./design_client_idea/superclasicos.jpg" alt="Superclásicos" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">Superclásicos</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marina Gorosito</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Disfrutemos juntos de nuestros recuerdos, te proponemos un recorrido por los éxitos desde los 80' en adelante.</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Marina Gorosito">MG</div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="0" data-start="15" data-end="23">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">15 A 23HS.</div>
+                <img src="./design_client_idea/tardedomingo.jpg" alt="La Tarde del Domingo" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">La Tarde del Domingo</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Pablo Larsen</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">No te damos tiempo para que pienses que llega el lunes, escuchando música para disfrutar.</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Pablo Larsen">PL</div>
+            </div>
+
+            <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="0" data-start="23" data-end="24">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
+                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">23 A 00HS.</div>
+                <img src="./design_client_idea/lanochedomingo.jpg" alt="La Trasnoche de La 97" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-base font-black text-white">La Trasnoche de La 97!</h3>
+                    <span class="text-xs font-bold text-sky-300">/ Marisa Pappalardo</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El cierre del fin de semana no es un bajón porque estamos con vos, ¡siempre!</p>
+                </div>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Marisa Pappalardo">MP</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Commercial Banner Slot in Programación -->
+      <div class="mt-12 mk-glass rounded-2xl p-5 sm:px-8 sm:py-6 border border-dashed border-la97-yellow/50 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 text-center md:text-left">
+          <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
+            ESPACIO PUBLICITARIO
+          </span>
+          <div>
+            <div class="text-sm sm:text-base font-black text-white">Auspiciá la Programación Oficial de La 97 FM</div>
+            <div class="text-xs text-la97-gray">Banner comercial disponible (970 × 120 px) o auspicio exclusivo de programa.</div>
+          </div>
+        </div>
+        <a href="./contacto.html#formulario-publicidad"
+          class="bg-la97-blue hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-xl transition-colors shrink-0">
+          Publicitá con nosotros →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-la97-navy/90 backdrop-blur-md border-t-2 border-la97-blue/60 text-white w-full px-6 lg:px-12 xl:px-16 py-8">
+    <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-white p-1 flex items-center justify-center shrink-0">
+          <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+        </div>
+        <span class="font-black uppercase tracking-wider">LA 97 SIEMPRE! • 97.3 MHz • MORENO 2976, MAR DEL PLATA</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://www.instagram.com/la97siempre/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-instagram-logo"></i> Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-blue px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-facebook-logo"></i> Facebook</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-youtube-logo"></i> YouTube</a>
+        <a href="https://x.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white hover:text-la97-navy px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-x-logo"></i> X</a>
+        <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3 py-1.5 rounded-lg font-black hover:bg-white transition-colors"><i class="ph-bold ph-whatsapp-logo"></i> WhatsApp</a>
+      </div>
+      <div class="text-la97-gray font-bold flex flex-wrap items-center gap-3">
+        <a href="./privacidad.html" data-la97-nav class="hover:text-white transition-colors">Privacidad</a>
+        <span>•</span>
+        <a href="./terminos.html" data-la97-nav class="hover:text-white transition-colors">Términos</a>
+        <span>•</span>
+        <span>© 2026 La 97 FM</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./tema-la97/assets/js/player.js"></script>
+  <script>
+    (function () {
+      const audio = document.getElementById('la97Audio');
+      const topPlayMirrorBtn = document.getElementById('topPlayMirrorBtn');
+      const topPlayMirrorText = document.getElementById('topPlayMirrorText');
+
+      if (topPlayMirrorBtn && audio) {
+        topPlayMirrorBtn.addEventListener('click', () => {
+          if (audio.paused) {
+            const s = audio.src;
+            audio.src = '';
+            audio.src = s;
+            audio.play().catch(console.warn);
+          } else {
+            audio.pause();
+          }
+        });
+      }
+      if (audio && topPlayMirrorText) {
+        audio.addEventListener('play', () => { topPlayMirrorText.textContent = 'PAUSAR 97.3'; });
+        audio.addEventListener('pause', () => { topPlayMirrorText.textContent = 'EN VIVO 97.3'; });
+      }
+
+      function initScheduleTabs() {
+        const tabs = document.querySelectorAll('.sched-tab-btn');
+        const blocks = document.querySelectorAll('[data-sched-block]');
+        if (!tabs.length || !blocks.length) return;
+
+        tabs.forEach((btn) => {
+          if (btn._la97Bound) return;
+          btn._la97Bound = true;
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-sched-tab');
+            tabs.forEach((b) => {
+              b.classList.remove('bg-la97-yellow', 'text-la97-navy');
+              b.classList.add('bg-white/10', 'text-white');
+            });
+            btn.classList.remove('bg-white/10', 'text-white');
+            btn.classList.add('bg-la97-yellow', 'text-la97-navy');
+
+            blocks.forEach((blk) => {
+              const bKey = blk.getAttribute('data-sched-block');
+              if (target === 'all' || bKey === target) {
+                blk.classList.remove('hidden');
+              } else {
+                blk.classList.add('hidden');
+              }
+            });
+          });
+        });
+      }
+
+      initScheduleTabs();
+      window.addEventListener('la97:page-swapped', initScheduleTabs);
+    })();
+  </script>
+</body>
+</html>

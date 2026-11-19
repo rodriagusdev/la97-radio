@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La 97 FM — Concepto Split-Screen 50/50 (Estilo Radio Tulum)</title>
+  <!-- TailwindCSS Play CDN (Exact config from DESIGN.md) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            la97: {
+              navy: '#273547',   // Predominant primary blue
+              blue: '#0366A2',   // Secondary accent blue
+              yellow: '#F4B70D', // Brand yellow
+              red: '#E2051D',    // Brand red
+              gray: '#E3E1E3',   // Brand gray
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./tema-la97/style.css">
+  <style>
+    /* Split-Screen Left Poster Background & Diagonal Collage Bars */
+    .la97-poster-bg {
+      background-color: #273547;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(3, 102, 162, 0.32) 0%, transparent 65%),
+        radial-gradient(circle at 80% 85%, rgba(226, 5, 29, 0.14) 0%, transparent 50%);
+    }
+
+    .la97-collage-bars {
+      position: relative;
+      width: 100%;
+      max-width: 390px;
+      height: 235px;
+      margin-inline: auto;
+    }
+
+    .la97-collage-bars .cbar {
+      position: absolute;
+      height: 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+    }
+
+    /* 4 Torn/Diagonal Graphic Bars in Official Palette */
+    .la97-collage-bars .cbar-1 {
+      top: 22px;
+      left: 8%;
+      width: 82%;
+      transform: rotate(3deg);
+      background: linear-gradient(90deg, #0366A2 0%, #E3E1E3 100%);
+    }
+    .la97-collage-bars .cbar-2 {
+      top: 72px;
+      left: 2%;
+      width: 88%;
+      transform: rotate(6deg);
+      background: linear-gradient(90deg, #F4B70D 0%, #F4B70D 75%, rgba(244, 183, 13, 0.35) 100%);
+    }
+    .la97-collage-bars .cbar-3 {
+      top: 124px;
+      left: 6%;
+      width: 86%;
+      transform: rotate(8deg);
+      background: repeating-linear-gradient(
+        -45deg,
+        #273547,
+        #273547 12px,
+        #E2051D 12px,
+        #E2051D 24px
+      );
+      border: 1px solid rgba(227, 225, 227, 0.3);
+    }
+    .la97-collage-bars .cbar-4 {
+      top: 174px;
+      left: 0%;
+      width: 76%;
+      transform: rotate(12deg);
+      background: linear-gradient(90deg, #E2051D 0%, #0366A2 100%);
+    }
+  </style>
+</head>
+<body class="bg-white text-[#273547] antialiased selection:bg-[#E2051D] selection:text-white min-h-screen flex flex-col">
+
+  <!-- Persistent Audio Stream -->
+  <audio id="la97Audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- =====================================================================
+       DEV PREVIEW TOP BAR
+       ===================================================================== -->
+  <div class="bg-black/95 text-white text-xs px-4 py-2 flex flex-wrap items-center justify-between gap-3 border-b border-white/15 sticky top-0 z-50">
+    <div class="flex items-center gap-2.5">
+      <a href="./preview-tema.html" class="bg-white/10 hover:bg-white/20 text-white font-bold px-2.5 py-1 rounded transition-colors">
+        ← Volver a Preview Tradicional
+      </a>
+      <span class="bg-la97-yellow text-la97-navy font-black px-2 py-0.5 rounded text-[10px] uppercase">CONCEPTO SPLIT 50/50</span>
+      <span class="text-la97-gray hidden md:inline">Inspirado en Radio Tulum + Tuner Canvas con los 5 colores de <code class="text-white font-mono">DESIGN.md</code></span>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="./concept-mediakit.html" class="px-2.5 py-1 rounded font-bold bg-la97-blue text-white hover:opacity-90 transition-opacity">📊 Ver Media Kit</a>
+      <a href="./concept-art.html" class="px-2.5 py-1 rounded font-bold bg-la97-red text-white hover:opacity-90 transition-opacity">⚡ Ver Concepto Art</a>
+      <a href="./concept-hud.html" class="px-2.5 py-1 rounded font-bold bg-white/10 text-la97-gray hover:bg-white/20 transition-colors">🚀 Ver Concepto HUD</a>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MOBILE SWIPEABLE NAVIGATION DRAWER (Opened by top-left square button)
+       ===================================================================== -->
+  <div class="Drawer" id="drawer" popover="manual">
+    <div class="Drawer-scroller">
+      <nav class="Drawer-sheet p-6" tabindex="-1" aria-label="Menú lateral">
+        <div>
+          <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="bg-white rounded-lg p-1 w-10 h-10 flex items-center justify-center shrink-0">
+                <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <div class="text-white text-base font-black tracking-wide leading-tight">LA 97 FM</div>
+                <div class="text-la97-yellow text-[10px] font-bold tracking-wider uppercase">97.3 MHz • MDP</div>
+              </div>
+            </div>
+            <button type="button" id="drawer-close" class="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-la97-red transition-colors" aria-label="Cerrar menú">
+              ✕
+            </button>
+          </div>
+
+          <ul class="space-y-2 text-sm font-extrabold tracking-wide">
+            <li><a href="#player" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl bg-white/10 text-white hover:bg-la97-blue transition-colors">EN VIVO</a></li>
+            <li><a href="#lo-ultimo" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">NOTICIAS</a></li>
+            <li><a href="#programacion-preview" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PROGRAMACIÓN</a></li>
+            <li><a href="#contacto" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">CONTACTO</a></li>
+          </ul>
+        </div>
+
+        <div class="pt-6 border-t border-white/10 space-y-3">
+          <div class="text-[11px] font-bold text-la97-gray/80 uppercase tracking-wider">Contacto Directo</div>
+          <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="flex items-center justify-between bg-la97-blue/40 border border-la97-blue px-4 py-2.5 rounded-xl text-xs font-extrabold text-white">
+            <span>WhatsApp Oyentes</span>
+            <span class="text-la97-yellow">223 615-0000</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       50/50 SPLIT-SCREEN MAIN LAYOUT
+       ===================================================================== -->
+  <main class="flex-1 w-full flex flex-col lg:flex-row">
+
+    <!-- ===================================================================
+         LEFT HALF (50%): STICKY BRAND ART POSTER (#273547 Predominant)
+         =================================================================== -->
+    <section class="w-full lg:w-1/2 lg:sticky lg:top-[41px] lg:h-[calc(100vh-41px)] la97-poster-bg text-white p-6 sm:p-10 lg:p-12 flex flex-col justify-between relative overflow-hidden" aria-label="Póster de marca La 97 FM">
+      
+      <!-- Top-Left Square Menu Button -->
+      <div class="relative z-10 flex items-center justify-between">
+        <button type="button" id="drawer-open" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer" class="w-10 h-10 rounded bg-white text-la97-navy hover:bg-la97-yellow transition-colors flex items-center justify-center shadow-lg cursor-pointer">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <span class="text-[11px] font-black tracking-[0.2em] text-la97-gray uppercase border border-white/20 px-3 py-1 rounded-full">
+          97.3 MHz &bull; MAR DEL PLATA
+        </span>
+      </div>
+
+      <!-- Center Visual Collage: 4 Angled Brand Bars + Floating Official Logo Badge -->
+      <div class="relative z-10 my-8 lg:my-auto flex flex-col items-center text-center">
+        
+        <div class="relative w-full max-w-[390px] mb-6">
+          <div class="la97-collage-bars" aria-hidden="true">
+            <div class="cbar cbar-1"></div>
+            <div class="cbar cbar-2"></div>
+            <div class="cbar cbar-3"></div>
+            <div class="cbar cbar-4"></div>
+          </div>
+
+          <!-- Official La 97 FM Logo Badge Overlapping Bottom-Right of Collage -->
+          <div class="absolute right-4 sm:right-6 -bottom-4 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-white p-2.5 shadow-2xl border-4 border-la97-blue flex items-center justify-center transform -rotate-6 hover:rotate-0 transition-transform">
+            <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="Logo La 97 FM" class="w-full h-full object-contain">
+          </div>
+
+          <span class="absolute left-12 top-3 w-6 h-6 rounded-full bg-la97-red shadow-lg border-2 border-white/30" aria-hidden="true"></span>
+          <span class="absolute left-20 top-16 w-4 h-4 rounded-full bg-la97-yellow shadow-lg" aria-hidden="true"></span>
+          <span class="absolute left-28 bottom-12 w-5 h-5 rounded-full bg-la97-blue shadow-lg border border-white/30" aria-hidden="true"></span>
+        </div>
+
+        <!-- Giant Condensed Display Title with Broadcast Tower Motif -->
+        <div class="mt-4 flex flex-col items-center">
+          <div class="relative flex items-center justify-center -mb-2" aria-hidden="true">
+            <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="24" r="16" stroke="#E2051D" stroke-width="2.8"/>
+              <circle cx="28" cy="24" r="10" stroke="#E2051D" stroke-width="2.8"/>
+              <circle cx="28" cy="24" r="4" fill="#E2051D"/>
+              <path d="M28 28L20 50M28 28L36 50M22 42h12M24 35h8" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white uppercase leading-none">
+            LA 97 FM
+          </h1>
+          <p class="text-xl sm:text-2xl font-bold tracking-[0.14em] text-la97-gray uppercase mt-2">
+            SIEMPRE <span class="text-la97-red font-black">CON VOS</span>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Poster Footer -->
+      <div class="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/15 text-xs font-bold text-la97-gray">
+        <span>@la97siempre &bull; WA: 223 615-0000</span>
+        <span class="text-la97-yellow font-black uppercase">LA RADIO DE SIEMPRE</span>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         RIGHT HALF (50%): AUDIO TUNER VISUALIZER (NO IMAGE) + EDITORIAL FEED
+         =================================================================== -->
+    <div class="w-full lg:w-1/2 bg-white text-la97-navy px-6 sm:px-10 lg:px-12 py-10 sm:py-14 flex flex-col items-center">
+      
+      <!-- 1. Centered Audio Tuner Section (No image — Canvas Visualizer from 2nd image adapted to DESIGN.md palette) -->
+      <section id="player" role="region" aria-label="Sintonizador de audio en vivo" class="w-full max-w-[540px] mx-auto text-center mb-12">
+        
+        <div class="text-base sm:text-lg font-extrabold tracking-[0.12em] text-la97-navy uppercase mb-1">
+          LA MÚSICA QUE NOS UNE
+        </div>
+        <div class="text-xs font-bold tracking-[0.22em] text-la97-blue uppercase mb-5">
+          ¡ESCUCHANOS EN VIVO!
+        </div>
+
+        <!-- Audio Tuner Box Adapted to Official Palette (#273547, #0366A2, #F4B70D, #E2051D, #E3E1E3) -->
+        <div class="bg-la97-navy text-white rounded-2xl p-5 sm:p-6 shadow-2xl border border-la97-gray text-left">
+          
+          <!-- Top Bar Inside Tuner: Nav Links + EN VIVO Indicator -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-3.5 border-b border-white/15 text-[11px] sm:text-xs font-extrabold tracking-widest uppercase">
+            <div class="flex items-center gap-4 sm:gap-6">
+              <a href="#player" class="text-la97-yellow">INICIO</a>
+              <a href="#programacion-preview" class="text-la97-gray hover:text-white transition-colors">PROGRAMACIÓN</a>
+              <a href="#lo-ultimo" class="text-la97-gray hover:text-white transition-colors">NOTICIAS</a>
+              <a href="#contacto" class="text-la97-gray hover:text-white transition-colors">CONTACTO</a>
+            </div>
+            <div class="flex items-center gap-1.5 text-la97-red font-black">
+              <span class="w-2 h-2 rounded-full bg-la97-red animate-ping"></span>
+              <span>&bull; EN VIVO</span>
+            </div>
+          </div>
+
+          <!-- Subtitle Label -->
+          <div class="text-[10px] font-extrabold tracking-[0.2em] text-la97-gray/80 uppercase mt-3 mb-2">
+            SINTONIZADOR DE AUDIO / ON-AIR &bull; 97.3 MHz
+          </div>
+
+          <!-- Interactive Orbital Rings & Soundwave Canvas (No Image!) -->
+          <div class="relative w-full h-40 sm:h-44 rounded-xl bg-[#1e2938] border border-white/10 overflow-hidden flex items-center justify-center my-2">
+            <canvas id="splitTunerCanvas" class="w-full h-full block"></canvas>
+          </div>
+
+          <!-- Bottom Bar Inside Tuner: Track/Show Info (Left) + Transport Controls (Right) -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 pt-2">
+            <div class="min-w-0">
+              <strong id="la97NowPlayingTitle" class="text-base sm:text-lg font-black text-white block truncate leading-tight">
+                La 97 FM — En Directo (97.3 MHz)
+              </strong>
+              <div class="flex items-center gap-2.5 text-[11px] font-bold mt-1">
+                <span class="text-la97-gray/70 font-mono">97.3</span>
+                <span id="la97NowPlayingSub" class="text-la97-yellow truncate">Transmisión en vivo • Mar del Plata</span>
+                <span class="text-la97-gray/70 font-mono">24 HS</span>
+              </div>
+            </div>
+
+            <!-- Transport Controls (Shuffle, Prev, Play/Pause Circle, Next, Repeat) -->
+            <div class="flex items-center justify-end gap-3.5 text-la97-gray shrink-0">
+              <a href="#programacion-preview" class="hover:text-la97-yellow transition-colors" title="Grilla de programación" aria-label="Grilla de programación">
+                <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+              </a>
+              <a href="#programacion-preview" class="hover:text-la97-yellow transition-colors" title="Programa anterior" aria-label="Programa anterior">
+                <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </a>
+              <button type="button" id="la97PlayBtn" onclick="la97TogglePlay()" aria-label="Reproducir o pausar transmisión" class="w-12 h-12 rounded-full bg-la97-blue/30 hover:bg-la97-red border-2 border-la97-yellow text-white flex items-center justify-center text-base shadow-lg hover:scale-105 transition-all cursor-pointer">
+                <span id="la97PlayIcon">▶</span>
+              </button>
+              <a href="#programacion-preview" class="hover:text-la97-yellow transition-colors" title="Siguiente programa" aria-label="Siguiente programa">
+                <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+              </a>
+              <button type="button" id="la97MuteBtn" onclick="la97Mute()" aria-label="Silenciar o activar volumen" class="hover:text-la97-yellow transition-colors cursor-pointer" title="Silenciar">
+                <span id="la97MuteIcon" class="text-sm">🔊</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Volume Slider Bar Below Tuner Controls -->
+          <div class="flex items-center gap-3 mt-3 pt-3 border-t border-white/10">
+            <span class="text-[10px] font-extrabold text-la97-gray/75 uppercase tracking-wider">VOLUMEN</span>
+            <div class="flex-1 flex items-center">
+              <label for="la97VolumeSlider" class="sr-only">Volumen de la radio</label>
+              <input type="range" id="la97VolumeSlider" class="la97-volume-slider" min="0" max="100" value="85" aria-valuetext="85%" style="--slider-thumb-color: #F4B70D; --slider-fill-color: #E2051D; --slider-track-color: rgba(227,225,227,0.25);">
+            </div>
+            <span class="text-[10px] font-black text-la97-yellow font-mono">EN VIVO</span>
+          </div>
+
+        </div>
+
+        <!-- Callout + Social Icons Row -->
+        <div class="mt-8">
+          <div class="text-sm sm:text-base font-extrabold tracking-wider text-la97-navy uppercase mb-3">
+            COMUNICATE EN VIVO - WHATSAPP &amp; REDES
+          </div>
+          <div class="flex items-center justify-center gap-4 text-la97-navy/65">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" title="WhatsApp Oyentes: 223 615-0000" aria-label="WhatsApp" class="hover:text-la97-red transition-colors">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.6-.1a14.8 14.8 0 0 1-4.8-2.9 11 11 0 0 1-2.2-3.2c-.2-.6 0-1.2.4-1.6.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.1.1-.3.3-.1.6.2.4.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.6.3.1.5.1.7-.1l.6-.8c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.2.5.4.1.2.1.6-.1 1.2z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com/la97siempre" target="_blank" rel="noopener" title="Instagram @la97siempre" aria-label="Instagram" class="hover:text-la97-red transition-colors">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+            </a>
+            <!-- Teléfono -->
+            <a href="tel:02234932502" title="Línea Oyentes: 0223 493-2502" aria-label="Teléfono" class="hover:text-la97-red transition-colors">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener" title="YouTube: la97fm" aria-label="YouTube" class="hover:text-la97-red transition-colors">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.14 5.6 12 5.6 12 5.6s-6.14 0-7.86.46a2.75 2.75 0 0 0-1.94 1.94C1.74 9.72 1.74 12 1.74 12s0 2.28.46 3.999a2.75 2.75 0 0 0 1.94 1.94c1.72.46 7.86.46 7.86.46s6.14 0 7.86-.46a2.75 2.75 0 0 0 1.94-1.94C22.26 14.28 22.26 12 22.26 12s0-2.28-.46-3.999zM9.95 15.02V8.98L15.2 12l-5.25 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 2. Editorial News Feed (Clean Typographic Cards with Official Corner Ribbons) -->
+      <section id="lo-ultimo" class="w-full max-w-[540px] mx-auto space-y-6 pt-6 border-t border-la97-gray" aria-labelledby="news-heading">
+        
+        <div class="flex items-end justify-between gap-4">
+          <div class="flex items-baseline gap-3">
+            <div class="inline-flex flex-col">
+              <span class="text-[11px] font-bold tracking-widest text-la97-navy uppercase">NOTICIAS</span>
+              <span class="w-full h-[2.5px] bg-la97-red mt-0.5"></span>
+            </div>
+            <h2 id="news-heading" class="text-xl sm:text-2xl font-black text-la97-navy tracking-tight uppercase">LO ÚLTIMO</h2>
+          </div>
+          <a href="./preview-tema.html" class="text-[11px] font-black text-la97-navy hover:text-la97-red uppercase tracking-wider">VER TODAS →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <article class="bg-[#E3E1E3]/25 rounded-xl border border-la97-gray p-4 pb-6 relative overflow-hidden flex flex-col">
+            <div class="h-32 sm:h-36 rounded-lg overflow-hidden mb-2.5 bg-la97-navy/5">
+              <img src="./card1.webp" alt="Serú Girán Quilmes Rock" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <span class="text-[10px] font-extrabold text-la97-navy uppercase tracking-wider mb-1">MÚSICA</span>
+            <h3 class="text-sm font-extrabold text-la97-navy leading-snug mb-2">
+              Serú Girán regresa al Quilmes Rock 2025
+            </h3>
+            <p class="text-xs text-la97-navy/75 leading-relaxed mb-4 flex-1">
+              El homenaje a la legendaria banda reunirá a grandes figuras del rock nacional en un show histórico...
+            </p>
+            <div class="pl-5">
+              <a href="./preview-tema.html" class="text-[11px] font-black text-la97-navy hover:text-la97-red uppercase">LEER MÁS →</a>
+            </div>
+            <div class="la97-corner-ribbon bg-la97-navy" aria-hidden="true"></div>
+          </article>
+
+          <article class="bg-[#E3E1E3]/25 rounded-xl border border-la97-gray p-4 pb-6 relative overflow-hidden flex flex-col">
+            <div class="h-32 sm:h-36 rounded-lg overflow-hidden mb-2.5 bg-la97-navy/5">
+              <img src="./card2.jpg" alt="Lollapalooza Argentina" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <span class="text-[10px] font-extrabold text-la97-red uppercase tracking-wider mb-1">AGENDA & FESTIVALES</span>
+            <h3 class="text-sm font-extrabold text-la97-navy leading-snug mb-2">
+              Lollapalooza Argentina: horarios confirmados
+            </h3>
+            <p class="text-xs text-la97-navy/75 leading-relaxed mb-4 flex-1">
+              Conocé día por día los escenarios y horarios del festival más esperado con cobertura de La 97...
+            </p>
+            <div class="pl-5">
+              <a href="./preview-tema.html" class="text-[11px] font-black text-la97-navy hover:text-la97-red uppercase">LEER MÁS →</a>
+            </div>
+            <div class="la97-corner-ribbon bg-la97-red" aria-hidden="true"></div>
+          </article>
+
+          <article class="bg-[#E3E1E3]/25 rounded-xl border border-la97-gray p-4 pb-6 relative overflow-hidden flex flex-col">
+            <div class="h-32 sm:h-36 rounded-lg overflow-hidden mb-2.5 bg-la97-navy/5">
+              <img src="./card3.jpg" alt="Benson Boone" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <span class="text-[10px] font-extrabold text-la97-blue uppercase tracking-wider mb-1">ESPECTÁCULOS</span>
+            <h3 class="text-sm font-extrabold text-la97-navy leading-snug mb-2">
+              Benson Boone: nuevo lanzamiento internacional
+            </h3>
+            <p class="text-xs text-la97-navy/75 leading-relaxed mb-4 flex-1">
+              El cantante y compositor estrena nuevo material discográfico que ingresa a la rotación de La 97...
+            </p>
+            <div class="pl-5">
+              <a href="./preview-tema.html" class="text-[11px] font-black text-la97-navy hover:text-la97-red uppercase">LEER MÁS →</a>
+            </div>
+            <div class="la97-corner-ribbon bg-la97-blue" aria-hidden="true"></div>
+          </article>
+
+          <article class="bg-[#E3E1E3]/25 rounded-xl border border-la97-gray p-4 pb-6 relative overflow-hidden flex flex-col">
+            <div class="h-32 sm:h-36 rounded-lg overflow-hidden mb-2.5 bg-la97-navy/5 flex items-center justify-center p-3">
+              <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="h-full object-contain">
+            </div>
+            <span class="text-[10px] font-extrabold text-la97-navy uppercase tracking-wider mb-1">DESTACADO</span>
+            <h3 class="text-sm font-extrabold text-la97-navy leading-snug mb-2">
+              La 97 es la radio más escuchada de Mar del Plata
+            </h3>
+            <p class="text-xs text-la97-navy/75 leading-relaxed mb-4 flex-1">
+              Gracias por acompañarnos cada día en el 97.3 del dial con la mejor selección musical...
+            </p>
+            <div class="pl-5">
+              <a href="./preview-tema.html" class="text-[11px] font-black text-la97-navy hover:text-la97-red uppercase">LEER MÁS →</a>
+            </div>
+            <div class="la97-corner-ribbon bg-la97-yellow" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <!-- Compact Programación Preview (#programacion-preview) -->
+        <div id="programacion-preview" class="bg-la97-navy text-white rounded-xl p-5 shadow-lg">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-white/15">
+            <span class="text-xs font-black text-la97-yellow uppercase tracking-wider">PROGRAMACIÓN LUNES A VIERNES</span>
+            <span class="text-[10px] font-bold text-la97-gray">97.3 MHz</span>
+          </div>
+          <ul class="space-y-2 text-xs">
+            <li class="flex justify-between"><span class="text-la97-gray">06 a 09 hs</span><strong class="font-extrabold">Bim Bam Bum</strong></li>
+            <li class="flex justify-between"><span class="text-la97-yellow font-bold">09 a 13 hs</span><strong class="font-extrabold text-la97-yellow">Ranking 40X40</strong></li>
+            <li class="flex justify-between"><span class="text-la97-gray">13 a 18 hs</span><strong class="font-extrabold">Música Express</strong></li>
+            <li class="flex justify-between"><span class="text-la97-gray">18 a 21 hs</span><strong class="font-extrabold">El Regreso</strong></li>
+          </ul>
+        </div>
+
+        <!-- Compact Contact Footer (#contacto) -->
+        <div id="contacto" class="pt-4 border-t border-la97-gray text-center text-xs text-la97-navy/70">
+          <strong class="text-la97-navy">La 97 FM (97.3 MHz)</strong> &bull; Moreno 2976, Mar del Plata.<br>
+          Comercial: <a href="https://wa.me/5492235211023" class="text-la97-blue font-bold hover:underline">223 521-1023</a> &bull; Tel: 0223 491-6607
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="./tema-la97/assets/js/player.js"></script>
+  <!-- Orbital Rings & Soundwave Canvas Visualizer using strictly DESIGN.md colors (#F4B70D, #E2051D, #0366A2, #E3E1E3) -->
+  <script>
+    (function() {
+      var canvas = document.getElementById('splitTunerCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var audioEl = document.getElementById('la97Audio');
+      var t = 0;
+
+      function resize() {
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width = canvas.parentElement.offsetWidth * dpr;
+        canvas.height = canvas.parentElement.offsetHeight * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      function draw() {
+        var w = canvas.parentElement.offsetWidth;
+        var h = canvas.parentElement.offsetHeight;
+        ctx.clearRect(0, 0, w, h);
+
+        var playing = audioEl && !audioEl.paused;
+        t += playing ? 0.05 : 0.016;
+
+        var ringCenterX = Math.max(95, w * 0.28);
+        var cy = h * 0.5;
+        var baseR = Math.min(h * 0.36, 54);
+
+        // 1. Outer Brand Yellow Ring (#F4B70D)
+        ctx.beginPath();
+        ctx.arc(ringCenterX, cy, baseR, t * 0.8, t * 0.8 + Math.PI * 1.4);
+        ctx.strokeStyle = '#F4B70D';
+        ctx.lineWidth = 3.2;
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = '#F4B70D';
+        ctx.stroke();
+
+        // 2. Middle Brand Red Ring (#E2051D)
+        ctx.beginPath();
+        ctx.arc(ringCenterX, cy, baseR * 0.72, -t * 1.15, -t * 1.15 + Math.PI * 1.25);
+        ctx.strokeStyle = '#E2051D';
+        ctx.lineWidth = 2.8;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = '#E2051D';
+        ctx.stroke();
+
+        // 3. Inner Brand Secondary Blue Ring (#0366A2)
+        ctx.beginPath();
+        ctx.arc(ringCenterX, cy, baseR * 0.45, t * 1.5, t * 1.5 + Math.PI * 1.5);
+        ctx.strokeStyle = '#0366A2';
+        ctx.lineWidth = 2.5;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#0366A2';
+        ctx.stroke();
+
+        // 4. Horizontal Spectrum Bars (#F4B70D -> #E2051D -> #0366A2 -> #E3E1E3)
+        var startX = ringCenterX + baseR + 6;
+        var endX = w - 24;
+        var bars = 48;
+        var step = (endX - startX) / bars;
+
+        for (var i = 0; i < bars; i++) {
+          var x = startX + i * step;
+          var p = i / bars;
+          var w1 = Math.sin(t * 3 + p * 8);
+          var w2 = Math.cos(t * 2 + p * 14);
+          var env = Math.sin(p * Math.PI);
+          var amp = Math.max(2, Math.abs(w1 * 0.6 + w2 * 0.4) * (playing ? 38 : 12) * env);
+
+          var col = p < 0.38 ? '#F4B70D' : (p < 0.72 ? '#E2051D' : '#0366A2');
+
+          ctx.beginPath();
+          ctx.moveTo(x, cy - amp);
+          ctx.lineTo(x, cy + amp);
+          ctx.strokeStyle = col;
+          ctx.lineWidth = 2.2;
+          ctx.lineCap = 'round';
+          ctx.shadowBlur = playing ? 8 : 3;
+          ctx.shadowColor = col;
+          ctx.stroke();
+        }
+
+        ctx.shadowBlur = 0;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
+</body>
+</html>

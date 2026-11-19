@@ -1,0 +1,320 @@
+/*
+Theme Name: La 97 FM
+Theme URI: https://la97.com.ar
+Author: La 97 FM Dev
+Description: Tema institucional moderno en TailwindCSS para La 97 FM (97.3 MHz - Mar del Plata). Incluye streaming de audio continuo sin cortes, grilla interactiva en vivo y noticias dinámicas.
+Version: 1.2.0
+License: GNU General Public License v2 or later
+Text Domain: tema-la97
+*/
+
+:root {
+  --la97-navy: #273547;
+  --la97-blue: #0366A2;
+  --la97-yellow: #F4B70D;
+  --la97-red: #E2051D;
+  --la97-gray: #E3E1E3;
+}
+
+/* ==========================================================================
+   1. TYPOGRAPHY REFINEMENT (improve-text-layout-and-legibility)
+   ========================================================================== */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p, blockquote, li {
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   2. HERO DIAGONAL STEPPED RIBBONS (Client Mockup Fidelity)
+   ========================================================================== */
+.la97-hero-graphic {
+  position: relative;
+  overflow: hidden;
+  background-color: #E3E1E3;
+}
+
+/* Base Navy Triangle/Polygon (#273547 Predominant) */
+.la97-stripe-navy {
+  position: absolute;
+  inset: 0;
+  background-color: #273547;
+  clip-path: polygon(0 0, 56% 0, 10% 100%, 0 100%);
+  z-index: 10;
+}
+
+/* Red Diagonal Ribbon (#E2051D) */
+.la97-stripe-red {
+  position: absolute;
+  inset: 0;
+  background-color: #E2051D;
+  clip-path: polygon(46% 0, 68% 0, 18% 100%, 0% 100%);
+  z-index: 20;
+  filter: drop-shadow(-6px 0 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Secondary Blue Stepped Ribbon (#0366A2) */
+.la97-stripe-blue {
+  position: absolute;
+  inset: 0;
+  background-color: #0366A2;
+  clip-path: polygon(52% 16%, 82% 16%, 40% 100%, 10% 100%);
+  z-index: 30;
+  filter: drop-shadow(-6px 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Yellow Stepped Ribbon (#F4B70D) */
+.la97-stripe-yellow {
+  position: absolute;
+  inset: 0;
+  background-color: #F4B70D;
+  clip-path: polygon(66% 32%, 96% 32%, 62% 100%, 32% 100%);
+  z-index: 40;
+  filter: drop-shadow(-6px 4px 12px rgba(0, 0, 0, 0.18));
+}
+
+/* ==========================================================================
+   3. NEWS CARD DIAGONAL CORNER RIBBON
+   ========================================================================== */
+.la97-corner-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 68px;
+  height: 68px;
+  pointer-events: none;
+  clip-path: polygon(0 28%, 0 68%, 68% 100%, 100% 100%);
+}
+
+/* ==========================================================================
+   4. CENTER-ALIGNED AUDIO EQUALIZER WAVEFORM
+   ========================================================================== */
+.la97-waveform {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 32px;
+}
+
+.la97-waveform span {
+  width: 3px;
+  border-radius: 9999px;
+  transition: height 0.2s ease, background-color 0.2s ease;
+}
+
+.la97-waveform span:nth-child(1)  { height: 8px;  background-color: #273547; opacity: 0.45; }
+.la97-waveform span:nth-child(2)  { height: 14px; background-color: #273547; opacity: 0.65; }
+.la97-waveform span:nth-child(3)  { height: 22px; background-color: #273547; opacity: 0.85; }
+.la97-waveform span:nth-child(4)  { height: 12px; background-color: #273547; opacity: 0.65; }
+.la97-waveform span:nth-child(5)  { height: 16px; background-color: #F4B70D; }
+.la97-waveform span:nth-child(6)  { height: 26px; background-color: #F4B70D; }
+.la97-waveform span:nth-child(7)  { height: 18px; background-color: #F4B70D; }
+.la97-waveform span:nth-child(8)  { height: 12px; background-color: #273547; opacity: 0.65; }
+.la97-waveform span:nth-child(9)  { height: 20px; background-color: #273547; opacity: 0.8; }
+.la97-waveform span:nth-child(10) { height: 10px; background-color: #273547; opacity: 0.45; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .la97-waveform.playing span:nth-child(odd) {
+    animation: la97-wave-bounce 0.55s infinite ease-in-out alternate;
+  }
+  .la97-waveform.playing span:nth-child(even) {
+    animation: la97-wave-bounce 0.42s infinite ease-in-out alternate-reverse;
+  }
+  .la97-waveform.playing span:nth-child(3n) {
+    animation-duration: 0.68s;
+  }
+}
+
+@keyframes la97-wave-bounce {
+  0%   { height: 6px; }
+  100% { height: 28px; }
+}
+
+/* ==========================================================================
+   5. BRAND-CONSISTENT VOLUME RANGE SLIDER (slider guide)
+   ========================================================================== */
+input[type="range"].la97-volume-slider {
+  --slider-track-size: 0.375rem;
+  --slider-thumb-size: 0.95rem;
+  --slider-track-radius: 999px;
+  --slider-thumb-radius: 50%;
+  --slider-track-color: #E3E1E3;
+  --slider-fill-color: #E2051D;
+  --slider-thumb-color: #273547;
+  --slider-direction: to right;
+
+  --attr-min: attr(min type(<number>), 0);
+  --attr-max: attr(max type(<number>), 100);
+  --control-value: attr(value type(<number>), 85);
+  --slider-progress: calc(
+    progress(var(--control-value), var(--attr-min), var(--attr-max)) * 100%
+  );
+
+  appearance: none;
+  inline-size: 100%;
+  block-size: 2rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@supports not (opacity: progress(1, 0, 100)) {
+  input[type="range"].la97-volume-slider {
+    --slider-progress: calc(
+      (var(--control-value) - var(--attr-min)) /
+      (var(--attr-max) - var(--attr-min)) * 100%
+    );
+  }
+}
+
+input[type="range"].la97-volume-slider::-webkit-slider-runnable-track {
+  block-size: var(--slider-track-size);
+  border: 0;
+  border-radius: var(--slider-track-radius);
+  background: linear-gradient(
+    var(--slider-direction),
+    var(--slider-fill-color) var(--slider-progress),
+    var(--slider-track-color) var(--slider-progress)
+  );
+}
+
+input[type="range"].la97-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: var(--slider-thumb-size);
+  block-size: var(--slider-thumb-size);
+  margin-block-start: calc(
+    (var(--slider-track-size) - var(--slider-thumb-size)) / 2
+  );
+  border: 2px solid #ffffff;
+  border-radius: var(--slider-thumb-radius);
+  background: var(--slider-thumb-color);
+  box-shadow: 0 1px 4px rgba(39, 53, 71, 0.35);
+}
+
+input[type="range"].la97-volume-slider::-moz-range-track {
+  block-size: var(--slider-track-size);
+  border: 0;
+  border-radius: var(--slider-track-radius);
+  background: var(--slider-track-color);
+}
+
+input[type="range"].la97-volume-slider::-moz-range-progress {
+  block-size: var(--slider-track-size);
+  border-radius: var(--slider-track-radius);
+  background: var(--slider-fill-color);
+}
+
+input[type="range"].la97-volume-slider::-moz-range-thumb {
+  inline-size: var(--slider-thumb-size);
+  block-size: var(--slider-thumb-size);
+  border: 2px solid #ffffff;
+  border-radius: var(--slider-thumb-radius);
+  background: var(--slider-thumb-color);
+  box-shadow: 0 1px 4px rgba(39, 53, 71, 0.35);
+}
+
+input[type="range"].la97-volume-slider:focus-visible {
+  outline: 2px solid var(--slider-fill-color);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   6. MOBILE NAVIGATION DRAWER (navigation-drawer guide)
+   ========================================================================== */
+.Drawer {
+  --drawer-width: min(20em, 82dvw);
+  --drawer-backdrop: 0;
+  position: fixed;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.Drawer::backdrop {
+  background: #273547;
+  opacity: calc(var(--drawer-backdrop) * 0.65);
+}
+
+.Drawer-scroller {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--drawer-width) 100%;
+  overflow-x: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.Drawer-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Drawer-scroller {
+    scroll-behavior: smooth;
+  }
+}
+
+.Drawer-scroller::after {
+  content: '';
+  scroll-snap-align: end;
+  scroll-initial-target: nearest;
+}
+
+.Drawer-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100svh;
+  background: #273547;
+  color: #ffffff;
+  overflow-y: auto;
+  scroll-snap-align: start;
+  scrollbar-width: none;
+  border-right: 1px solid rgba(227, 225, 227, 0.15);
+  box-shadow: 12px 0 32px rgba(0, 0, 0, 0.4);
+}
+
+@supports (animation-timeline: scroll()) {
+  .Drawer {
+    timeline-scope: --drawer-fade;
+    animation: fade-drawer-backdrop linear both;
+    animation-timeline: --drawer-fade;
+  }
+
+  .Drawer-scroller {
+    scroll-timeline: --drawer-fade x;
+  }
+
+  @property --drawer-backdrop {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+
+  @keyframes fade-drawer-backdrop {
+    0%   { --drawer-backdrop: 1; }
+    100% { --drawer-backdrop: 0; }
+  }
+}
+
+/* ==========================================================================
+   7. ACTIVE PROGRAM HIGHLIGHT IN GRILLA
+   ========================================================================== */
+.la97-prog-row.is-on-air {
+  border-color: #E2051D !important;
+  box-shadow: 0 8px 24px rgba(226, 5, 29, 0.12) !important;
+  background: linear-gradient(to right, rgba(226, 5, 29, 0.03), #ffffff 30%) !important;
+}

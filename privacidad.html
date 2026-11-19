@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — La 97 FM (97.3 MHz Mar del Plata)</title>
+  <meta name="description" content="Política de Privacidad y Protección de Datos Personales de La 97 FM (97.3 MHz, Mar del Plata) conforme a la Ley 25.326.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://la97.com.ar/privacidad/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="La 97 FM — 97.3 MHz">
+  <meta property="og:title" content="Política de Privacidad — La 97 FM (97.3 MHz)">
+  <meta property="og:description" content="Conocé cómo protegemos tus datos personales en La 97 FM Mar del Plata.">
+  <meta property="og:image" content="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <link rel="icon" type="image/png" href="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <link rel="apple-touch-icon" href="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            la97: {
+              navy: '#273547',
+              blue: '#0366A2',
+              yellow: '#F4B70D',
+              red: '#E2051D',
+              gray: '#E3E1E3',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./tema-la97/style.css">
+  <style>
+    .page-default-bg {
+      background: linear-gradient(180deg, #1b2636 0%, #273547 50%, #1a2433 100%);
+    }
+    .mk-glass {
+      background: linear-gradient(135deg, rgba(39, 53, 71, 0.80) 0%, rgba(22, 32, 46, 0.90) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(3, 102, 162, 0.55);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(227, 225, 227, 0.14);
+    }
+  </style>
+</head>
+<body class="page-default-bg text-white antialiased selection:bg-[#E2051D] selection:text-white min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- Persistent Live Audio Stream (ShockMedia) -->
+  <audio id="la97Audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- MOBILE SWIPEABLE NAVIGATION DRAWER -->
+  <div class="Drawer" id="drawer" popover="manual">
+    <div class="Drawer-scroller">
+      <nav class="Drawer-sheet p-6" tabindex="-1" aria-label="Menú móvil">
+        <div>
+          <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="bg-white rounded-lg p-1 w-10 h-10 flex items-center justify-center shrink-0">
+                <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <div class="text-white text-base font-black tracking-wide leading-tight">LA 97 FM</div>
+                <div class="text-la97-yellow text-[10px] font-bold tracking-wider uppercase">97.3 MHz • RADIO N°1</div>
+              </div>
+            </div>
+            <button type="button" id="drawer-close" class="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-la97-red transition-colors" aria-label="Cerrar menú">
+              ✕
+            </button>
+          </div>
+
+          <ul class="space-y-2 text-sm font-extrabold tracking-wide">
+            <li><a href="./concept-mediakit.html" data-la97-nav class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">INICIO</a></li>
+            <li><a href="./programacion.html" data-la97-nav class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PROGRAMACIÓN OFICIAL</a></li>
+            <li><a href="./concept-mediakit.html#productos-comerciales" data-la97-nav class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PRODUCTOS & AUSPICIOS</a></li>
+            <li><a href="./contacto.html" data-la97-nav class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">CONTACTO COMERCIAL</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TOP INSTITUTIONAL HEADER -->
+  <header class="bg-la97-navy/80 backdrop-blur-xl sticky top-0 z-40 border-b-2 border-la97-blue/60 shadow-xl w-full">
+    <div class="w-full px-6 lg:px-12 xl:px-16 py-3.5 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <button type="button" id="drawer-open" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer"
+          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 hover:bg-la97-red text-white flex items-center justify-center transition-colors cursor-pointer">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <a href="./concept-mediakit.html" data-la97-nav class="flex items-center gap-3.5 group">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1.5 border-2 border-la97-yellow shadow-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM 97.3 MHz" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white text-lg sm:text-xl font-black tracking-tight uppercase leading-none">LA 97 SIEMPRE!</span>
+              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2 py-0.5 rounded uppercase">RADIO N°1</span>
+            </div>
+            <div class="text-la97-gray text-[11px] font-bold tracking-wider uppercase mt-1">
+              97.3 MHz • MORENO 2976 • MAR DEL PLATA
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-6 text-xs font-black uppercase tracking-wider text-la97-gray">
+        <a href="./concept-mediakit.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Inicio</a>
+        <a href="./programacion.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Programación</a>
+        <a href="./concept-mediakit.html#productos-comerciales" data-la97-nav class="hover:text-la97-yellow transition-colors">Publicidad</a>
+        <a href="./contacto.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Contacto</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <div class="hidden xl:inline-flex items-center gap-2 text-[11px] font-bold text-la97-gray bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+          <span class="w-1.5 h-1.5 rounded-full bg-la97-yellow"></span>
+          <span>Al aire: <strong id="la97HeaderShow" class="text-white font-black">La 97 FM</strong></span>
+        </div>
+        <button type="button" id="topPlayMirrorBtn"
+          class="inline-flex items-center gap-2 bg-la97-red hover:bg-la97-yellow hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-lg transition-all cursor-pointer">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span id="topPlayMirrorText">EN VIVO 97.3</span>
+        </button>
+        <a href="./contacto.html" data-la97-nav
+          class="hidden sm:inline-flex items-center bg-la97-blue hover:bg-white hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full transition-colors">
+          ¡SUMATE!
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-1 w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16">
+    <article class="mk-glass max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 border-t-4 border-t-la97-yellow space-y-6">
+      <div>
+        <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+          INFORMACIÓN LEGAL • LEY 25.326
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
+          Política de Privacidad
+        </h1>
+        <p class="text-xs text-la97-gray mt-2">Última actualización: Noviembre 2026 • La 97 FM (97.3 MHz - Mar del Plata)</p>
+      </div>
+
+      <div class="space-y-5 text-sm sm:text-base text-la97-gray leading-relaxed">
+        <section>
+          <h2 class="text-lg font-black text-la97-yellow mb-2">1. Responsable del Tratamiento</h2>
+          <p>
+            <strong>La 97 FM (97.3 MHz)</strong>, con estudios y planta transmisora en <strong>Moreno 2976, Mar del Plata, Provincia de Buenos Aires, Argentina</strong>, garantiza la confidencialidad y protección de los datos personales suministrados a través de este sitio web conforme a la <strong>Ley N° 25.326 de Protección de Datos Personales</strong>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-black text-la97-yellow mb-2">2. Datos que Recopilamos y Finalidad</h2>
+          <p>
+            Únicamente recopilamos los datos que el usuario ingresa voluntariamente en nuestro <strong>Formulario de Consulta Comercial</strong> (nombre, marca/empresa, correo electrónico, teléfono y mensaje), con el único fin de responder solicitudes de pauta publicitaria a través de nuestro equipo comercial en Mar del Plata (<a href="mailto:comercial@la97.com.ar" class="text-white underline">comercial@la97.com.ar</a>) o nuestro representante oficial en Buenos Aires (Vocación).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-black text-la97-yellow mb-2">3. Servicios de Terceros y Redes Sociales</h2>
+          <p>
+            Este sitio integra la transmisión de audio en vivo provista por ShockMedia, enlaces externos hacia <strong>WhatsApp</strong> (<code class="text-white">223 615-0000</code>) y contenido embebido de nuestra cuenta oficial de <strong>Instagram (@la97siempre)</strong>. Cada plataforma externa se rige por sus propias políticas de privacidad.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-black text-la97-yellow mb-2">4. Derechos de Acceso, Rectificación y Supresión</h2>
+          <p>
+            El titular de los datos personales tiene la facultad de ejercer el derecho de acceso, rectificación, actualización o supresión de sus datos enviando un correo a <a href="mailto:comercial@la97.com.ar" class="text-la97-yellow font-bold hover:underline">comercial@la97.com.ar</a>.
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-la97-navy/90 backdrop-blur-md border-t-2 border-la97-blue/60 text-white w-full px-6 lg:px-12 xl:px-16 py-8">
+    <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-white p-1 flex items-center justify-center shrink-0">
+          <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+        </div>
+        <span class="font-black uppercase tracking-wider">LA 97 SIEMPRE! • 97.3 MHz • MORENO 2976, MAR DEL PLATA</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://www.instagram.com/la97siempre/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-la97-blue px-3 py-1.5 rounded-lg font-bold transition-colors">Facebook</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors">YouTube</a>
+        <a href="https://x.com/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white hover:text-la97-navy px-3 py-1.5 rounded-lg font-bold transition-colors">X</a>
+        <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="bg-la97-yellow text-la97-navy px-3 py-1.5 rounded-lg font-black hover:bg-white transition-colors">WhatsApp</a>
+      </div>
+      <div class="text-la97-gray font-bold flex flex-wrap items-center gap-3">
+        <a href="./privacidad.html" data-la97-nav class="text-la97-yellow hover:underline">Privacidad</a>
+        <span>•</span>
+        <a href="./terminos.html" data-la97-nav class="hover:text-white transition-colors">Términos</a>
+        <span>•</span>
+        <span>© 2026 La 97 FM</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./tema-la97/assets/js/player.js"></script>
+  <script>
+    (function () {
+      const audio = document.getElementById('la97Audio');
+      const topPlayMirrorBtn = document.getElementById('topPlayMirrorBtn');
+      const topPlayMirrorText = document.getElementById('topPlayMirrorText');
+      if (topPlayMirrorBtn && audio) {
+        topPlayMirrorBtn.addEventListener('click', () => {
+          if (typeof window.la97TogglePlay === 'function') window.la97TogglePlay();
+          else if (audio.paused) { const s = audio.src; audio.src = ''; audio.src = s; audio.play().catch(console.warn); }
+          else audio.pause();
+        });
+      }
+      if (audio && topPlayMirrorText) {
+        audio.addEventListener('play', () => { topPlayMirrorText.textContent = 'PAUSAR 97.3'; });
+        audio.addEventListener('pause', () => { topPlayMirrorText.textContent = 'EN VIVO 97.3'; });
+      }
+    })();
+  </script>
+</body>
+</html>

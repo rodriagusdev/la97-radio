@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La 97 FM — Concept Art: Mural Cinético Bauhaus & Vinilo 97.3</title>
+  <!-- TailwindCSS Play CDN (Exact 5-color system from DESIGN.md) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            la97: {
+              navy: '#273547',   // Predominant primary blue
+              blue: '#0366A2',   // Secondary accent blue
+              yellow: '#F4B70D', // Brand yellow
+              red: '#E2051D',    // Brand red
+              gray: '#E3E1E3',   // Brand gray
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./tema-la97/style.css">
+  <style>
+    /* =====================================================================
+       CONCEPT ART — KINETIC BAUHAUS & VINYL BROADCAST WALL
+       Strictly using #273547 (predominant), #0366A2, #F4B70D, #E2051D, #E3E1E3
+       ===================================================================== */
+
+    /* Architectural Bauhaus Diagonal Stripes (Pure CSS) */
+    .bauhaus-stripes-red {
+      background: repeating-linear-gradient(
+        -45deg,
+        #273547,
+        #273547 10px,
+        #E2051D 10px,
+        #E2051D 20px
+      );
+    }
+    .bauhaus-stripes-yellow {
+      background: repeating-linear-gradient(
+        45deg,
+        #273547,
+        #273547 10px,
+        #F4B70D 10px,
+        #F4B70D 20px
+      );
+    }
+    .bauhaus-stripes-blue {
+      background: repeating-linear-gradient(
+        -45deg,
+        #0366A2,
+        #0366A2 12px,
+        #E3E1E3 12px,
+        #E3E1E3 24px
+      );
+    }
+
+    /* Architectural Dot Grid Surface on Navy */
+    .bauhaus-grid-navy {
+      background-color: #273547;
+      background-image: radial-gradient(rgba(227, 225, 227, 0.14) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+    }
+
+    /* Infinite Kinetic Ticker Animation */
+    @keyframes la97-marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .la97-ticker-track {
+      display: flex;
+      width: max-content;
+      animation: la97-marquee 26s linear infinite;
+    }
+    .la97-ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Spinning Vinyl Record */
+    @keyframes vinyl-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .vinyl-disc {
+      animation: vinyl-spin 14s linear infinite;
+      animation-play-state: paused;
+      background:
+        radial-gradient(circle at center,
+          #FFFFFF 0%,
+          #FFFFFF 17%,
+          #E2051D 17.5%,
+          #E2051D 21%,
+          #273547 21.5%,
+          #273547 33%,
+          rgba(3, 102, 162, 0.55) 33.5%,
+          #273547 34.5%,
+          #273547 48%,
+          rgba(244, 183, 13, 0.5) 48.5%,
+          #273547 49.5%,
+          #273547 64%,
+          rgba(226, 5, 29, 0.55) 64.5%,
+          #273547 65.5%,
+          #273547 100%
+        );
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 6px #0366A2,
+        0 0 0 12px rgba(244, 183, 13, 0.25);
+    }
+    .vinyl-disc.is-spinning {
+      animation-play-state: running;
+    }
+
+    /* Tonearm Pivot */
+    .tonearm {
+      transform-origin: 82% 18%;
+      transform: rotate(-28deg);
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .tonearm.is-engaged {
+      transform: rotate(4deg);
+    }
+
+    /* Brutalist / Bauhaus Offset Card Shadow */
+    .bauhaus-card {
+      box-shadow: 8px 8px 0px #273547;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .bauhaus-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #E2051D;
+    }
+    .bauhaus-card-yellow {
+      box-shadow: 8px 8px 0px #F4B70D;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .bauhaus-card-yellow:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #0366A2;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .la97-ticker-track,
+      .vinyl-disc {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#273547] text-white antialiased selection:bg-[#F4B70D] selection:text-[#273547] min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- Persistent Live Audio Stream (ShockMedia) -->
+  <audio id="la97Audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- =====================================================================
+       DEV PREVIEW SWITCHER BAR
+       ===================================================================== -->
+  <div class="bg-black/95 text-white text-xs px-4 py-2 flex flex-wrap items-center justify-between gap-3 border-b border-white/15 sticky top-0 z-50">
+    <div class="flex items-center gap-2.5">
+      <a href="./preview-tema.html" class="bg-white/10 hover:bg-white/20 text-white font-bold px-2.5 py-1 rounded transition-colors">
+        ← Volver a Preview Tradicional
+      </a>
+      <span class="bg-la97-red text-white font-black px-2 py-0.5 rounded text-[10px] uppercase">⚡ CONCEPT ART</span>
+      <span class="text-la97-gray hidden md:inline">Mural Cinético Bauhaus & Consola Vinilo 97.3 — 100% paleta <code class="text-la97-yellow font-mono">DESIGN.md</code></span>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="./concept-mediakit.html" class="px-2.5 py-1 rounded font-bold bg-la97-blue text-white hover:opacity-90 transition-opacity">📊 Ver Media Kit</a>
+      <a href="./concept-split.html" class="px-2.5 py-1 rounded font-bold bg-la97-yellow text-la97-navy hover:opacity-90 transition-opacity">🎨 Ver Concepto Split</a>
+      <a href="./concept-hud.html" class="px-2.5 py-1 rounded font-bold bg-white/10 text-la97-gray hover:bg-white/20 transition-colors">🚀 Ver Concepto HUD</a>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MOBILE SWIPEABLE NAVIGATION DRAWER
+       ===================================================================== -->
+  <div class="Drawer" id="drawer" popover="manual">
+    <div class="Drawer-scroller">
+      <nav class="Drawer-sheet p-6" tabindex="-1" aria-label="Menú móvil">
+        <div>
+          <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="bg-white rounded-lg p-1 w-10 h-10 flex items-center justify-center shrink-0">
+                <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <div class="text-white text-base font-black tracking-wide leading-tight">LA 97 FM</div>
+                <div class="text-la97-yellow text-[10px] font-bold tracking-wider uppercase">97.3 MHz • MDP</div>
+              </div>
+            </div>
+            <button type="button" id="drawer-close" class="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-la97-red transition-colors" aria-label="Cerrar menú">
+              ✕
+            </button>
+          </div>
+
+          <ul class="space-y-2 text-sm font-extrabold tracking-wide">
+            <li><a href="#consola" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl bg-white/10 text-white hover:bg-la97-blue transition-colors">CONSOLA VINILO 97.3</a></li>
+            <li><a href="#mural-programacion" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">MATRIZ DE PROGRAMACIÓN</a></li>
+            <li><a href="#ranking-40x40" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">RANKING 40X40</a></li>
+            <li><a href="#pulso-noticias" onclick="window.la97CloseDrawer && window.la97CloseDrawer();" class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">LO ÚLTIMO EN MDQ</a></li>
+          </ul>
+        </div>
+
+        <div class="pt-6 border-t border-white/10 space-y-3">
+          <div class="text-[11px] font-bold text-la97-gray/80 uppercase tracking-wider">Cabina en Vivo</div>
+          <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="flex items-center justify-between bg-la97-yellow text-la97-navy px-4 py-2.5 rounded-xl text-xs font-black">
+            <span>WhatsApp Oyentes</span>
+            <span>223 615-0000</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       KINETIC MARQUEE RIBBON (Inspired by Sol Migliónico storefront graphics)
+       ===================================================================== -->
+  <div class="bg-la97-yellow text-la97-navy border-b-2 border-la97-navy overflow-hidden py-2 select-none">
+    <div class="la97-ticker-track text-xs sm:text-sm font-black uppercase tracking-[0.22em]">
+      <div class="flex items-center gap-6 px-4">
+        <span>● AL AIRE • LUNES A DOMINGO • MDQ</span>
+        <span class="bg-la97-navy text-la97-yellow px-2 py-0.5 rounded-sm">97.3 MHz</span>
+        <span>LA MÚSICA QUE NOS UNE</span>
+        <span class="text-la97-red">★ LA 97 SIEMPRE</span>
+        <span>TRANSMISIÓN EN VIVO DESDE MAR DEL PLATA</span>
+        <span class="bg-la97-red text-white px-2 py-0.5 rounded-sm">RANKING 40X40</span>
+        <span>● AL AIRE • LUNES A DOMINGO • MDQ</span>
+        <span class="bg-la97-navy text-la97-yellow px-2 py-0.5 rounded-sm">97.3 MHz</span>
+        <span>LA MÚSICA QUE NOS UNE</span>
+        <span class="text-la97-red">★ LA 97 SIEMPRE</span>
+        <span>TRANSMISIÓN EN VIVO DESDE MAR DEL PLATA</span>
+        <span class="bg-la97-red text-white px-2 py-0.5 rounded-sm">RANKING 40X40</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       ARCHITECTURAL HEADER BAR (Full-Width)
+       ===================================================================== -->
+  <header class="bg-la97-navy border-b-2 border-la97-gray/20 w-full px-6 lg:px-12 xl:px-16 py-4">
+    <div class="w-full flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <button type="button" id="drawer-open" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" class="lg:hidden w-11 h-11 rounded-xl bg-white/10 hover:bg-la97-red text-white flex items-center justify-center transition-colors cursor-pointer">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <a href="#consola" class="flex items-center gap-3.5 group">
+          <div class="bg-white rounded-xl p-1.5 w-12 h-12 flex items-center justify-center shrink-0 border-2 border-la97-yellow shadow-md group-hover:scale-105 transition-transform">
+            <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white text-xl font-black tracking-tight uppercase leading-none">LA 97 FM</span>
+              <span class="bg-la97-blue text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">97.3 MHz</span>
+            </div>
+            <div class="text-la97-yellow text-[11px] font-extrabold tracking-[0.18em] uppercase mt-1">
+              MURAL SONORO • MAR DEL PLATA
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Bauhaus Navigation Pills -->
+      <nav aria-label="Navegación principal" class="hidden lg:flex items-center bg-white/5 border border-la97-gray/20 rounded-xl p-1 gap-1">
+        <a href="#consola" class="px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider bg-la97-red text-white">01. Consola</a>
+        <a href="#mural-programacion" class="px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-la97-gray hover:bg-white/10 hover:text-white transition-colors">02. Grilla Viva</a>
+        <a href="#ranking-40x40" class="px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-la97-gray hover:bg-white/10 hover:text-white transition-colors">03. 40X40</a>
+        <a href="#pulso-noticias" class="px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-la97-gray hover:bg-white/10 hover:text-white transition-colors">04. Noticias</a>
+      </nav>
+
+      <!-- Right Live Clock & Master Play Trigger -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex flex-col items-end font-mono text-right">
+          <span class="text-[10px] font-bold text-la97-gray uppercase tracking-widest">HORA OFICIAL MDQ</span>
+          <span id="artLiveClock" class="text-sm font-black text-la97-yellow">00:00:00 ARS</span>
+        </div>
+
+        <button type="button" id="headerPlayBtn" class="inline-flex items-center gap-2.5 bg-la97-red hover:bg-la97-yellow hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-all cursor-pointer">
+          <span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+          <span id="headerPlayLabel">ESCUCHAR 97.3</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN ARCHITECTURAL BENTO WALL (Full-Width w-full px-6 lg:px-12 xl:px-16)
+       ===================================================================== -->
+  <main id="main-content" class="flex-1 w-full px-6 lg:px-12 xl:px-16 py-8 lg:py-12 space-y-14 bauhaus-grid-navy">
+
+    <!-- SECTION 1: HERO ARCHITECTURAL BENTO CONSOLE -->
+    <section id="consola" class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+
+      <!-- LEFT COLUMN (5 cols): KINETIC BAUHAUS POSTER & FREQUENCY DIAL -->
+      <div class="lg:col-span-5 flex flex-col justify-between bg-white text-la97-navy rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden border-4 border-la97-gray bauhaus-card-yellow">
+        
+        <!-- Top Geometric Shapes (Inspired by Sol Migliónico Proposal) -->
+        <div class="relative z-10">
+          <div class="flex items-center justify-between gap-2 mb-6">
+            <div class="inline-flex items-center gap-2 bg-la97-navy text-white text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg">
+              <span class="w-2 h-2 rounded-full bg-la97-yellow"></span>
+              <span>ESTUDIO CENTRAL • 97.3 FM</span>
+            </div>
+            <span class="text-xs font-black text-la97-blue tracking-widest uppercase">CANAL ESTÉREO</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl xl:text-[3.6rem] font-black text-la97-navy leading-[0.96] tracking-tight uppercase">
+            EL SONIDO DE <span class="bg-la97-red text-white px-2.5 inline-block -rotate-1">MAR DEL PLATA</span> EN TIEMPO REAL.
+          </h1>
+
+          <p class="mt-4 text-sm sm:text-base font-bold text-la97-navy/80 leading-relaxed">
+            Sintonizá la transmisión en directo, girá el dial analógico o explorá las ondas geométricas de <strong class="text-la97-navy font-black">La 97 Siempre</strong>.
+          </p>
+        </div>
+
+        <!-- Interactive FM Frequency Slider Dial (88.0 - 108.0 MHz locked on 97.3) -->
+        <div class="my-6 bg-la97-navy text-white rounded-2xl p-5 border-2 border-la97-blue relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-extrabold tracking-widest text-la97-gray uppercase">SINTONIZADOR INTERACTIVO FM</span>
+            <span id="dialStatusBadge" class="text-[10px] font-black bg-la97-yellow text-la97-navy px-2 py-0.5 rounded uppercase">SEÑAL ÓPTIMA • 97.3 MHz</span>
+          </div>
+
+          <div class="flex items-baseline justify-between my-2">
+            <div class="text-3xl sm:text-4xl font-black tracking-tight text-la97-yellow font-mono">
+              <span id="freqReadout">97.3</span> <span class="text-sm text-white">MHz</span>
+            </div>
+            <button type="button" id="snap973Btn" class="text-[11px] font-black bg-la97-blue hover:bg-la97-red text-white px-3 py-1 rounded-lg transition-colors cursor-pointer">
+              FIJAR EN 97.3
+            </button>
+          </div>
+
+          <!-- Ruler ticks -->
+          <div class="relative pt-2 pb-1">
+            <input
+              id="fmDialInput"
+              type="range"
+              min="88.1"
+              max="107.9"
+              step="0.1"
+              value="97.3"
+              aria-label="Sintonizador de frecuencia FM"
+              class="w-full accent-[#E2051D] cursor-pointer h-2 bg-white/20 rounded-lg"
+            >
+            <div class="flex justify-between text-[10px] font-mono text-la97-gray/70 mt-1.5">
+              <span>88.0</span>
+              <span>92.0</span>
+              <span class="text-la97-yellow font-black">▲ 97.3 LA 97</span>
+              <span>102.0</span>
+              <span>108.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bauhaus Geometric Block Strip -->
+        <div class="grid grid-cols-3 gap-3 pt-2 relative z-10">
+          <div class="bg-la97-blue text-white rounded-xl p-3.5 flex flex-col justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray">FRECUENCIA</span>
+            <span class="text-xl font-black mt-1">97.3 FM</span>
+          </div>
+          <div class="bg-la97-yellow text-la97-navy rounded-xl p-3.5 flex flex-col justify-between">
+            <span class="text-[10px] font-black uppercase tracking-wider">AIRE</span>
+            <span class="text-xl font-black mt-1">24 HRS</span>
+          </div>
+          <div class="bg-la97-red text-white rounded-xl p-3.5 flex flex-col justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider">CIUDAD</span>
+            <span class="text-xl font-black mt-1">MDQ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN (7 cols): INTERACTIVE VINYL TURNTABLE & RADIAL SOUNDWAVE CANVAS -->
+      <div class="lg:col-span-7 bg-[#1e2938] border-4 border-la97-blue rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden shadow-2xl">
+        
+        <!-- Corner Bauhaus Diagonal Ribbons -->
+        <div class="w-28 h-28 bauhaus-stripes-yellow absolute -top-10 -right-10 rotate-12 pointer-events-none opacity-90"></div>
+        <div class="w-24 h-24 bauhaus-stripes-red absolute -bottom-10 -left-10 -rotate-12 pointer-events-none opacity-90"></div>
+
+        <!-- Top Status Bar + Visual Mode Selector -->
+        <div class="flex flex-wrap items-center justify-between gap-3 relative z-20">
+          <div class="flex items-center gap-2.5">
+            <span id="vinylLiveDot" class="inline-flex items-center gap-1.5 bg-la97-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              EN VIVO AHORA
+            </span>
+            <span class="text-xs font-extrabold text-la97-gray uppercase tracking-wider hidden sm:inline">SHOCKMEDIA 128 KBPS AAC</span>
+          </div>
+
+          <!-- 3 Visual Mode Buttons for the Radial Canvas -->
+          <div class="flex items-center gap-1.5 bg-la97-navy/90 p-1 rounded-xl border border-white/10" role="group" aria-label="Modo de visualizador">
+            <button type="button" data-viz-mode="radial" class="viz-mode-btn px-3 py-1 rounded-lg text-[11px] font-black uppercase bg-la97-yellow text-la97-navy cursor-pointer transition-colors">
+              SOL RADIAL
+            </button>
+            <button type="button" data-viz-mode="bauhaus" class="viz-mode-btn px-3 py-1 rounded-lg text-[11px] font-black uppercase text-la97-gray hover:text-white cursor-pointer transition-colors">
+              BARRAS BAUHAUS
+            </button>
+            <button type="button" data-viz-mode="waves" class="viz-mode-btn px-3 py-1 rounded-lg text-[11px] font-black uppercase text-la97-gray hover:text-white cursor-pointer transition-colors">
+              PULSO ATLÁNTICO
+            </button>
+          </div>
+        </div>
+
+        <!-- Center Turntable Stage + Radial Equalizer Canvas -->
+        <div class="relative my-6 flex items-center justify-center min-h-[300px] sm:min-h-[340px]">
+          <!-- Interactive Canvas Backdrop -->
+          <canvas id="artVinylCanvas" width="760" height="360" class="w-full h-[300px] sm:h-[340px] block rounded-2xl"></canvas>
+
+          <!-- Physical Vinyl Record Overlay (Click to Play/Pause) -->
+          <button
+            type="button"
+            id="vinylDiscBtn"
+            aria-label="Reproducir o pausar giradiscos en vivo"
+            class="vinyl-disc w-52 h-52 sm:w-64 sm:h-64 rounded-full absolute flex items-center justify-center cursor-pointer group focus-visible:outline-4 focus-visible:outline-la97-yellow"
+          >
+            <!-- Center White Label with Official Logo -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-4 border-la97-yellow flex flex-col items-center justify-center p-2 shadow-inner relative">
+              <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-12 h-12 sm:w-14 sm:h-14 object-contain">
+              <!-- Center Spindle Hole -->
+              <span class="w-3 h-3 rounded-full bg-la97-navy border border-la97-red absolute"></span>
+            </div>
+          </button>
+
+          <!-- Tonearm SVG -->
+          <div id="vinylTonearm" class="tonearm pointer-events-none absolute right-[8%] sm:right-[16%] top-4 w-28 sm:w-36 h-48 hidden sm:block">
+            <svg viewBox="0 0 120 200" fill="none" class="w-full h-full drop-shadow-xl">
+              <!-- Pivot Base -->
+              <circle cx="95" cy="34" r="22" fill="#273547" stroke="#F4B70D" stroke-width="4"/>
+              <circle cx="95" cy="34" r="9" fill="#E2051D"/>
+              <!-- Arm Rod -->
+              <path d="M95 34 L42 155 L24 170" stroke="#E3E1E3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Cartridge Head -->
+              <rect x="12" y="160" width="22" height="14" rx="3" transform="rotate(-25 12 160)" fill="#E2051D" stroke="#F4B70D" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom Console Controls & Live Show Readout -->
+        <div class="bg-la97-navy/95 border-2 border-white/15 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-20">
+          <div class="flex items-center gap-3.5 w-full sm:w-auto">
+            <img id="la97NowPlayingImg" src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="Programa al aire" class="w-14 h-14 rounded-xl object-cover bg-white p-1 border-2 border-la97-yellow shrink-0">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-black uppercase tracking-widest text-la97-yellow">AHORA SONANDO</span>
+                <span id="playerStatus" class="text-[10px] font-bold text-la97-gray">• Listo para reproducir</span>
+              </div>
+              <div id="la97NowPlayingTitle" class="text-lg sm:text-xl font-black text-white truncate">La 97 FM — En Vivo</div>
+              <div id="la97NowPlayingSub" class="text-xs font-bold text-la97-gray truncate">97.3 MHz • Mar del Plata</div>
+            </div>
+          </div>
+
+          <!-- Transport + Volume + Mute -->
+          <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+            <button
+              type="button"
+              id="playToggleBtn"
+              aria-label="Reproducir o pausar transmisión en vivo"
+              class="px-5 py-3 rounded-xl bg-la97-red hover:bg-la97-yellow hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all cursor-pointer shrink-0"
+            >
+              <svg id="playIcon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span id="playBtnText">PLAY VIVO</span>
+            </button>
+
+            <div class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-xl border border-white/10">
+              <input
+                id="volumeSlider"
+                type="range"
+                min="0"
+                max="100"
+                value="85"
+                aria-label="Volumen de la radio"
+                class="la97-volume-slider"
+              >
+            </div>
+
+            <button
+              type="button"
+              id="muteBtn"
+              aria-label="Silenciar o activar sonido"
+              class="w-10 h-10 rounded-xl bg-la97-blue hover:bg-la97-yellow hover:text-la97-navy text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2: ASYMMETRIC BAUHAUS SCHEDULE & RANKING 40X40 MATRIX
+         =================================================================== -->
+    <section id="mural-programacion" class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT 7 COLS: LIVE PROGRAMMING MATRIX -->
+      <div class="lg:col-span-7 bg-white text-la97-navy rounded-3xl p-6 sm:p-8 border-4 border-la97-gray bauhaus-card">
+        <div class="flex flex-wrap items-end justify-between gap-4 pb-6 border-b-2 border-la97-gray">
+          <div>
+            <div class="inline-block">
+              <span class="text-xs font-black tracking-widest text-la97-red uppercase block">SINCRONIZADO CON ARGENTINA (UTC-3)</span>
+              <div class="w-full h-[3px] bg-la97-red mt-1"></div>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-la97-navy tracking-tight uppercase mt-2">
+              MATRIZ DE PROGRAMACIÓN
+            </h2>
+          </div>
+
+          <!-- Day Filter Tabs -->
+          <div class="flex flex-wrap gap-1.5" role="tablist" aria-label="Filtrar programación por día">
+            <button type="button" data-day-filter="lv" class="day-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-black uppercase bg-la97-navy text-la97-yellow cursor-pointer transition-colors">
+              LUN A VIE
+            </button>
+            <button type="button" data-day-filter="sab" class="day-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-black uppercase bg-la97-gray/60 text-la97-navy hover:bg-la97-blue hover:text-white cursor-pointer transition-colors">
+              SÁBADOS
+            </button>
+            <button type="button" data-day-filter="dom" class="day-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-black uppercase bg-la97-gray/60 text-la97-navy hover:bg-la97-blue hover:text-white cursor-pointer transition-colors">
+              DOMINGOS
+            </button>
+          </div>
+        </div>
+
+        <!-- Program Rows Container -->
+        <div class="mt-6 space-y-3" id="scheduleList">
+          <!-- Lunes a Viernes -->
+          <div data-day-group="lv" class="space-y-3">
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25 hover:border-la97-blue transition-all" data-days="1,2,3,4,5" data-start="7" data-end="9">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-navy text-la97-yellow font-mono text-xs font-black">07:00 - 09:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">La Primera Mañana</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Actualidad de Mar del Plata, tránsito, clima y servicios</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25 hover:border-la97-blue transition-all" data-days="1,2,3,4,5" data-start="9" data-end="13">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-navy text-la97-yellow font-mono text-xs font-black">09:00 - 13:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Mañanas de La 97</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Compañía, entrevistas, premios y clásicos de toda la vida</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25 hover:border-la97-blue transition-all" data-days="1,2,3,4,5" data-start="13" data-end="17">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-blue text-white font-mono text-xs font-black">13:00 - 17:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Tardes de Radio</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">La mejor selección musical para acompañar tu tarde</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25 hover:border-la97-blue transition-all" data-days="1,2,3,4,5" data-start="17" data-end="20">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-red text-white font-mono text-xs font-black">17:00 - 20:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">El Regreso por La 97</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Resumen informativo y los pedidos de los oyentes por WhatsApp</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25 hover:border-la97-blue transition-all" data-days="1,2,3,4,5" data-start="20" data-end="24">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-navy text-white font-mono text-xs font-black">20:00 - 00:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Noches de La 97</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Lentas, clásicos internacionales y conexión nocturna</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+          </div>
+
+          <!-- Sábados -->
+          <div data-day-group="sab" class="space-y-3 hidden">
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25" data-days="6" data-start="9" data-end="14">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-yellow text-la97-navy font-mono text-xs font-black">09:00 - 14:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Ranking 40X40 (En Vivo)</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">El conteo oficial con las 40 canciones más votadas de la semana</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25" data-days="6" data-start="14" data-end="20">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-blue text-white font-mono text-xs font-black">14:00 - 20:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Música Express</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Tardes de sábado a pura música sin interrupciones</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+          </div>
+
+          <!-- Domingos -->
+          <div data-day-group="dom" class="space-y-3 hidden">
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25" data-days="0" data-start="9" data-end="13">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-blue text-white font-mono text-xs font-black">09:00 - 13:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Domingos en Familia</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Clásicos nacionales e internacionales para el domingo marplatense</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+
+            <div class="la97-prog-row flex items-center justify-between gap-4 p-4 rounded-2xl border-2 border-la97-gray bg-[#E3E1E3]/25" data-days="0" data-start="13" data-end="21">
+              <div class="flex items-center gap-4">
+                <span class="px-3 py-1.5 rounded-xl bg-la97-red text-white font-mono text-xs font-black">13:00 - 21:00</span>
+                <div>
+                  <h3 class="text-base font-black text-la97-navy uppercase">Fórmula 97 Fin de Semana</h3>
+                  <p class="text-xs font-bold text-la97-navy/70">Todos los hits seleccionados de La 97 Siempre</p>
+                </div>
+              </div>
+              <span class="la97-on-air-badge text-[10px] font-black bg-la97-red text-white px-2.5 py-1 rounded-full uppercase">● AL AIRE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT 5 COLS: RANKING 40X40 INTERACTIVE BAUHAUS DECK -->
+      <div id="ranking-40x40" class="lg:col-span-5 bg-la97-blue text-white rounded-3xl p-6 sm:p-8 border-4 border-la97-yellow relative overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between gap-2 mb-4">
+          <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded-lg uppercase tracking-wider">CONTEO OFICIAL</span>
+          <span class="text-xs font-mono font-bold text-la97-gray">SÁBADOS 09:00 HS</span>
+        </div>
+
+        <h2 class="text-3xl font-black uppercase tracking-tight leading-none">
+          RANKING <span class="text-la97-yellow">40X40</span>
+        </h2>
+        <p class="text-xs sm:text-sm font-bold text-la97-gray mt-2">
+          Tocá cualquier puesto para cargarlo en el monitor de onda del estudio:
+        </p>
+
+        <div class="mt-6 space-y-3">
+          <button type="button" data-track-title="#01 • Emilia, Tini — La_Original.mp3" data-track-sub="Puesto #01 del Ranking 40X40 • 3 semanas en la cima" class="ranking-item w-full text-left bg-la97-navy hover:bg-la97-red border-2 border-white/15 rounded-2xl p-4 flex items-center justify-between gap-3 transition-all cursor-pointer group">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-la97-yellow text-la97-navy font-black text-base flex items-center justify-center shrink-0">01</span>
+              <div>
+                <div class="text-sm font-black text-white uppercase">Emilia & Tini — La_Original.mp3</div>
+                <div class="text-[11px] font-bold text-la97-gray">3 semanas #1 • Votá por WhatsApp</div>
+              </div>
+            </div>
+            <span class="text-xs font-black text-la97-yellow group-hover:text-white uppercase">CARGAR ▶</span>
+          </button>
+
+          <button type="button" data-track-title="#02 • Luck Ra, BM — La Morocha" data-track-sub="Puesto #02 del Ranking 40X40 • Subió 2 lugares" class="ranking-item w-full text-left bg-la97-navy hover:bg-la97-red border-2 border-white/15 rounded-2xl p-4 flex items-center justify-between gap-3 transition-all cursor-pointer group">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-white text-la97-navy font-black text-base flex items-center justify-center shrink-0">02</span>
+              <div>
+                <div class="text-sm font-black text-white uppercase">Luck Ra & BM — La Morocha</div>
+                <div class="text-[11px] font-bold text-la97-gray">▲ Subió 2 puestos esta semana</div>
+              </div>
+            </div>
+            <span class="text-xs font-black text-la97-yellow group-hover:text-white uppercase">CARGAR ▶</span>
+          </button>
+
+          <button type="button" data-track-title="#03 • Dua Lipa — Houdini" data-track-sub="Puesto #03 del Ranking 40X40 • Internacional más pedido" class="ranking-item w-full text-left bg-la97-navy hover:bg-la97-red border-2 border-white/15 rounded-2xl p-4 flex items-center justify-between gap-3 transition-all cursor-pointer group">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-la97-red text-white font-black text-base flex items-center justify-center shrink-0">03</span>
+              <div>
+                <div class="text-sm font-black text-white uppercase">Dua Lipa — Houdini</div>
+                <div class="text-[11px] font-bold text-la97-gray">★ Hit Internacional de la Semana</div>
+              </div>
+            </div>
+            <span class="text-xs font-black text-la97-yellow group-hover:text-white uppercase">CARGAR ▶</span>
+          </button>
+
+          <button type="button" data-track-title="#04 • Miranda! & María Becerra — Perfecta" data-track-sub="Puesto #04 del Ranking 40X40 • Clásico renovado" class="ranking-item w-full text-left bg-la97-navy hover:bg-la97-red border-2 border-white/15 rounded-2xl p-4 flex items-center justify-between gap-3 transition-all cursor-pointer group">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-la97-gray text-la97-navy font-black text-base flex items-center justify-center shrink-0">04</span>
+              <div>
+                <div class="text-sm font-black text-white uppercase">Miranda! & María Becerra — Perfecta</div>
+                <div class="text-[11px] font-bold text-la97-gray">Más pedido en Mar del Plata</div>
+              </div>
+            </div>
+            <span class="text-xs font-black text-la97-yellow group-hover:text-white uppercase">CARGAR ▶</span>
+          </button>
+        </div>
+
+        <!-- WhatsApp Vote CTA -->
+        <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="mt-6 w-full bg-la97-yellow hover:bg-white text-la97-navy font-black text-xs uppercase tracking-wider py-3.5 px-5 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors">
+          <span>VOTAR MI TEMA POR WHATSAPP (223 615-0000)</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: ARCHITECTURAL NEWS WALL ("LO ÚLTIMO EN MAR DEL PLATA")
+         =================================================================== -->
+    <section id="pulso-noticias" class="w-full space-y-6">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <div class="inline-block">
+            <span class="text-xs font-black tracking-widest text-la97-yellow uppercase block">REDACCIÓN LA 97 FM</span>
+            <div class="w-full h-[3px] bg-la97-red mt-1"></div>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight uppercase mt-2">
+            PULSO INFORMATIVO & CULTURA
+          </h2>
+        </div>
+        <a href="./preview-tema.html" class="text-xs font-black text-la97-yellow hover:underline uppercase tracking-wider">
+          VER ARCHIVO COMPLETO →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Card 01 -->
+        <article class="bg-white text-la97-navy rounded-2xl border-2 border-la97-gray p-6 pb-8 relative overflow-hidden flex flex-col justify-between bauhaus-card">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-3 border border-la97-gray bg-la97-navy/5">
+              <img src="./card1.webp" alt="Serú Girán Quilmes Rock" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-la97-red text-white text-[10px] font-black px-2.5 py-1 rounded uppercase">ROCK NACIONAL</span>
+              <span class="text-2xl font-black text-la97-navy/20 font-mono">01</span>
+            </div>
+            <h3 class="text-base font-extrabold text-la97-navy leading-snug">
+              Serú Girán: el homenaje histórico en el Quilmes Rock 2025
+            </h3>
+            <p class="text-xs text-la97-navy/75 mt-2 leading-relaxed">
+              Cobertura especial desde el móvil de La 97 FM con entradas y sorteos exclusivos para oyentes.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-la97-gray flex items-center justify-between text-[11px] font-black text-la97-blue uppercase">
+            <span>HACE 2 HORAS</span>
+            <span>LEER NOTA →</span>
+          </div>
+          <div class="la97-corner-ribbon bg-la97-navy"></div>
+        </article>
+
+        <!-- Card 02 -->
+        <article class="bg-white text-la97-navy rounded-2xl border-2 border-la97-gray p-6 pb-8 relative overflow-hidden flex flex-col justify-between bauhaus-card">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-3 border border-la97-gray bg-la97-navy/5">
+              <img src="./card2.jpg" alt="Lollapalooza Argentina" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-la97-blue text-white text-[10px] font-black px-2.5 py-1 rounded uppercase">FESTIVALES</span>
+              <span class="text-2xl font-black text-la97-navy/20 font-mono">02</span>
+            </div>
+            <h3 class="text-base font-extrabold text-la97-navy leading-snug">
+              Lollapalooza Argentina: grilla completa y horarios confirmados
+            </h3>
+            <p class="text-xs text-la97-navy/75 mt-2 leading-relaxed">
+              Todos los artistas, escenarios y detalles de la transmisión en directo para todo Mar del Plata.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-la97-gray flex items-center justify-between text-[11px] font-black text-la97-blue uppercase">
+            <span>DESTACADO</span>
+            <span>LEER NOTA →</span>
+          </div>
+          <div class="la97-corner-ribbon bg-la97-red"></div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="bg-white text-la97-navy rounded-2xl border-2 border-la97-gray p-6 pb-8 relative overflow-hidden flex flex-col justify-between bauhaus-card">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-3 border border-la97-gray bg-la97-navy/5">
+              <img src="./card3.jpg" alt="Benson Boone" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-1 rounded uppercase">RANKING 40X40</span>
+              <span class="text-2xl font-black text-la97-navy/20 font-mono">03</span>
+            </div>
+            <h3 class="text-base font-extrabold text-la97-navy leading-snug">
+              Benson Boone estrena material que entra directo a la rotación
+            </h3>
+            <p class="text-xs text-la97-navy/75 mt-2 leading-relaxed">
+              El fenómeno internacional llega a las mañanas y tardes de La 97 Siempre con votación en vivo.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-la97-gray flex items-center justify-between text-[11px] font-black text-la97-blue uppercase">
+            <span>ESTRENO</span>
+            <span>LEER NOTA →</span>
+          </div>
+          <div class="la97-corner-ribbon bg-la97-blue"></div>
+        </article>
+
+        <!-- Card 04 -->
+        <article class="bg-white text-la97-navy rounded-2xl border-2 border-la97-gray p-6 pb-8 relative overflow-hidden flex flex-col justify-between bauhaus-card">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-3 border border-la97-gray bg-la97-navy/5 flex items-center justify-center p-3">
+              <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="h-full object-contain">
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-la97-navy text-white text-[10px] font-black px-2.5 py-1 rounded uppercase">COMUNIDAD</span>
+              <span class="text-2xl font-black text-la97-navy/20 font-mono">04</span>
+            </div>
+            <h3 class="text-base font-extrabold text-la97-navy leading-snug">
+              Sumate al Club de Oyentes de La 97 Siempre y participá por pases semanales
+            </h3>
+            <p class="text-xs text-la97-navy/75 mt-2 leading-relaxed">
+              Enviá tu audio o mensaje directo al WhatsApp de cabina durante toda la programación en vivo.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-la97-gray flex items-center justify-between text-[11px] font-black text-la97-blue uppercase">
+            <span>OYENTES</span>
+            <span>LEER NOTA →</span>
+          </div>
+          <div class="la97-corner-ribbon bg-la97-yellow"></div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER (Full-Width, Predominant #273547 Navy)
+       ===================================================================== -->
+  <footer class="bg-la97-navy border-t-4 border-la97-red text-white w-full px-6 lg:px-12 xl:px-16 py-10 mt-12">
+    <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3.5">
+        <div class="bg-white rounded-xl p-1.5 w-11 h-11 flex items-center justify-center shrink-0">
+          <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <div class="font-black text-sm uppercase tracking-wider">LA 97 FM • 97.3 MHz MAR DEL PLATA</div>
+          <div class="text-xs text-la97-gray">Concept Art Bauhaus & Vinilo — Diseñado bajo las reglas de DESIGN.md</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 text-xs font-extrabold">
+        <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="bg-la97-yellow text-la97-navy px-4 py-2 rounded-xl">WHATSAPP: 223 615-0000</a>
+        <a href="tel:02234932502" class="bg-white/10 text-white px-4 py-2 rounded-xl">TEL: 0223 493-2502</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Re-use official player.js for stream control, drawer, and Argentina schedule detection -->
+  <script src="./tema-la97/assets/js/player.js"></script>
+
+  <!-- Concept Art Interactive Vinyl, Frequency Dial & Radial Bauhaus Canvas Engine -->
+  <script>
+    (function () {
+      const audio = document.getElementById('la97Audio');
+      const vinylDisc = document.getElementById('vinylDiscBtn');
+      const tonearm = document.getElementById('vinylTonearm');
+      const headerPlayBtn = document.getElementById('headerPlayBtn');
+      const headerPlayLabel = document.getElementById('headerPlayLabel');
+      const playToggleBtn = document.getElementById('playToggleBtn');
+      const fmDialInput = document.getElementById('fmDialInput');
+      const freqReadout = document.getElementById('freqReadout');
+      const dialStatusBadge = document.getElementById('dialStatusBadge');
+      const snap973Btn = document.getElementById('snap973Btn');
+      const canvas = document.getElementById('artVinylCanvas');
+      const ctx = canvas ? canvas.getContext('2d') : null;
+
+      let vizMode = 'radial'; // 'radial' | 'bauhaus' | 'waves'
+      let phase = 0;
+
+      // Sync vinyl disc spin & tonearm with audio state
+      function syncTurntableState() {
+        const playing = audio && !audio.paused;
+        if (vinylDisc) vinylDisc.classList.toggle('is-spinning', playing);
+        if (tonearm) tonearm.classList.toggle('is-engaged', playing);
+        if (headerPlayLabel) headerPlayLabel.textContent = playing ? 'PAUSAR 97.3' : 'ESCUCHAR 97.3';
+      }
+
+      if (audio) {
+        audio.addEventListener('play', syncTurntableState);
+        audio.addEventListener('pause', syncTurntableState);
+        audio.addEventListener('ended', syncTurntableState);
+      }
+
+      if (vinylDisc && playToggleBtn) {
+        vinylDisc.addEventListener('click', () => playToggleBtn.click());
+      }
+      if (headerPlayBtn && playToggleBtn) {
+        headerPlayBtn.addEventListener('click', () => playToggleBtn.click());
+      }
+
+      // Interactive FM Frequency Dial
+      function updateDial(val) {
+        const num = parseFloat(val).toFixed(1);
+        if (freqReadout) freqReadout.textContent = num;
+        const diff = Math.abs(parseFloat(num) - 97.3);
+        if (dialStatusBadge) {
+          if (diff < 0.15) {
+            dialStatusBadge.textContent = 'SEÑAL ÓPTIMA • 97.3 MHz';
+            dialStatusBadge.className = 'text-[10px] font-black bg-la97-yellow text-la97-navy px-2 py-0.5 rounded uppercase';
+          } else {
+            dialStatusBadge.textContent = 'FUERA DE SINTONÍA • BUSCÁ 97.3';
+            dialStatusBadge.className = 'text-[10px] font-black bg-la97-red text-white px-2 py-0.5 rounded uppercase';
+          }
+        }
+      }
+      if (fmDialInput) {
+        fmDialInput.addEventListener('input', (e) => updateDial(e.target.value));
+      }
+      if (snap973Btn && fmDialInput) {
+        snap973Btn.addEventListener('click', () => {
+          fmDialInput.value = '97.3';
+          updateDial('97.3');
+        });
+      }
+
+      // Visual Mode Switcher
+      document.querySelectorAll('.viz-mode-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          vizMode = btn.getAttribute('data-viz-mode') || 'radial';
+          document.querySelectorAll('.viz-mode-btn').forEach((b) => {
+            const active = b === btn;
+            b.className = active
+              ? 'viz-mode-btn px-3 py-1 rounded-lg text-[11px] font-black uppercase bg-la97-yellow text-la97-navy cursor-pointer transition-colors'
+              : 'viz-mode-btn px-3 py-1 rounded-lg text-[11px] font-black uppercase text-la97-gray hover:text-white cursor-pointer transition-colors';
+          });
+        });
+      });
+
+      // Day Filter Tabs
+      document.querySelectorAll('.day-filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-day-filter');
+          document.querySelectorAll('[data-day-group]').forEach((grp) => {
+            grp.classList.toggle('hidden', grp.getAttribute('data-day-group') !== target);
+          });
+          document.querySelectorAll('.day-filter-btn').forEach((b) => {
+            const active = b === btn;
+            b.className = active
+              ? 'day-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-black uppercase bg-la97-navy text-la97-yellow cursor-pointer transition-colors'
+              : 'day-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-black uppercase bg-la97-gray/60 text-la97-navy hover:bg-la97-blue hover:text-white cursor-pointer transition-colors';
+          });
+        });
+      });
+
+      // Ranking 40X40 Interactive Track Loader
+      document.querySelectorAll('.ranking-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          const title = item.getAttribute('data-track-title');
+          const sub = item.getAttribute('data-track-sub');
+          const titleEl = document.getElementById('la97NowPlayingTitle');
+          const subEl = document.getElementById('la97NowPlayingSub');
+          if (titleEl && title) titleEl.textContent = title;
+          if (subEl && sub) subEl.textContent = sub;
+          if (audio && audio.paused && playToggleBtn) {
+            playToggleBtn.click();
+          }
+        });
+      });
+
+      // Live Argentina Clock (America/Argentina/Buenos_Aires)
+      const clockEl = document.getElementById('artLiveClock');
+      function updateClock() {
+        if (!clockEl) return;
+        try {
+          const nowStr = new Intl.DateTimeFormat('es-AR', {
+            timeZone: 'America/Argentina/Buenos_Aires',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          }).format(new Date());
+          clockEl.textContent = nowStr + ' ARS';
+        } catch (e) {}
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      // Canvas Visualizer strictly using DESIGN.md 5-color palette
+      const PALETTE = ['#F4B70D', '#E2051D', '#0366A2', '#E3E1E3'];
+      function renderCanvas() {
+        if (!ctx || !canvas) return;
+        const w = canvas.width;
+        const h = canvas.height;
+        const cx = w / 2;
+        const cy = h / 2;
+        const playing = audio && !audio.paused;
+        phase += playing ? 0.065 : 0.015;
+
+        ctx.clearRect(0, 0, w, h);
+
+        if (vizMode === 'radial') {
+          // 64 Radial Bauhaus Sunburst Bars around the vinyl disc
+          const bars = 64;
+          const baseRadius = 118;
+          for (let i = 0; i < bars; i++) {
+            const angle = (i / bars) * Math.PI * 2 + phase * 0.2;
+            const wave = Math.sin(i * 0.45 + phase * 2.2) * 0.5 + 0.5;
+            const amp = playing ? 16 + wave * 48 : 8 + wave * 12;
+            const x1 = cx + Math.cos(angle) * baseRadius;
+            const y1 = cy + Math.sin(angle) * baseRadius;
+            const x2 = cx + Math.cos(angle) * (baseRadius + amp);
+            const y2 = cy + Math.sin(angle) * (baseRadius + amp);
+
+            ctx.strokeStyle = PALETTE[i % PALETTE.length];
+            ctx.lineWidth = 4.5;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+          }
+        } else if (vizMode === 'bauhaus') {
+          // Diagonal Rising Equalizer Columns (Inspired by Sol Migliónico Page 4)
+          const cols = 28;
+          const colW = w / cols;
+          for (let i = 0; i < cols; i++) {
+            const wave = Math.sin(i * 0.35 + phase * 2.4) * 0.5 + 0.5;
+            const barH = playing ? 40 + wave * (h * 0.72) : 20 + wave * 45;
+            ctx.fillStyle = PALETTE[i % PALETTE.length];
+            ctx.fillRect(i * colW + 4, h - barH, colW - 8, barH);
+          }
+        } else {
+          // Concentric Atlantic Sound Waves
+          for (let r = 0; r < 4; r++) {
+            ctx.strokeStyle = PALETTE[r % PALETTE.length];
+            ctx.lineWidth = 3.5;
+            ctx.beginPath();
+            for (let x = 0; x <= w; x += 8) {
+              const y = cy + Math.sin(x * 0.02 + phase * (1.5 + r * 0.4) + r) * (playing ? 32 + r * 18 : 10 + r * 6);
+              if (x === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          }
+        }
+
+        requestAnimationFrame(renderCanvas);
+      }
+      requestAnimationFrame(renderCanvas);
+    })();
+  </script>
+</body>
+</html>

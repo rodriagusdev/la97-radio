@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="h-full bg-[#273547] text-white overflow-x-hidden selection:bg-[#F4B70D] selection:text-[#273547]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La 97 FM — Quantum Studio HUD (Brand Palette Edition)</title>
+  <!-- TailwindCSS Play CDN (Exact 5-color system from DESIGN.md) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            la97: {
+              navy: '#273547',   // Predominant primary blue
+              blue: '#0366A2',   // Secondary accent blue
+              yellow: '#F4B70D', // Brand yellow
+              red: '#E2051D',    // Brand red
+              gray: '#E3E1E3',   // Brand gray
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', -apple-system, sans-serif;
+    }
+    .font-hud {
+      font-family: 'Orbitron', monospace;
+    }
+    
+    /* Studio Backdrop with Depth of Field — Adapted to #273547, #0366A2, #E2051D, #F4B70D */
+    .studio-bg {
+      background-color: #273547;
+      background-image: 
+        radial-gradient(ellipse at 70% 30%, rgba(3, 102, 162, 0.48) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 70%, rgba(226, 5, 29, 0.28) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(39, 53, 71, 0.65) 0%, rgba(39, 53, 71, 0.96) 100%),
+        url('./design_client_idea/concept-cyber.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Holographic Glassmorphism Panels in Predominant #273547 & #0366A2 */
+    .holo-panel {
+      background: linear-gradient(135deg, rgba(39, 53, 71, 0.86) 0%, rgba(39, 53, 71, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(3, 102, 162, 0.75);
+      box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(227, 225, 227, 0.2),
+        0 0 30px rgba(3, 102, 162, 0.28);
+      position: relative;
+    }
+
+    .holo-glow {
+      box-shadow: 0 0 25px rgba(244, 183, 13, 0.45), inset 0 0 15px rgba(3, 102, 162, 0.35);
+    }
+
+    /* Diagonal Brand Accent Ribbons (#E2051D, #F4B70D, #0366A2) */
+    .corner-stripes-tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .corner-stripes-tr::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140%;
+      height: 7px;
+      background: #E2051D;
+      transform: rotate(45deg) translate(8px, -24px);
+      box-shadow: 0 0 10px #E2051D;
+    }
+    .corner-stripes-tr::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140%;
+      height: 7px;
+      background: #F4B70D;
+      transform: rotate(45deg) translate(14px, -14px);
+      box-shadow: 0 0 10px #F4B70D;
+    }
+
+    .corner-stripes-bl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .corner-stripes-bl::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 140%;
+      height: 6px;
+      background: #0366A2;
+      transform: rotate(45deg) translate(-22px, 12px);
+    }
+    .corner-stripes-bl::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 140%;
+      height: 6px;
+      background: #E2051D;
+      transform: rotate(45deg) translate(-14px, 20px);
+    }
+
+    /* 3D Perspective Tilt on Lower Desk Cards */
+    .desk-tilt {
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    @media (min-width: 1024px) {
+      .desk-3d-left {
+        transform: perspective(900px) rotateX(12deg) rotateY(8deg) translateZ(0);
+      }
+      .desk-3d-center {
+        transform: perspective(900px) rotateX(14deg) translateZ(0);
+      }
+      .desk-3d-right {
+        transform: perspective(900px) rotateX(12deg) rotateY(-8deg) translateZ(0);
+      }
+      .desk-3d-left:hover, .desk-3d-center:hover, .desk-3d-right:hover {
+        transform: perspective(900px) rotateX(4deg) translateZ(20px);
+        border-color: #F4B70D;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(3, 102, 162, 0.5);
+      }
+    }
+
+    /* Segmented Progress Bars in Official Brand Colors */
+    .segmented-bar {
+      display: flex;
+      gap: 3px;
+      height: 6px;
+      width: 100%;
+    }
+    .segmented-bar span {
+      flex: 1;
+      height: 100%;
+      background: rgba(227, 225, 227, 0.18);
+      border-radius: 1px;
+    }
+    .segmented-bar.red span.active {
+      background: #E2051D;
+      box-shadow: 0 0 8px #E2051D;
+    }
+    .segmented-bar.blue span.active {
+      background: #0366A2;
+      box-shadow: 0 0 8px #0366A2;
+    }
+
+    /* Glowing Badge Ring Strictly Using #0366A2, #F4B70D, #E2051D */
+    .logo-ring {
+      box-shadow: 
+        0 0 0 3px #0366A2,
+        0 0 22px rgba(3, 102, 162, 0.75),
+        0 0 45px rgba(244, 183, 13, 0.35),
+        inset 0 0 18px rgba(226, 5, 29, 0.35);
+    }
+  </style>
+</head>
+<body class="min-h-screen studio-bg flex flex-col justify-between p-4 sm:p-6 lg:p-8 relative selection:bg-[#F4B70D] selection:text-[#273547]">
+
+  <!-- Top Floating Bar: Navigation back to standard theme & other concepts -->
+  <div class="w-full flex flex-wrap items-center justify-between gap-4 mb-6 z-50">
+    <a href="./preview-tema.html" class="inline-flex items-center gap-2 bg-la97-navy/95 hover:bg-la97-blue text-xs font-bold text-white border border-la97-gray/30 px-3.5 py-1.5 rounded-lg shadow-lg backdrop-blur transition-all">
+      <span>← Volver a Vista Previa Tradicional</span>
+    </a>
+
+    <div class="flex flex-wrap items-center gap-2 text-xs font-hud font-bold">
+      <a href="./concept-mediakit.html" class="bg-la97-blue hover:opacity-90 text-white px-2.5 py-1 rounded transition-opacity">📊 Media Kit</a>
+      <a href="./concept-art.html" class="bg-la97-red hover:opacity-90 text-white px-2.5 py-1 rounded transition-opacity">⚡ Concepto Art</a>
+      <a href="./concept-split.html" class="bg-la97-yellow hover:opacity-90 text-la97-navy px-2.5 py-1 rounded transition-opacity">🎨 Concepto Split</a>
+      <a href="./concept-hud.html" class="bg-white/10 hover:bg-white/20 text-la97-gray px-2.5 py-1 rounded transition-colors">🚀 HUD Original</a>
+      <span class="bg-la97-navy border border-la97-yellow text-la97-yellow px-2.5 py-1 rounded">HUD PALETA LA 97</span>
+    </div>
+  </div>
+
+  <!-- Audio Element connecting to real ShockMedia stream -->
+  <audio id="liveAudio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
+
+  <!-- =========================================================================
+       MAIN QUANTUM HUD INTERFACE (Adapted to DESIGN.md 5-Color System)
+       ========================================================================= -->
+  <div class="max-w-[1540px] w-full mx-auto flex-1 flex flex-col justify-center space-y-6 lg:space-y-8 my-auto relative z-30">
+    
+    <!-- Top Row: Floating Glowing Logo Badge + Quantum Audio Tuner Screen -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+      
+      <!-- Glowing Circular Logo Badge (Left) -->
+      <div class="lg:col-span-3 flex justify-center lg:justify-start">
+        <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full logo-ring bg-la97-navy/95 p-2 flex flex-col items-center justify-center text-center backdrop-blur-md">
+          <div class="absolute inset-0 rounded-full border-2 border-dashed border-la97-yellow/50 animate-spin" style="animation-duration: 24s;"></div>
+          <!-- Internal Logo Typography in Official Colors -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="w-12 h-12 rounded-xl bg-white p-1 mb-1 shadow flex items-center justify-center">
+              <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM" class="w-full h-full object-contain">
+            </div>
+            <div class="text-2xl sm:text-3xl font-black text-white tracking-tighter leading-none">
+              LA 97
+            </div>
+            <div class="text-[11px] font-black uppercase text-la97-yellow tracking-widest mt-1">
+              FM Siempre!
+            </div>
+            <div class="text-[10px] font-mono text-la97-gray font-bold tracking-widest mt-0.5 bg-la97-blue px-2 py-0.5 rounded-full">
+              97.3 MHz
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Transparent Glass HUD Center Panel (Right) -->
+      <div class="lg:col-span-9 holo-panel rounded-2xl p-5 sm:p-7">
+        
+        <!-- Top Nav Inside HUD -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-la97-gray/20 text-xs sm:text-sm font-hud font-bold tracking-widest">
+          <div class="flex items-center gap-6 text-la97-gray">
+            <a href="#" class="text-la97-yellow border-b-2 border-la97-red pb-1 hover:text-white transition-colors">INICIO</a>
+            <a href="#" class="hover:text-la97-yellow transition-colors">PROGRAMACIÓN</a>
+            <a href="#" class="hover:text-la97-yellow transition-colors">PODCASTS</a>
+            <a href="#" class="hover:text-la97-yellow transition-colors">NOTICIAS</a>
+          </div>
+
+          <div class="flex items-center gap-2 bg-la97-red text-white px-3 py-1 rounded-full text-xs font-black">
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+            <span>● EN VIVO</span>
+          </div>
+        </div>
+
+        <!-- Tuner Header -->
+        <div class="text-[11px] font-hud text-la97-yellow font-bold tracking-[0.2em] uppercase mt-3 mb-1">
+          QUANTUM AUDIO TUNER / ON-AIR • 97.3 MHz
+        </div>
+
+        <!-- Glowing Interactive Particle Waveform Canvas (Strictly using #F4B70D, #E2051D, #0366A2, #E3E1E3) -->
+        <div class="relative w-full h-36 sm:h-44 flex items-center justify-center my-2 overflow-hidden rounded-xl bg-la97-navy/90 border border-la97-blue/60">
+          <canvas id="quantumWaveform" class="w-full h-full block"></canvas>
+        </div>
+
+        <!-- Track & Audio Telemetry Info -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
+          <div>
+            <h2 id="hudTrackTitle" class="text-lg sm:text-xl font-black text-white tracking-wide">
+              La 97 FM — En Directo (97.3 MHz)
+            </h2>
+            <div class="flex items-center gap-3 text-xs text-la97-gray font-mono mt-0.5">
+              <span>03:00</span>
+              <span class="text-la97-yellow font-bold">Telemetría de audio ShockMedia</span>
+              <span>02:00</span>
+            </div>
+          </div>
+
+          <!-- Futuristic Player Controls in Brand Colors -->
+          <div class="flex items-center gap-4 text-la97-gray">
+            <!-- Shuffle -->
+            <button class="hover:text-la97-yellow transition-colors" title="Aleatorio">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+            </button>
+            <!-- Prev -->
+            <button class="hover:text-la97-yellow transition-colors" title="Anterior">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <!-- Big Glowing Play/Pause Button (#E2051D / #F4B70D) -->
+            <button id="hudPlayBtn" onclick="toggleHudAudio()" class="w-12 h-12 rounded-full bg-la97-red hover:bg-la97-yellow hover:text-la97-navy border-2 border-la97-yellow text-white flex items-center justify-center shadow-lg transition-all hover:scale-105 holo-glow cursor-pointer">
+              <span id="hudPlayIcon" class="text-lg">▶</span>
+            </button>
+            <!-- Next -->
+            <button class="hover:text-la97-yellow transition-colors" title="Siguiente">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+            <!-- Repeat -->
+            <button class="hover:text-la97-yellow transition-colors" title="Repetir">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Row: 3 Floating Tilted Desk Hologram Cards (Bigger & Expanded) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-3">
+      
+      <!-- Card 1: AGENDA / CRONOGRAMA (Left 3D Tilt - 3 cols) -->
+      <div class="holo-panel desk-tilt desk-3d-left rounded-2xl p-6 sm:p-7 relative lg:col-span-3 flex flex-col justify-between">
+        <div class="corner-stripes-tr"></div>
+        <div class="corner-stripes-bl"></div>
+
+        <div>
+          <h3 class="font-hud text-xs sm:text-sm font-black tracking-widest text-la97-yellow mb-5 uppercase flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-la97-red animate-pulse"></span>
+            AGENDA / CRONOGRAMA
+          </h3>
+
+          <div class="space-y-4">
+            <!-- Item 1 -->
+            <div class="bg-la97-navy/70 p-3.5 rounded-xl border border-la97-blue/30">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-white mb-1.5">
+                <span>Ranking 40 x 40 En Vivo</span>
+                <span class="bg-la97-red text-white px-2 py-0.5 rounded text-[10px] font-black uppercase">EN VIVO</span>
+              </div>
+              <div class="text-xs text-la97-gray mb-2">Transmisión en directo por La 97 FM</div>
+              <div class="segmented-bar red" style="height: 8px;">
+                <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-la97-navy/70 p-3.5 rounded-xl border border-la97-blue/30">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-white mb-1.5">
+                <span>Móviles de Verano MDQ</span>
+                <span class="bg-la97-blue text-white px-2 py-0.5 rounded text-[10px] font-black uppercase">PRÓXIMO</span>
+              </div>
+              <div class="text-xs text-la97-gray mb-2">Especial desde playas y paradores</div>
+              <div class="segmented-bar blue" style="height: 8px;">
+                <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-la97-gray/20 flex items-center justify-between text-xs font-mono text-la97-gray mt-4">
+          <span>COBERTURA 100 KM</span>
+          <span class="text-la97-yellow font-black">MDQ & COSTA</span>
+        </div>
+      </div>
+
+      <!-- Card 2: MÚSICA Y NOTICIAS (Center 3D Tilt - 6 cols - Prominent & Large Cards) -->
+      <div class="holo-panel desk-tilt desk-3d-center rounded-2xl p-6 sm:p-7 lg:col-span-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-hud text-xs sm:text-sm font-black tracking-widest text-la97-yellow uppercase flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-la97-yellow animate-ping"></span>
+              MÚSICA Y NOTICIAS DESTACADAS
+            </h3>
+            <span class="text-[11px] font-mono text-la97-gray hidden sm:inline">ACTUALIZADO EN VIVO</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <!-- Mini Card 1: Serú Girán -->
+            <div class="bg-la97-navy/90 rounded-xl p-3 border-2 border-la97-blue/60 group hover:border-la97-yellow transition-all flex flex-col justify-between shadow-lg hover:-translate-y-1">
+              <div class="h-36 sm:h-44 rounded-lg overflow-hidden mb-3 bg-la97-navy relative">
+                <img src="./card1.webp" alt="Serú Girán Quilmes Rock" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 left-2 bg-la97-blue text-white text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-wider shadow">
+                  ROCK NACIONAL
+                </span>
+              </div>
+              <div>
+                <span class="text-la97-yellow text-[10px] font-black tracking-wider uppercase block">SERÚ GIRÁN</span>
+                <h4 class="text-xs sm:text-sm font-black text-white mt-1 leading-snug">
+                  Homenaje histórico en Quilmes Rock
+                </h4>
+              </div>
+            </div>
+
+            <!-- Mini Card 2: Lollapalooza -->
+            <div class="bg-la97-navy/90 rounded-xl p-3 border-2 border-la97-blue/60 group hover:border-la97-yellow transition-all flex flex-col justify-between shadow-lg hover:-translate-y-1">
+              <div class="h-36 sm:h-44 rounded-lg overflow-hidden mb-3 bg-la97-navy relative">
+                <img src="./card2.jpg" alt="Lollapalooza Argentina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 left-2 bg-la97-red text-white text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-wider shadow">
+                  FESTIVALES
+                </span>
+              </div>
+              <div>
+                <span class="text-la97-red text-[10px] font-black tracking-wider uppercase block">LOLLAPALOOZA</span>
+                <h4 class="text-xs sm:text-sm font-black text-white mt-1 leading-snug">
+                  Grilla oficial completa y horarios
+                </h4>
+              </div>
+            </div>
+
+            <!-- Mini Card 3: Benson Boone -->
+            <div class="bg-la97-navy/90 rounded-xl p-3 border-2 border-la97-blue/60 group hover:border-la97-yellow transition-all flex flex-col justify-between shadow-lg hover:-translate-y-1">
+              <div class="h-36 sm:h-44 rounded-lg overflow-hidden mb-3 bg-la97-navy relative">
+                <img src="./card3.jpg" alt="Benson Boone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 left-2 bg-la97-yellow text-la97-navy text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-wider shadow">
+                  INTERNACIONAL
+                </span>
+              </div>
+              <div>
+                <span class="text-la97-yellow text-[10px] font-black tracking-wider uppercase block">BENSON BOONE</span>
+                <h4 class="text-xs sm:text-sm font-black text-white mt-1 leading-snug">
+                  Nuevo lanzamiento entra al 40X40
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: PLAYLIST / PROGRAMACIÓN (Right 3D Tilt - 3 cols) -->
+      <div class="holo-panel desk-tilt desk-3d-right rounded-2xl p-6 sm:p-7 relative lg:col-span-3 flex flex-col justify-between">
+        <div class="corner-stripes-tr"></div>
+        <div class="corner-stripes-bl"></div>
+
+        <div>
+          <h3 class="font-hud text-xs sm:text-sm font-black tracking-widest text-la97-yellow mb-5 uppercase flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-la97-blue"></span>
+            PLAYLIST / PROGRAMACIÓN
+          </h3>
+
+          <div class="space-y-3 text-xs font-mono">
+            <div class="bg-la97-navy/70 p-3 rounded-xl border border-la97-blue/30 flex items-center justify-between text-la97-gray">
+              <div class="flex items-center gap-2.5">
+                <span class="text-la97-yellow text-sm">▶</span>
+                <span class="font-bold text-white">Música Express</span>
+              </div>
+              <span class="text-la97-yellow font-black text-[11px] bg-la97-navy px-2 py-0.5 rounded">13:00 HS</span>
+            </div>
+
+            <div class="bg-la97-navy/70 p-3 rounded-xl border border-la97-blue/30 flex items-center justify-between text-la97-gray">
+              <div class="flex items-center gap-2.5">
+                <span class="text-la97-red text-sm">▶</span>
+                <span class="font-bold text-white">El Regreso — Pablo Larsen</span>
+              </div>
+              <span class="text-la97-gray/80 font-black text-[11px] bg-la97-navy px-2 py-0.5 rounded">18:00 HS</span>
+            </div>
+
+            <div class="bg-la97-navy/70 p-3 rounded-xl border border-la97-blue/30 flex items-center justify-between text-la97-gray">
+              <div class="flex items-center gap-2.5">
+                <span class="text-la97-blue text-sm">▶</span>
+                <span class="font-bold text-white">Ranking 40X40 Hits</span>
+              </div>
+              <span class="text-la97-yellow font-black text-[11px] bg-la97-navy px-2 py-0.5 rounded">AUTO DJ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Waveform Line -->
+        <div class="pt-4 border-t border-la97-gray/20 flex items-center justify-between text-xs text-la97-yellow font-mono mt-4">
+          <span>MODULACIÓN DSP</span>
+          <span class="font-black bg-la97-blue text-white px-2.5 py-1 rounded-full text-[10px]">97.3 MHz ACTIVE</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom Technical Legend -->
+  <div class="text-center text-xs text-la97-gray/80 font-mono tracking-wider z-20 pt-4">
+    LA 97 FM — CONCEPTO HUD (PALETA OFICIAL DESIGN.MD) • TRANSMITIENDO EN VIVO DESDE MAR DEL PLATA
+  </div>
+
+  <!-- =========================================================================
+       AUDIO & QUANTUM WAVEFORM CANVAS SCRIPT (Strictly using DESIGN.md colors)
+       ========================================================================= -->
+  <script>
+    var audio = document.getElementById('liveAudio');
+    var playBtn = document.getElementById('hudPlayBtn');
+    var playIcon = document.getElementById('hudPlayIcon');
+    var canvas = document.getElementById('quantumWaveform');
+    var ctx = canvas.getContext('2d');
+    var isPlaying = false;
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.parentElement.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function toggleHudAudio() {
+      if (!audio) return;
+      if (audio.paused) {
+        var s = audio.src;
+        audio.src = '';
+        audio.src = s;
+        audio.play().then(function() {
+          isPlaying = true;
+          playIcon.innerHTML = '❚❚';
+          playBtn.classList.remove('bg-la97-red', 'text-white');
+          playBtn.classList.add('bg-la97-yellow', 'text-la97-navy');
+        }).catch(function(e) { console.warn(e); });
+      } else {
+        audio.pause();
+        isPlaying = false;
+        playIcon.innerHTML = '▶';
+        playBtn.classList.add('bg-la97-red', 'text-white');
+        playBtn.classList.remove('bg-la97-yellow', 'text-la97-navy');
+      }
+    }
+
+    // Dynamic Futuristic Canvas Waveform & Quantum Particle Rings in Official Brand Palette
+    var time = 0;
+    function renderVisualizer() {
+      var w = canvas.width / window.devicePixelRatio;
+      var h = canvas.height / window.devicePixelRatio;
+      ctx.clearRect(0, 0, w, h);
+
+      var cx = w * 0.42;
+      var cy = h * 0.5;
+      time += isPlaying ? 0.05 : 0.015;
+
+      // 1. Concentric Quantum Rings (#F4B70D, #E2051D, #0366A2)
+      var ringRadius = Math.min(h * 0.35, 55);
+      
+      // Outer Yellow Arc (#F4B70D)
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius, time * 0.8, time * 0.8 + Math.PI * 1.4);
+      ctx.strokeStyle = '#F4B70D';
+      ctx.lineWidth = 3;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = '#F4B70D';
+      ctx.stroke();
+
+      // Middle Red Ring (#E2051D)
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius * 0.72, -time * 1.2, -time * 1.2 + Math.PI * 1.2);
+      ctx.strokeStyle = '#E2051D';
+      ctx.lineWidth = 2.5;
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = '#E2051D';
+      ctx.stroke();
+
+      // Inner Brand Blue Ring (#0366A2) + Brand Gray highlight
+      ctx.beginPath();
+      ctx.arc(cx - 80, cy, ringRadius * 0.45, time * 1.6, time * 1.6 + Math.PI * 1.5);
+      ctx.strokeStyle = '#0366A2';
+      ctx.lineWidth = 2.5;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = '#0366A2';
+      ctx.stroke();
+
+      // 2. Soundwave particles expanding from center to right
+      var startX = cx - 35;
+      var endX = w - 40;
+      var bars = 64;
+      var step = (endX - startX) / bars;
+
+      for (var i = 0; i < bars; i++) {
+        var x = startX + i * step;
+        var progress = i / bars;
+        
+        // Multi-frequency wave envelope
+        var freq1 = Math.sin(time * 3 + progress * 8);
+        var freq2 = Math.cos(time * 2 + progress * 14);
+        var freq3 = Math.sin(time * 4 - progress * 4);
+        var envelope = Math.sin(progress * Math.PI);
+        
+        var amp = (freq1 * 0.5 + freq2 * 0.3 + freq3 * 0.2) * (isPlaying ? 45 : 16) * envelope;
+        
+        // Color transition strictly in Brand Palette: Yellow (#F4B70D) -> Red (#E2051D) -> Blue (#0366A2) -> Gray (#E3E1E3)
+        var col = progress < 0.35 ? '#F4B70D' : (progress < 0.68 ? '#E2051D' : (progress < 0.9 ? '#0366A2' : '#E3E1E3'));
+        
+        ctx.beginPath();
+        ctx.moveTo(x, cy - amp);
+        ctx.lineTo(x, cy + amp);
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 2.2;
+        ctx.shadowBlur = isPlaying ? 10 : 4;
+        ctx.shadowColor = col;
+        ctx.stroke();
+
+        // Particle sparks
+        if (isPlaying && Math.random() > 0.85) {
+          ctx.fillStyle = col;
+          ctx.fillRect(x, cy + (Math.random() - 0.5) * amp * 2.5, 2, 2);
+        }
+      }
+
+      ctx.shadowBlur = 0;
+      requestAnimationFrame(renderVisualizer);
+    }
+    renderVisualizer();
+  </script>
+</body>
+</html>
+
