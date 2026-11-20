@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La 97 FM — 97.3 MHz Mar del Plata | Tu Radio, Tu Música!</title>
-  <meta name="description" content="Escuchá La 97 FM (97.3 MHz) en vivo desde Mar del Plata. La radio con mayor audiencia de la ciudad (20,1% share Kantar Ibope). Programación local 24 hs, música y publicidad.">
+  <title>La 97! FM 97.3 | Radio de Mar del Plata y publicidad radial</title>
+  <meta name="description" content="Escuchá La 97! FM 97.3, radio de Mar del Plata. Música, entretenimiento, programación en vivo y soluciones de publicidad para empresas y marcas.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="La 97 FM — 97.3 MHz">
@@ -18,28 +18,36 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://la97.com.ar/">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RadioStation",
-      "name": "La 97 FM",
-      "alternateName": "La 97 Siempre!",
-      "url": "https://la97.com.ar/",
-      "logo": "https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png",
-      "broadcastFrequency": "97.3 MHz",
-      "description": "La radio con mayor audiencia de Mar del Plata (20,1% share Kantar Ibope). Programación local en vivo las 24 hs.",
-      "telephone": "+54-223-493-2502",
-      "email": "comercial@la97.com.ar",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Moreno 2976",
-        "addressLocality": "Mar del Plata",
-        "addressRegion": "Buenos Aires",
-        "addressCountry": "AR"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "RadioStation",
+        "name": "La 97! FM",
+        "alternateName": "La 97 Siempre!",
+        "url": "https://la97.com.ar/",
+        "logo": "https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png",
+        "broadcastFrequency": "97.3 MHz",
+        "description": "La radio de mayor audiencia de Mar del Plata (20,1% share Kantar Ibope 2024). Programación local en vivo las 24 hs y soluciones de publicidad radial.",
+        "telephone": "+54-223-491-6607",
+        "email": "comercial@la97.com.ar",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Moreno 2976",
+          "addressLocality": "Mar del Plata",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/la97siempre/"
+        ]
       },
-      "sameAs": [
-        "https://www.instagram.com/la97siempre/"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "La 97! FM 97.3",
+        "url": "https://la97.com.ar/"
+      }
+    ]
   </script>
   <!-- TailwindCSS Play CDN (Exact 5-color system from DESIGN.md) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -302,17 +310,12 @@
         <a href="./contacto.html" data-la97-nav class="hover:text-la97-yellow transition-colors">Contacto</a>
       </nav>
 
-      <!-- Right Live Stream Pill & Commercial CTA -->
+      <!-- Right Live Show Pill & Commercial CTA -->
       <div class="flex items-center gap-2.5">
         <div class="hidden xl:inline-flex items-center gap-2 text-[11px] font-bold text-la97-gray bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
           <span class="w-1.5 h-1.5 rounded-full bg-la97-yellow"></span>
           <span>Al aire: <strong id="la97HeaderShow" class="text-white font-black">La 97 FM</strong></span>
         </div>
-        <button type="button" id="topPlayMirrorBtn"
-          class="inline-flex items-center gap-2 bg-la97-red hover:bg-la97-yellow hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-lg transition-all cursor-pointer">
-          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-          <span id="topPlayMirrorText">EN VIVO 97.3</span>
-        </button>
         <a href="./contacto.html" data-la97-nav
           class="hidden sm:inline-flex items-center bg-la97-blue hover:bg-white hover:text-la97-navy text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-full transition-colors">
           ¡SUMATE!
@@ -333,63 +336,75 @@
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex flex-wrap items-center gap-2">
             <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
-              TU RADIO, TU MÚSICA!
-            </span>
-            <span
-              class="bg-white/10 border border-white/20 text-la97-gray text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
-              FUENTE: KANTAR IBOPE MEDIA
+              LA 97! FM · 97.3
             </span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl xl:text-[4.1rem] font-black leading-[1.02] tracking-tight">
-            Somos la radio con mayor audiencia de la ciudad<span
+            La radio que conecta a Mar del Plata<span
               class="text-la97-yellow">.</span>
           </h1>
 
-          <!-- Stacked Yellow Ribbons from Page 5 -->
-          <div class="pt-1 space-y-1.5">
-            <div><span class="mk-ribbon-yellow text-base sm:text-xl font-black uppercase tracking-tight">Conectamos
-                generaciones con autenticidad,</span></div>
-            <div><span class="mk-ribbon-red text-base sm:text-xl font-black uppercase tracking-tight">creando una
-                comunidad en el 97.3 MHz.</span></div>
-            <p class="text-xs sm:text-sm font-bold text-la97-gray pt-1.5">
-              En nuestra radio, el espíritu de la música encuentra su hogar.
-            </p>
+          <p class="text-base sm:text-xl font-bold text-la97-gray leading-relaxed max-w-2xl">
+            Música, entretenimiento y compañía. <strong class="text-white font-black">Somos la radio de mayor audiencia de Mar del Plata</strong>, con una comunidad que nos elige todos los días, en todas sus plataformas.
+          </p>
+
+          <!-- Two Main Areas Entry: ESCUCHANOS EN VIVO / PUBLICITÁ CON NOSOTROS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 max-w-2xl">
+            <a href="#escuchanos-en-vivo"
+              class="mk-glass rounded-2xl p-4 border-l-4 border-l-la97-red hover:border-la97-red transition-all flex items-center justify-between gap-3 group">
+              <div>
+                <div class="text-[10px] font-black uppercase tracking-widest text-la97-red">PARA OYENTES</div>
+                <div class="text-sm font-black text-white uppercase mt-0.5">ESCUCHANOS EN VIVO</div>
+              </div>
+              <i class="ph-bold ph-headphones text-xl text-la97-yellow group-hover:scale-110 transition-transform"></i>
+            </a>
+            <a href="#oportunidad-comercial" data-la97-nav
+              class="mk-glass rounded-2xl p-4 border-l-4 border-l-la97-yellow hover:border-la97-yellow transition-all flex items-center justify-between gap-3 group">
+              <div>
+                <div class="text-[10px] font-black uppercase tracking-widest text-la97-yellow">PARA MARCAS</div>
+                <div class="text-sm font-black text-white uppercase mt-0.5">PUBLICITÁ CON NOSOTROS</div>
+              </div>
+              <i class="ph-bold ph-megaphone text-xl text-sky-300 group-hover:scale-110 transition-transform"></i>
+            </a>
           </div>
 
           <!-- Giant 20,1% Block from Page 2 -->
           <div
-            class="bg-la97-navy/80 backdrop-blur-md border-2 border-white/20 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-2xl mt-4">
+            class="bg-la97-navy/80 backdrop-blur-md border-2 border-white/20 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-2xl mt-2">
             <div class="shrink-0">
               <div class="text-6xl sm:text-7xl font-black text-la97-yellow tracking-tighter leading-none">
                 20,1<span class="text-4xl sm:text-5xl">%</span>
               </div>
               <div
                 class="text-[11px] font-black uppercase tracking-widest text-white mt-2 bg-la97-blue px-2.5 py-1 rounded inline-block">
-                SHARE LÍDER EN MDQ
+                SHARE DE AUDIENCIA
               </div>
             </div>
             <div class="border-l-0 sm:border-l-2 border-white/20 sm:pl-6 space-y-2">
               <p class="text-sm sm:text-base font-bold text-white leading-snug">
-                de quienes escuchan <span class="text-la97-yellow font-black">RADIO</span> nos eligen. El resto se
+                de quienes escuchan <span class="text-la97-yellow font-black">RADIO</span> nos eligen en Mar del Plata. El resto se
                 divide en más de 70 emisoras.
               </p>
               <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
                 La cercanía es nuestra fortaleza y celebramos la pasión por la música y los buenos contenidos.
               </p>
+              <div class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/80 pt-1">
+                Fuente: Kantar Ibope Media — Medición 2024 (consultora líder en Latinoamérica)
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Right 5 Cols: Studio Condenser Console & Live On-Air Player (Page 1 & 10) -->
-        <div class="lg:col-span-5">
+        <!-- Right 5 Cols: Área 1 — ESCUCHANOS EN VIVO -->
+        <div id="escuchanos-en-vivo" class="lg:col-span-5 scroll-mt-24">
           <div class="mk-glass text-white rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden space-y-5">
             <!-- 1. Top Status Strip -->
             <div class="flex items-center justify-between gap-2 pb-4 border-b border-white/10">
               <span
                 class="inline-flex items-center gap-2 bg-la97-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">
                 <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-                TRANSMISIÓN HD EN VIVO
+                ESCUCHANOS EN VIVO • HD
               </span>
               <span id="mkLiveClock" class="text-xs font-mono font-black text-la97-yellow">97.3 MHz • MDQ</span>
             </div>
@@ -433,7 +448,7 @@
                   </svg>
                 </button>
                 <div>
-                  <div id="playBtnText" class="text-xs font-black uppercase tracking-wider text-white">ESCUCHAR AHORA</div>
+                  <div id="playBtnText" class="text-xs font-black uppercase tracking-wider text-white">ESCUCHANOS EN VIVO</div>
                   <div class="text-[11px] text-la97-gray">Sonido Digital HD • 24 hs</div>
                 </div>
               </div>
@@ -450,25 +465,25 @@
               <div class="hidden" id="waveform" aria-hidden="true"></div>
             </div>
 
-            <!-- 4b. H.T.H. Mar del Plata (Hora, Temperatura y Humedad) + Sponsor Slot -->
+            <!-- 4b. Tiempo Ahora en Mar del Plata (Hora, Temperatura y Humedad) -->
             <div class="bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 flex flex-wrap items-center justify-between gap-2 text-[11px]">
               <div class="flex flex-wrap items-center gap-3 font-bold text-white">
-                <span class="bg-la97-blue/40 text-sky-300 font-black px-2 py-0.5 rounded uppercase tracking-wider text-[10px]">H.T.H. MDQ</span>
+                <span class="bg-la97-blue/40 text-sky-300 font-black px-2 py-0.5 rounded uppercase tracking-wider text-[10px]">TIEMPO AHORA</span>
                 <span class="inline-flex items-center gap-1 font-mono text-la97-yellow"><i class="ph-bold ph-clock"></i> <span id="hthTime">--:-- hs</span></span>
                 <span class="inline-flex items-center gap-1"><i class="ph-bold ph-thermometer-simple text-la97-red"></i> <span id="hthTemp">--°C</span></span>
                 <span class="inline-flex items-center gap-1 text-la97-gray"><i class="ph-bold ph-drop text-sky-300"></i> <span id="hthHum">--% Hum</span></span>
               </div>
-              <a href="./contacto.html#formulario-publicidad" data-la97-nav class="text-[10px] font-black uppercase tracking-wider text-la97-yellow/90 hover:text-white transition-colors">
-                Auspiciá el H.T.H. →
-              </a>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/80">
+                Mar del Plata
+              </span>
             </div>
 
-            <!-- 5. Footer Quote & WhatsApp CTA -->
+            <!-- 5. Listener Message CTA (Strictly Oyentes) -->
             <div class="pt-1 flex flex-wrap items-center justify-between gap-3 text-xs font-black text-white">
-              <span class="text-la97-gray">¡QUE TU MARCA SE ESCUCHE EN LA RADIO N°1!</span>
+              <span class="text-la97-gray">¿Querés salir al aire o pedir tu tema?</span>
               <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
-                class="bg-la97-yellow text-la97-navy px-3.5 py-2 rounded-xl hover:bg-white transition-colors shrink-0">
-                WHATSAPP 223 615-0000
+                class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3.5 py-2 rounded-xl hover:bg-white transition-colors shrink-0">
+                <i class="ph-bold ph-whatsapp-logo text-base"></i><span>MENSAJES 223 615-0000</span>
               </a>
             </div>
           </div>
@@ -479,8 +494,9 @@
 
     <!-- ===================================================================
          ESPACIO PUBLICITARIO 1: BANNER COMERCIAL LEADERBOARD
+         (Oculto por defecto; activar cuando un anunciante contrate el espacio)
          =================================================================== -->
-    <section aria-label="Espacio publicitario" class="w-full px-6 lg:px-12 xl:px-16 py-6 bg-transparent">
+    <section aria-label="Espacio publicitario" class="hidden w-full px-6 lg:px-12 xl:px-16 py-6 bg-transparent">
       <div class="mk-glass rounded-2xl p-5 sm:px-8 sm:py-6 border border-dashed border-la97-yellow/50 flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 text-center md:text-left">
           <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
@@ -503,19 +519,19 @@
     </section>
 
     <!-- ===================================================================
-         NOVEDADES & NOTICIAS DESDE INSTAGRAM (@la97siempre)
+         COMUNIDAD INSTAGRAM (@la97siempre) — LA 97! SIEMPRE ESTÁ PASANDO ALGO
          =================================================================== -->
     <section id="novedades-instagram" class="w-full px-6 lg:px-12 xl:px-16 py-14 bg-la97-navy/55 backdrop-blur-sm text-white">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
         <div>
           <span class="inline-flex items-center gap-2 bg-la97-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
-            NOTICIAS Y NOVEDADES EN VIVO
+            COMUNIDAD EN INSTAGRAM • @LA97SIEMPRE
           </span>
           <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-3">
-            Lo último de La 97 en <span class="text-la97-yellow">Instagram</span>
+            La 97! <span class="text-la97-yellow">Siempre está pasando algo.</span>
           </h2>
-          <p class="text-sm text-la97-gray mt-1">
-            Novedades, sorteos, lanzamientos y backstage actualizados directamente desde nuestro Instagram oficial <strong class="text-white">@la97siempre</strong>.
+          <p class="text-sm text-la97-gray mt-1 max-w-2xl">
+            Novedades, música, entrevistas, sorteos, experiencias y todo lo que sucede dentro y fuera del aire.
           </p>
         </div>
 
@@ -527,10 +543,6 @@
           <a href="https://www.facebook.com/" target="_blank" rel="noopener"
             class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase px-4 py-2.5 rounded-xl transition-colors">
             <i class="ph-bold ph-facebook-logo text-base"></i><span>Facebook</span>
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noopener"
-            class="inline-flex items-center gap-2 bg-la97-red hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase px-4 py-2.5 rounded-xl transition-colors">
-            <i class="ph-bold ph-youtube-logo text-base"></i><span>YouTube</span>
           </a>
           <a href="https://x.com/" target="_blank" rel="noopener"
             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase px-4 py-2.5 rounded-xl border border-white/15 transition-colors">
@@ -596,54 +608,188 @@
     </section>
 
     <!-- ===================================================================
-         MULTIPLATAFORMA & ANUNCIANTES (Pages 7 & 10 of Media Kit)
+         PROGRAMACIÓN DESTACADA (Acceso directo a la grilla semanal)
          =================================================================== -->
-    <section aria-label="Propuesta comercial multiplataforma" class="w-full px-6 lg:px-12 xl:px-16 py-10 bg-transparent text-white">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Page 7: Multiplataforma -->
-        <div class="mk-glass rounded-3xl p-8 border-t-4 border-t-la97-red flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-black uppercase tracking-widest text-la97-yellow">INFORMACIÓN Y PUBLICIDAD</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">
-              Multiplataforma
-            </h2>
-            <div class="mt-5 flex flex-wrap gap-2.5">
-              <span class="bg-la97-red text-white text-xs sm:text-sm font-black px-4 py-2 rounded-xl uppercase tracking-wide">
-                Lideramos por innovar.
-              </span>
-              <span class="bg-la97-red text-white text-xs sm:text-sm font-black px-4 py-2 rounded-xl uppercase tracking-wide">
-                Lideramos por ser creativos.
-              </span>
-            </div>
-          </div>
-          <p class="text-xs sm:text-sm text-la97-gray mt-6 leading-relaxed">
-            Combinamos aire FM HD, streaming digital, redes sociales y presencia territorial para amplificar el mensaje de cada marca.
+    <section id="programacion-destacada" aria-label="Programación diaria destacada" class="w-full px-6 lg:px-12 xl:px-16 py-12 bg-transparent text-white">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="bg-la97-red text-white text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+            PROGRAMACIÓN DIARIA • LUNES A VIERNES
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-3">
+            Nuestros programas <span class="text-la97-yellow">al aire</span>
+          </h2>
+          <p class="text-sm text-la97-gray mt-1">
+            Contenido y realización 100% local las 24 hs desde Mar del Plata.
           </p>
         </div>
+        <a href="./programacion.html" data-la97-nav
+          class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-colors shrink-0">
+          <span>Ver grilla completa (Lunes a Domingo)</span> <i class="ph-bold ph-arrow-right"></i>
+        </a>
+      </div>
 
-        <!-- Page 10: Anunciantes -->
-        <div class="mk-glass rounded-3xl p-8 border-t-4 border-t-la97-blue flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-black uppercase tracking-widest text-sky-300">ANUNCIANTES</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
-              Unimos marcas con la mayor audiencia de Mar del Plata.
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="./programacion.html" data-la97-nav class="group mk-glass rounded-2xl p-4 flex flex-col gap-3 hover:border-la97-yellow/70 transition-all">
+          <div class="flex items-center gap-3">
+            <img src="./design_client_idea/bimbambum.jpg" alt="Bim Bam Bum" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0">
+            <div>
+              <div class="text-[11px] font-black text-la97-yellow">06 A 09 HS</div>
+              <h3 class="text-sm font-black text-white group-hover:text-la97-yellow transition-colors">Bim Bam Bum</h3>
+              <div class="text-[11px] text-sky-300 font-bold">Marina Gorosito</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="./programacion.html" data-la97-nav class="group mk-glass rounded-2xl p-4 flex flex-col gap-3 hover:border-la97-yellow/70 transition-all">
+          <div class="flex items-center gap-3">
+            <img src="./design_client_idea/40x40.jpg" alt="Ranking 40 x 40" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0">
+            <div>
+              <div class="text-[11px] font-black text-la97-yellow">09 A 13 HS</div>
+              <h3 class="text-sm font-black text-white group-hover:text-la97-yellow transition-colors">Ranking 40 x 40</h3>
+              <div class="text-[11px] text-sky-300 font-bold">Martinez / Carballo</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="./programacion.html" data-la97-nav class="group mk-glass rounded-2xl p-4 flex flex-col gap-3 hover:border-la97-yellow/70 transition-all">
+          <div class="flex items-center gap-3">
+            <img src="./design_client_idea/musicaexpress.jpg" alt="Música Express" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0">
+            <div>
+              <div class="text-[11px] font-black text-la97-yellow">13 A 18 HS</div>
+              <h3 class="text-sm font-black text-white group-hover:text-la97-yellow transition-colors">Música Express</h3>
+              <div class="text-[11px] text-sky-300 font-bold">Gerardo Reboredo</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="./programacion.html" data-la97-nav class="group mk-glass rounded-2xl p-4 flex flex-col gap-3 hover:border-la97-yellow/70 transition-all">
+          <div class="flex items-center gap-3">
+            <img src="./design_client_idea/elregreso.jpg" alt="El Regreso - Top Ten - La Noche" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0">
+            <div>
+              <div class="text-[11px] font-black text-la97-yellow">18 A 24 HS</div>
+              <h3 class="text-sm font-black text-white group-hover:text-la97-yellow transition-colors">El Regreso • Top Ten • La Noche</h3>
+              <div class="text-[11px] text-sky-300 font-bold">Pablo Larsen</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECCIÓN COMERCIAL: AUDIENCIA DE VALOR & ESTRATEGIA OMNICANAL
+         =================================================================== -->
+    <section id="oportunidad-comercial" aria-label="Propuesta comercial para anunciantes" class="w-full px-6 lg:px-12 xl:px-16 py-12 bg-transparent text-white">
+      <div class="mk-glass rounded-3xl p-8 sm:p-10 border-t-4 border-t-la97-yellow shadow-2xl space-y-8">
+        <!-- Header + 4 Official Stats -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+              PUBLICITÁ CON NOSOTROS
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-3">
+              Una audiencia que importa. <span class="text-la97-yellow">Conectá tu marca.</span>
             </h2>
-            <p class="text-sm text-la97-gray mt-3 leading-relaxed">
-              El compromiso constante de todo el <strong class="text-white">staff creativo y de ventas</strong>, junto a nuestro <strong class="text-la97-yellow">sistema de publicidad estratégico, multimedial y de impacto</strong>, nos permite que las marcas más importantes nos elijan.
+            <p class="text-sm text-la97-gray mt-2 leading-relaxed">
+              La audiencia no es solamente un número: es la posibilidad de conectar tu empresa con miles de personas todos los días en Mar del Plata.
             </p>
           </div>
-          <div class="mt-6">
+          <div class="flex flex-wrap items-center gap-3 shrink-0">
+            <a href="https://wa.me/5492235211023" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-4 py-3 rounded-xl transition-colors">
+              <i class="ph-bold ph-whatsapp-logo text-base"></i><span>Comercial 223 521-1023</span>
+            </a>
             <a href="./contacto.html#formulario-publicidad" data-la97-nav
               class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-colors">
-              ¡Sumate como anunciante! →
+              <span>Anunciá en La 97! →</span>
             </a>
+          </div>
+        </div>
+
+        <!-- 4 Key Official Indicators -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
+            <div class="text-3xl sm:text-4xl font-black text-la97-yellow leading-none">20,1%</div>
+            <div class="text-xs font-black uppercase text-white mt-2">Share de audiencia</div>
+            <div class="text-[11px] text-la97-gray mt-0.5">Kantar Ibope Media (2024)</div>
+          </div>
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
+            <div class="text-3xl sm:text-4xl font-black text-white leading-none">24 hs.</div>
+            <div class="text-xs font-black uppercase text-la97-yellow mt-2">Programación propia</div>
+            <div class="text-[11px] text-la97-gray mt-0.5">Aire FM 97.3 HD & Streaming</div>
+          </div>
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
+            <div class="text-3xl sm:text-4xl font-black text-white leading-none">36 años</div>
+            <div class="text-xs font-black uppercase text-sky-300 mt-2">De trayectoria</div>
+            <div class="text-[11px] text-la97-gray mt-0.5">Acompañando a MDQ en 2026</div>
+          </div>
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
+            <div class="text-3xl sm:text-4xl font-black text-la97-yellow leading-none">+86.000</div>
+            <div class="text-xs font-black uppercase text-white mt-2">Seguidores en Instagram</div>
+            <div class="text-[11px] text-la97-gray mt-0.5">Comunidad activa + Facebook</div>
+          </div>
+        </div>
+
+        <!-- Ficha Técnica Oficial (Respaldo Metodológico Unificado) -->
+        <details class="bg-black/25 border border-white/10 rounded-2xl px-5 py-3.5 text-xs text-la97-gray">
+          <summary class="cursor-pointer font-black uppercase tracking-wider text-la97-yellow flex items-center justify-between">
+            <span>Ficha técnica y respaldo metodológico de datos</span>
+            <i class="ph-bold ph-caret-down"></i>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 leading-relaxed">
+            <div>
+              <strong class="text-white block">Share de audiencia (20,1%)</strong>
+              Participación sobre el total de audiencia radial medida en Mar del Plata. Fuente: <em>Kantar Ibope Media — Medición 2024</em>.
+            </div>
+            <div>
+              <strong class="text-white block">Comunidad digital (+86.000)</strong>
+              Seguidores activos en cuenta oficial de Instagram (<em>@la97siempre</em>) sumados a comunidad en Facebook.
+            </div>
+            <div>
+              <strong class="text-white block">Perfil de público (35 años / AB C1 C2)</strong>
+              Estudio de consumo y hábitos de escucha realizado por el <em>Observatorio de la Universidad FASTA y Kantar Ibope Media</em>.
+            </div>
+          </div>
+        </details>
+
+        <!-- Omnicanal Deliverables: Una radio. Múltiples formas de conectar. -->
+        <div class="pt-4 border-t border-white/10">
+          <div class="mb-5">
+            <h3 class="text-xl sm:text-2xl font-black text-white">
+              Una radio. <span class="text-la97-yellow">Múltiples formas de conectar.</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-la97-gray mt-1">
+              Las marcas que eligen La 97! amplifican su comunicación integrando radio FM, streaming online, redes sociales y acciones en vivo.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <div class="w-9 h-9 rounded-xl bg-la97-red/25 text-la97-yellow flex items-center justify-center mb-3"><i class="ph-bold ph-radio text-lg"></i></div>
+              <h4 class="text-sm font-black text-white uppercase">Radio FM 97.3</h4>
+              <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">Presencia de marca en la programación y tandas publicitarias.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <div class="w-9 h-9 rounded-xl bg-la97-blue/30 text-sky-300 flex items-center justify-center mb-3"><i class="ph-bold ph-broadcast text-lg"></i></div>
+              <h4 class="text-sm font-black text-white uppercase">Streaming Online</h4>
+              <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">Conexión con oyentes desde diferentes dispositivos y lugares.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <div class="w-9 h-9 rounded-xl bg-la97-yellow/20 text-la97-yellow flex items-center justify-center mb-3"><i class="ph-bold ph-instagram-logo text-lg"></i></div>
+              <h4 class="text-sm font-black text-white uppercase">Redes Sociales</h4>
+              <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">Contenidos, publicaciones, sorteos y experiencias de marca.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <div class="w-9 h-9 rounded-xl bg-la97-red/25 text-white flex items-center justify-center mb-3"><i class="ph-bold ph-megaphone text-lg"></i></div>
+              <h4 class="text-sm font-black text-white uppercase">Acciones Especiales</h4>
+              <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">Móviles, eventos, activaciones y experiencias presenciales.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===================================================================
-         COBERTURA 100 KM, PILARES & PRIME TIME (Page 3 of Media Kit — Glass Bento)
+         COBERTURA REGIONAL, PILARES & PRIME TIME (Page 3 of Media Kit — Glass Bento)
          =================================================================== -->
     <section id="cobertura-alcance" aria-label="Cobertura regional y liderazgo en prime time" class="w-full px-6 lg:px-12 xl:px-16 py-10 bg-transparent text-white">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
@@ -672,20 +818,20 @@
             </div>
           </div>
           <div class="mt-4 text-[11px] font-mono uppercase tracking-widest text-la97-gray">
-            Radio de alcance regional • 100 km
+            Alcance regional • Mar del Plata y zona
           </div>
         </div>
 
         <!-- Right 7 Cols: Cobertura Copy + 3 Glass Pillars + Prime Time Card -->
         <div class="lg:col-span-7 flex flex-col justify-between gap-5">
-          <!-- Cobertura 100km Card -->
+          <!-- Cobertura Regional Card -->
           <div class="mk-glass rounded-3xl p-7 sm:p-8">
-            <span class="text-xs font-black uppercase tracking-widest text-la97-yellow">ALCANCE REGIONAL COMPROBADO</span>
+            <span class="text-xs font-black uppercase tracking-widest text-la97-yellow">DE MAR DEL PLATA A TODA LA REGIÓN</span>
             <h2 class="text-3xl sm:text-5xl font-black tracking-tight mt-1">
-              Cobertura <span class="text-la97-yellow">100</span> <span class="text-2xl sm:text-3xl text-la97-gray">km</span>
+              Llegamos a <span class="text-la97-yellow">toda la región</span>
             </h2>
             <p class="text-xs sm:text-sm text-la97-gray leading-relaxed mt-3">
-              <strong class="text-white font-black">Desde Moreno 2976 (microcentro) a todo Mar del Plata y zona:</strong> Batán, Miramar, Lobería, Balcarce, Santa Clara del Mar, Vivoratá, Mar Chiquita, Cnel. Vidal, Las Armas, etc.
+              La 97! FM acompaña a miles de personas en sus actividades cotidianas desde Moreno 2976 (microcentro) hacia toda la zona: <strong class="text-white font-black">Mar del Plata · Batán · Santa Clara del Mar · Miramar · Balcarce · Mar Chiquita · Coronel Vidal y localidades cercanas.</strong>
             </p>
           </div>
 
@@ -833,99 +979,131 @@
     </section>
 
     <!-- ===================================================================
-         SECTION 5: PRODUCTOS DESTACADOS — 3x3 CHECKERBOARD (Page 8 of Media Kit)
+         SECTION 5: PRODUCTOS DESTACADOS — ASYMMETRIC EDITORIAL BENTO
          =================================================================== -->
     <section id="productos-comerciales"
-      class="w-full px-6 lg:px-12 xl:px-16 py-16 bg-la97-navy/55 backdrop-blur-sm text-white">
-      <!-- Yellow Top Banner from Page 8 -->
-      <div
-        class="bg-la97-yellow text-la97-navy rounded-t-3xl p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      class="w-full px-6 lg:px-12 xl:px-16 py-16 bg-transparent text-white">
+
+      <!-- Clean Modern Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
         <div>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-none">
-            Productos<br>Destacados
+          <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+            SOLUCIONES PUBLICITARIAS
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
+            Productos <span class="text-la97-yellow">Destacados</span>
           </h2>
+          <p class="text-sm sm:text-base text-la97-gray mt-1.5">
+            Formatos diseñados para que tu marca tenga presencia real al aire, en la calle y en redes.
+          </p>
         </div>
-        <p class="text-base sm:text-xl font-bold max-w-md leading-snug">
-          potenciando el alcance y la presencia de <strong class="font-black underline">nuestros anunciantes.</strong>
-        </p>
+
+        <a href="./contacto.html#formulario-publicidad" data-la97-nav
+          class="inline-flex items-center gap-2 bg-white/10 hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl border border-white/15 transition-colors shrink-0">
+          <span>Consultar por formatos</span> <i class="ph-bold ph-arrow-right"></i>
+        </a>
       </div>
 
-      <!-- Auspicios Exclusivos Bar -->
-      <div
-        class="bg-black/45 backdrop-blur-md border-x border-white/15 p-6 sm:px-10 flex flex-wrap items-center justify-between gap-4">
-        <div class="text-xl sm:text-2xl font-bold">
+      <!-- Asymmetric 12-Col Bento Grid (2 Wide -> 3 Medium -> 2 Asymmetric) -->
+      <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4">
+
+        <!-- ROW 1: 2 Wide Featured Cards -->
+        <div class="md:col-span-3 lg:col-span-6 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-red/25 via-la97-navy/85 to-la97-navy/95 border border-la97-red/40 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-6">
+          <div class="flex items-center justify-between">
+            <span class="bg-la97-red text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">FORMATO ESTRELLA • EN VIVO</span>
+            <div class="w-11 h-11 rounded-xl bg-white/10 text-la97-yellow flex items-center justify-center"><i class="ph-bold ph-microphone-stage text-xl"></i></div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">PNT & Notas Comerciales</h3>
+            <p class="text-xs sm:text-sm text-la97-gray mt-2 leading-relaxed">
+              Publicidad No Tradicional integrada por nuestros conductores al aire, más entrevistas y coberturas de lanzamientos dentro de cada programa.
+            </p>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 lg:col-span-6 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-blue/30 via-la97-navy/85 to-la97-navy/95 border border-la97-blue/50 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-6">
+          <div class="flex items-center justify-between">
+            <span class="bg-la97-blue text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">ALTA ROTACIÓN • AIRE FM</span>
+            <div class="w-11 h-11 rounded-xl bg-white/10 text-sky-300 flex items-center justify-center"><i class="ph-bold ph-broadcast text-xl"></i></div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">Tanda & Apertura de Tanda</h3>
+            <p class="text-xs sm:text-sm text-la97-gray mt-2 leading-relaxed">
+              Rotación estratégica de spots en las franjas de mayor audiencia y presentación exclusiva de tu marca al inicio de cada corte comercial.
+            </p>
+          </div>
+        </div>
+
+        <!-- ROW 2: 3 Medium Cards -->
+        <div class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-la97-blue/25 text-sky-300 flex items-center justify-center"><i class="ph-bold ph-thermometer-sun text-lg"></i></div>
+            <span class="text-[10px] font-mono font-bold uppercase text-la97-gray/75">AUSPICIO</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">H.T.H.</h3>
+            <p class="text-xs text-la97-gray mt-1 leading-relaxed">Auspicio de Hora, Temperatura y Humedad en vivo.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-la97-red/20 text-white flex items-center justify-center"><i class="ph-bold ph-gift text-lg"></i></div>
+            <span class="text-[10px] font-mono font-bold uppercase text-la97-gray/75">INTERACCIÓN</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Líneas de Juego</h3>
+            <p class="text-xs text-la97-gray mt-1 leading-relaxed">Consignas, sorteos y premios con participación directa de oyentes.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-la97-yellow/20 text-la97-yellow flex items-center justify-center"><i class="ph-bold ph-van text-lg"></i></div>
+            <span class="text-[10px] font-mono font-bold uppercase text-la97-gray/75">TERRITORIAL</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Móviles en Vivo</h3>
+            <p class="text-xs text-la97-gray mt-1 leading-relaxed">Playas, paradores, teatros y eventos de Mar del Plata.</p>
+          </div>
+        </div>
+
+        <!-- ROW 3: 2 Asymmetric Digital Cards -->
+        <div class="md:col-span-3 lg:col-span-7 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-la97-yellow/20 text-la97-yellow flex items-center justify-center shrink-0"><i class="ph-bold ph-instagram-logo text-xl"></i></div>
+            <div>
+              <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Posteos en Redes Sociales</h3>
+              <p class="text-xs text-la97-gray mt-1 leading-relaxed">Contenido de marca en nuestra comunidad de +86.000 seguidores en Instagram (<code class="text-white">@la97siempre</code>) y Facebook.</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono font-bold uppercase text-la97-yellow shrink-0">DIGITAL</span>
+        </div>
+
+        <div class="md:col-span-3 lg:col-span-5 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-la97-blue/25 text-sky-300 flex items-center justify-center shrink-0"><i class="ph-bold ph-globe-hemisphere-west text-xl"></i></div>
+            <div>
+              <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Streaming HD & Web</h3>
+              <p class="text-xs text-la97-gray mt-1 leading-relaxed">Banners web y presencia digital continua las 24 hs.</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono font-bold uppercase text-sky-300 shrink-0">24 HS</span>
+        </div>
+
+      </div>
+
+      <!-- Auspicios Exclusivos Bottom Dock -->
+      <div class="mt-4 mk-glass rounded-2xl p-5 sm:px-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="text-sm font-bold text-white">
           Auspicios <strong class="font-black text-la97-yellow">exclusivos en:</strong>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-black uppercase">• Programas</span>
-          <span class="bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-black uppercase">• Noticias</span>
-          <span class="bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-black uppercase">• Top Ten</span>
-          <span class="bg-la97-red px-3.5 py-1.5 rounded-full text-xs font-black uppercase">• Puesto N°1</span>
-          <span class="bg-la97-blue px-3.5 py-1.5 rounded-full text-xs font-black uppercase">• Ranking 40x40</span>
-        </div>
-      </div>
-
-      <!-- 3x3 Checkerboard Matrix from Page 8 (Dark Glass Edition) -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-3 rounded-b-3xl overflow-hidden border border-white/15 text-white shadow-2xl">
-        <!-- 1. Apertura de Tanda -->
-        <div
-          class="bg-la97-navy/85 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">a</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-white">Apertura<br>de Tanda</h3>
-        </div>
-        <!-- 2. Tanda -->
-        <div
-          class="bg-la97-blue/35 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">t</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-la97-yellow">Tanda</h3>
-        </div>
-        <!-- 3. Posteos en RRSS -->
-        <div
-          class="bg-la97-navy/85 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">p</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-white">Posteos<br>en RRSS</h3>
-        </div>
-        <!-- 4. H.T.H. -->
-        <div
-          class="bg-la97-blue/35 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">h</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-la97-yellow">H.T.H.</h3>
-          <p class="text-xs font-bold text-la97-gray mt-1 relative z-10">Hora, temperatura y humedad.</p>
-        </div>
-        <!-- 5. PNT -->
-        <div
-          class="bg-la97-navy/85 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">p</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-white">PNT</h3>
-          <p class="text-xs font-bold text-la97-gray mt-1 relative z-10">Publicidad No Tradicional</p>
-        </div>
-        <!-- 6. Notas comerciales -->
-        <div
-          class="bg-la97-blue/35 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">n</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-la97-yellow">Notas</h3>
-          <p class="text-xs font-bold text-la97-gray mt-1 relative z-10">comerciales</p>
-        </div>
-        <!-- 7. Líneas de Juego -->
-        <div
-          class="bg-la97-navy/85 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">j</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-white">Líneas<br>de Juego</h3>
-        </div>
-        <!-- 8. Móviles -->
-        <div
-          class="bg-la97-blue/35 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <span class="text-8xl font-black text-white/5 absolute select-none">m</span>
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-la97-yellow">Móviles</h3>
-          <p class="text-xs font-bold text-la97-gray mt-1 relative z-10">Playas, paradores, teatros y eventos.</p>
-        </div>
-        <!-- 9. YouTube -->
-        <div
-          class="bg-la97-navy/85 backdrop-blur-md border border-white/5 p-8 sm:p-10 relative flex flex-col items-center justify-center text-center min-h-[200px]">
-          <h3 class="text-xl sm:text-2xl font-black relative z-10 text-white">YouTube</h3>
-          <span
-            class="mt-2 inline-flex items-center justify-center w-14 h-10 rounded-xl bg-la97-red text-white font-black text-lg shadow">▶</span>
+          <span class="bg-white/10 px-3 py-1.5 rounded-lg text-[11px] font-bold">Programas</span>
+          <span class="bg-white/10 px-3 py-1.5 rounded-lg text-[11px] font-bold">Noticias</span>
+          <span class="bg-white/10 px-3 py-1.5 rounded-lg text-[11px] font-bold">Top Ten</span>
+          <span class="bg-la97-red px-3 py-1.5 rounded-lg text-[11px] font-black">Puesto N°1</span>
+          <span class="bg-la97-blue px-3 py-1.5 rounded-lg text-[11px] font-black">Ranking 40x40</span>
         </div>
       </div>
     </section>
@@ -936,9 +1114,12 @@
     <section
       class="w-full px-6 lg:px-12 xl:px-16 py-16 bg-black/35 backdrop-blur-sm text-white border-t border-white/10">
       <div class="max-w-4xl mx-auto text-center space-y-3">
-        <p class="text-xs sm:text-sm font-bold text-la97-gray uppercase tracking-widest">
-          Sus palabras nos representan conceptualmente.
-        </p>
+        <span class="text-xs font-black uppercase tracking-widest text-la97-yellow">
+          TESTIMONIOS REALES
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          Las marcas nos eligen. <span class="text-la97-yellow">La audiencia nos acompaña.</span>
+        </h2>
         <!-- Word Cloud from Page 11 -->
         <div
           class="py-6 flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 text-la97-yellow font-black leading-none select-none">
@@ -950,58 +1131,84 @@
           <span class="text-4xl sm:text-6xl">genios</span>
           <span class="text-xl sm:text-2xl text-white">12 horas diarias</span>
         </div>
-        <p class="text-sm font-extrabold text-white">Sus mensajes son los que nos impulsan.</p>
+        <p class="text-sm font-extrabold text-white">Sus palabras nos representan. Sus mensajes son los que nos impulsan.</p>
       </div>
 
-      <!-- 3 Real Reviews from Page 11 -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-        <div class="mk-glass border-la97-yellow/40 rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-black text-white text-sm">Adrian Vecchio</span>
-              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2 py-0.5 rounded">GOOGLE ★★★★★</span>
-            </div>
-            <p class="text-xs sm:text-sm text-la97-yellow leading-relaxed">
-              "Gente de radio. Mucho trabajo y profesionalismo en lo que hacen. Excelente para publicitar. Es muy
-              escuchada."
-            </p>
+      <!-- 1. ANUNCIANTES (Mayor visibilidad comercial) -->
+      <div class="mt-10 space-y-4">
+        <div class="flex items-center justify-between gap-3">
+          <div class="inline-flex items-center gap-2">
+            <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">ANUNCIANTES</span>
+            <span class="text-xs font-bold text-la97-gray uppercase tracking-wider hidden sm:inline">Experiencia comercial comprobada</span>
           </div>
-          <div class="text-[11px] text-la97-gray mt-4 pt-3 border-t border-white/10">Google. Enero 2026.</div>
+          <a href="./contacto.html#formulario-publicidad" data-la97-nav class="text-xs font-black text-la97-yellow hover:underline">
+            Publicitá con nosotros →
+          </a>
         </div>
 
-        <div class="mk-glass border-la97-yellow/40 rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-black text-white text-sm">@collectorcarshop</span>
-              <span class="bg-la97-red text-white text-[10px] font-black px-2 py-0.5 rounded">INSTAGRAM</span>
+        <div class="mk-glass border-2 border-la97-yellow/60 rounded-3xl p-7 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
+          <div class="space-y-3 max-w-3xl">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="font-black text-white text-base sm:text-lg">Adrian Vecchio</span>
+              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-0.5 rounded">GOOGLE ★★★★★</span>
+              <span class="text-[11px] text-la97-gray">• Enero 2026</span>
             </div>
-            <p class="text-xs sm:text-sm text-la97-yellow leading-relaxed">
-              "Yo los escucho desde hace 20 años desde Buenos Aires por internet y ahora por App. Me encanta, son lo
-              massss, 24hs con la 97."
+            <p class="text-base sm:text-xl font-bold text-la97-yellow leading-relaxed">
+              "Gente de radio. Mucho trabajo y profesionalismo en lo que hacen. Excelente para publicitar. Es muy escuchada."
             </p>
           </div>
-          <div class="text-[11px] text-la97-gray mt-4 pt-3 border-t border-white/10">Instagram. Agosto 2025.</div>
+          <div class="shrink-0 flex flex-col sm:items-end gap-2">
+            <span class="text-[11px] font-black uppercase tracking-widest text-sky-300">RESPALDO COMERCIAL</span>
+            <a href="./contacto.html#formulario-publicidad" data-la97-nav
+              class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors">
+              Consultar pauta →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. OYENTES (Comunidad y cercanía) -->
+      <div class="mt-8 space-y-4">
+        <div class="inline-flex items-center gap-2">
+          <span class="bg-la97-blue text-white text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">OYENTES</span>
+          <span class="text-xs font-bold text-la97-gray uppercase tracking-wider">Comunidad y compañía diaria</span>
         </div>
 
-        <div class="mk-glass border-la97-yellow/40 rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-black text-white text-sm">Roxii Zarate</span>
-              <span class="bg-la97-blue text-white text-[10px] font-black px-2 py-0.5 rounded">FACEBOOK</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="mk-glass border border-white/15 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-black text-white text-sm">@collectorcarshop</span>
+                <span class="bg-la97-red text-white text-[10px] font-black px-2 py-0.5 rounded">INSTAGRAM</span>
+              </div>
+              <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
+                "Yo los escucho desde hace 20 años desde Buenos Aires por internet y ahora por App. Me encanta, son lo massss, 24hs con la 97."
+              </p>
             </div>
-            <p class="text-xs sm:text-sm text-la97-yellow leading-relaxed">
-              "La mejor compañía siempre. 💛 Sigan alegrando siempre mis días."
-            </p>
+            <div class="text-[11px] text-la97-gray/75 mt-4 pt-3 border-t border-white/10">Instagram. Agosto 2025.</div>
           </div>
-          <div class="text-[11px] text-la97-gray mt-4 pt-3 border-t border-white/10">Facebook. Marzo 2026.</div>
+
+          <div class="mk-glass border border-white/15 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-black text-white text-sm">Roxii Zarate</span>
+                <span class="bg-la97-blue text-white text-[10px] font-black px-2 py-0.5 rounded">FACEBOOK</span>
+              </div>
+              <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
+                "La mejor compañía siempre. 💛 Sigan alegrando siempre mis días."
+              </p>
+            </div>
+            <div class="text-[11px] text-la97-gray/75 mt-4 pt-3 border-t border-white/10">Facebook. Marzo 2026.</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===================================================================
          ESPACIOS DE BANNERS COMERCIALES LATERALES
+         (Oculto por defecto; activar cuando un anunciante contrate el espacio)
          =================================================================== -->
-    <section aria-label="Banners comerciales" class="w-full px-6 lg:px-12 xl:px-16 py-10 bg-la97-navy/55 backdrop-blur-sm text-white border-t border-white/10">
+    <section aria-label="Banners comerciales" class="hidden w-full px-6 lg:px-12 xl:px-16 py-10 bg-la97-navy/55 backdrop-blur-sm text-white border-t border-white/10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="mk-glass rounded-2xl p-5 border border-dashed border-white/25 flex items-center justify-between gap-4">
           <div>
@@ -1016,6 +1223,42 @@
             <div class="text-sm font-black text-white mt-1.5">Espacio Comercial Disponible</div>
           </div>
           <a href="./contacto.html#formulario-publicidad" class="text-xs font-black text-la97-yellow hover:underline shrink-0">Consultar →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CIERRE COMERCIAL: TU PRÓXIMA CAMPAÑA PUEDE EMPEZAR ACÁ
+         =================================================================== -->
+    <section id="contacto-comercial-home" aria-label="Contacto comercial" class="w-full px-6 lg:px-12 xl:px-16 py-14 bg-transparent text-white border-t border-white/10">
+      <div class="mk-glass rounded-3xl p-8 sm:p-12 border-t-4 border-t-la97-yellow shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div class="max-w-2xl space-y-3">
+          <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+            CONTACTO COMERCIAL
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            Tu próxima campaña puede empezar acá.
+          </h2>
+          <p class="text-sm sm:text-base text-la97-gray leading-relaxed">
+            ¿Querés anunciar tu empresa en la radio de mayor audiencia de Mar del Plata? Nuestro equipo comercial puede asesorarte y desarrollar una propuesta publicitaria adaptada a los objetivos de tu marca.
+          </p>
+        </div>
+
+        <div class="shrink-0 flex flex-col sm:items-end gap-3">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="tel:02234916607"
+              class="inline-flex items-center gap-2 bg-white/10 hover:bg-la97-blue text-white text-sm font-black px-5 py-3.5 rounded-xl border border-white/15 transition-colors">
+              <i class="ph-bold ph-phone text-la97-yellow text-base"></i><span>223 491-6607</span>
+            </a>
+            <a href="https://wa.me/5492235211023" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-sm font-black px-5 py-3.5 rounded-xl transition-colors">
+              <i class="ph-bold ph-whatsapp-logo text-base"></i><span>223 521-1023</span>
+            </a>
+          </div>
+          <a href="./contacto.html#formulario-publicidad" data-la97-nav
+            class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-lg transition-colors w-full sm:w-auto">
+            <span>Solicitar propuesta comercial</span> <i class="ph-bold ph-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -1038,7 +1281,6 @@
       <div class="flex flex-wrap items-center gap-3">
         <a href="https://www.instagram.com/la97siempre/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-instagram-logo"></i> Instagram</a>
         <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-blue px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-facebook-logo"></i> Facebook</a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-red px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-youtube-logo"></i> YouTube</a>
         <a href="https://x.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white hover:text-la97-navy px-3 py-1.5 rounded-lg font-bold transition-colors"><i class="ph-bold ph-x-logo"></i> X</a>
         <a href="https://wa.me/5492236150000" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3 py-1.5 rounded-lg font-black hover:bg-white transition-colors"><i class="ph-bold ph-whatsapp-logo"></i> WhatsApp</a>
       </div>

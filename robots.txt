@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://la97.com.ar/sitemap.xml
