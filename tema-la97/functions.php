@@ -69,20 +69,22 @@ function la97_handle_contact_form() {
 
     // Honeypot anti-bots
     if (!empty($_POST['la97_website'])) {
-        wp_safe_redirect(add_query_arg('enviado', '1', home_url('/contacto/#formulario-publicidad')));
+        wp_safe_redirect(add_query_arg('enviado', '1', home_url('/publicita-ya/#formulario-publicidad')));
         exit;
     }
 
     $region  = isset($_POST['adRegion']) ? sanitize_text_field(wp_unslash($_POST['adRegion'])) : 'mdp';
     $name    = isset($_POST['adName']) ? sanitize_text_field(wp_unslash($_POST['adName'])) : '';
-    $company = isset($_POST['adCompany']) ? sanitize_text_field(wp_unslash($_POST['adCompany'])) : '';
+    $company = isset($_POST['adBrand'])
+        ? sanitize_text_field(wp_unslash($_POST['adBrand']))
+        : (isset($_POST['adCompany']) ? sanitize_text_field(wp_unslash($_POST['adCompany'])) : '');
     $phone   = isset($_POST['adPhone']) ? sanitize_text_field(wp_unslash($_POST['adPhone'])) : '';
     $email   = isset($_POST['adEmail']) ? sanitize_email(wp_unslash($_POST['adEmail'])) : '';
     $product = isset($_POST['adProduct']) ? sanitize_text_field(wp_unslash($_POST['adProduct'])) : '';
     $message = isset($_POST['adMessage']) ? sanitize_textarea_field(wp_unslash($_POST['adMessage'])) : '';
 
     if (empty($name) || empty($email) || !is_email($email)) {
-        wp_safe_redirect(add_query_arg('error', 'invalid', home_url('/contacto/#formulario-publicidad')));
+        wp_safe_redirect(add_query_arg('error', 'invalid', home_url('/publicita-ya/#formulario-publicidad')));
         exit;
     }
 
@@ -115,21 +117,22 @@ function la97_handle_contact_form() {
 
     wp_mail($recipients, $subject, $body, $headers);
 
-    wp_safe_redirect(add_query_arg('enviado', '1', home_url('/contacto/#formulario-publicidad')));
+    wp_safe_redirect(add_query_arg('enviado', '1', home_url('/publicita-ya/#formulario-publicidad')));
     exit;
 }
 add_action('admin_post_nopriv_la97_contact', 'la97_handle_contact_form');
 add_action('admin_post_la97_contact', 'la97_handle_contact_form');
 
 /**
- * Crear páginas base del tema (Programación, Contacto, Privacidad, Términos) una sola vez
+ * Crear páginas base del tema (Programación, Publicitá Ya!, Contacto, Privacidad, Términos) una sola vez
  */
 function la97_ensure_pages_seeded() {
-    if (get_option('la97_pages_seeded_v2') === '1') {
+    if (get_option('la97_pages_seeded_v3') === '1') {
         return;
     }
     $pages = array(
         'programacion' => 'Programación',
+        'publicita-ya' => 'Publicitá Ya!',
         'contacto'     => 'Contacto',
         'privacidad'   => 'Privacidad',
         'terminos'     => 'Términos',
@@ -149,6 +152,6 @@ function la97_ensure_pages_seeded() {
     if ($created) {
         flush_rewrite_rules();
     }
-    update_option('la97_pages_seeded_v2', '1');
+    update_option('la97_pages_seeded_v3', '1');
 }
 add_action('init', 'la97_ensure_pages_seeded');
