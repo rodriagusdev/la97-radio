@@ -31,6 +31,15 @@ get_header(); ?>
               de Mar del Plata</strong>, con una comunidad que nos elige todos los días, en todas sus plataformas.
           </p>
 
+          <!-- Listener Message CTA (Strictly Oyentes) -->
+          <div class="mk-glass rounded-2xl px-4 py-3 border border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs font-black text-white max-w-2xl">
+            <span class="text-la97-gray">¿Querés salir al aire o pedir tu tema?</span>
+            <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3.5 py-2 rounded-xl hover:bg-white transition-colors shrink-0">
+              <i class="ph-bold ph-whatsapp-logo text-base"></i><span>MENSAJES 223 615-0000</span>
+            </a>
+          </div>
+
           <!-- Two Main Areas Entry: ESCUCHANOS EN VIVO / PUBLICITÁ CON NOSOTROS -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 max-w-2xl">
             <a href="#escuchanos-en-vivo"
@@ -82,17 +91,7 @@ get_header(); ?>
         <!-- Right 5 Cols: Área 1 — ESCUCHANOS EN VIVO -->
         <div id="escuchanos-en-vivo" class="lg:col-span-5 scroll-mt-24">
           <div class="mk-glass text-white rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden space-y-5">
-            <!-- 1. Top Status Strip -->
-            <div class="flex items-center justify-between gap-2 pb-4 border-b border-white/10">
-              <span
-                class="inline-flex items-center gap-2 bg-la97-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-                ESCUCHANOS EN VIVO • HD
-              </span>
-              <span id="mkLiveClock" class="text-xs font-mono font-black text-la97-yellow">97.3 MHz • MDQ</span>
-            </div>
-
-            <!-- 2. Now Playing Show Info -->
+            <!-- 1. Now Playing Show Info -->
             <div class="flex items-center gap-4">
               <img id="la97NowPlayingImg" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/40x40.jpg" alt="Ranking 40 x 40"
                 class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-la97-yellow shadow-lg shrink-0">
@@ -106,19 +105,12 @@ get_header(); ?>
                 <div id="la97NowPlayingSub" class="text-xs font-bold text-la97-gray mt-0.5">
                   Christian Carballo y Eugenia Martinez
                 </div>
-                <div id="playerStatus" class="text-[11px] font-extrabold text-la97-yellow mt-1">
-                  Listo para reproducir
-                </div>
               </div>
             </div>
 
             <!-- 3. Quantum Audio Tuner / On-Air Visualizer -->
             <div
               class="relative w-full h-32 flex items-center justify-center overflow-hidden rounded-2xl bg-[#101824]/90 border border-la97-blue/50 shadow-inner">
-              <span
-                class="absolute top-2.5 left-3.5 text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-la97-yellow/85 pointer-events-none z-10">
-                AUDIO TUNER / ON-AIR • 97.3 MHz
-              </span>
               <canvas id="quantumWaveform" class="w-full h-full block"></canvas>
             </div>
 
@@ -135,7 +127,6 @@ get_header(); ?>
                 <div>
                   <div id="playBtnText" class="text-xs font-black uppercase tracking-wider text-white">ESCUCHANOS EN
                     VIVO</div>
-                  <div class="text-[11px] text-la97-gray">Sonido Digital HD • 24 hs</div>
                 </div>
               </div>
 
@@ -169,15 +160,6 @@ get_header(); ?>
                 Mar del Plata
               </span>
             </div>
-
-            <!-- 5. Listener Message CTA (Strictly Oyentes) -->
-            <div class="pt-1 flex flex-wrap items-center justify-between gap-3 text-xs font-black text-white">
-              <span class="text-la97-gray">¿Querés salir al aire o pedir tu tema?</span>
-              <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
-                class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3.5 py-2 rounded-xl hover:bg-white transition-colors shrink-0">
-                <i class="ph-bold ph-whatsapp-logo text-base"></i><span>MENSAJES 223 615-0000</span>
-              </a>
-            </div>
           </div>
         </div>
 
@@ -205,7 +187,7 @@ get_header(); ?>
             </div>
           </div>
         </div>
-        <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>"
+        <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>"
           class="bg-la97-blue hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-xl transition-colors shrink-0">
           Publicitar aquí →
         </a>
@@ -515,7 +497,7 @@ get_header(); ?>
               class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-4 py-3 rounded-xl transition-colors">
               <i class="ph-bold ph-whatsapp-logo text-base"></i><span>Comercial 223 521-1023</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
+            <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
               class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-colors">
               <span>Anunciá en La 97! →</span>
             </a>
@@ -551,6 +533,45 @@ get_header(); ?>
           </div>
         </div>
 
+        <!-- Cobertura Regional + Prime Time (Integrated into Comercial Showcase) -->
+        <div id="cobertura-alcance" class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
+          <div class="lg:col-span-7 bg-black/30 border border-white/10 rounded-2xl p-6 flex flex-col justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-black uppercase tracking-widest text-la97-yellow">DE MAR DEL PLATA A TODA LA REGIÓN</span>
+              <h3 class="text-2xl sm:text-3xl font-black tracking-tight mt-1.5 leading-tight text-white">
+                Una radio de Mar del Plata con <span class="text-la97-yellow">alcance regional.</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-la97-gray leading-relaxed mt-2">
+                Desde nuestros estudios en Mar del Plata, llevamos música, información y entretenimiento a distintos puntos de la costa y el sudeste bonaerense.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-white/10 space-y-1.5">
+              <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-300">Llegamos a comunidades de:</div>
+              <p class="text-xs sm:text-sm font-bold text-white leading-relaxed">
+                Mar del Plata · Batán · Chapadmalal · Miramar · Balcarce · Santa Clara del Mar · Mar Chiquita · Coronel Vidal · Lobería.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-gradient-to-br from-la97-red/30 via-la97-navy/85 to-la97-blue/35 border border-la97-red/40 rounded-2xl p-6 flex flex-col justify-between gap-4">
+            <div>
+              <span class="inline-block bg-la97-yellow text-la97-navy text-[10px] font-black uppercase px-2.5 py-1 rounded mb-2.5">
+                LIDERAZGO EN FRANJA CENTRAL
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-black text-white leading-none">
+                1ros. en prime time.
+              </h3>
+              <p class="text-xs sm:text-sm font-bold text-la97-gray mt-2.5 leading-relaxed">
+                Lideramos la audiencia en la franja central de <span class="bg-la97-red text-white font-black px-2 py-0.5 rounded ml-1">6 a 17 hs.</span>
+              </p>
+            </div>
+            <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-la97-gray">
+              <span>Horario de mayor encendido y consumo comercial</span>
+              <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav class="font-black text-la97-yellow hover:underline shrink-0">Pautar →</a>
+            </div>
+          </div>
+        </div>
+
         <!-- Ficha Técnica Oficial (Respaldo Metodológico Unificado) -->
         <details class="bg-black/25 border border-white/10 rounded-2xl px-5 py-3.5 text-xs text-la97-gray">
           <summary
@@ -575,84 +596,6 @@ get_header(); ?>
             </div>
           </div>
         </details>
-
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         COBERTURA REGIONAL, PILARES & PRIME TIME (Page 3 of Media Kit — Glass Bento)
-         =================================================================== -->
-    <section id="cobertura-alcance" aria-label="Cobertura regional y liderazgo en prime time"
-      class="w-full px-6 lg:px-12 xl:px-16 py-10 bg-transparent text-white">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-
-        <!-- Left 6 Cols: Unified Cobertura Regional -->
-        <div
-          class="lg:col-span-6 mk-glass rounded-3xl p-7 sm:p-8 flex flex-col justify-between gap-6 border border-white/15 bg-gradient-to-br from-la97-navy/95 via-la97-navy/85 to-la97-blue/20">
-          <div>
-            <span class="text-xs font-black uppercase tracking-widest text-la97-yellow">DE MAR DEL PLATA A TODA LA REGIÓN</span>
-            <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 leading-tight">
-              Una radio de Mar del Plata con <span class="text-la97-yellow">alcance regional.</span>
-            </h2>
-            <p class="text-xs sm:text-sm text-la97-gray leading-relaxed mt-3">
-              Desde nuestros estudios en Mar del Plata, llevamos música, información y entretenimiento a distintos puntos de la costa y el sudeste bonaerense.
-            </p>
-          </div>
-
-          <!-- Clean Simple City List -->
-          <div class="pt-4 border-t border-white/10 space-y-2.5">
-            <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-300">Llegamos a comunidades de:</div>
-            <p class="text-xs sm:text-sm font-bold text-white leading-relaxed">
-              Mar del Plata · Batán · Chapadmalal · Miramar · Balcarce · Santa Clara del Mar · Mar Chiquita · Coronel Vidal · Lobería.
-            </p>
-          </div>
-        </div>
-
-        <!-- Right 6 Cols: 3 Glass Pillars + Prime Time Card -->
-        <div class="lg:col-span-6 flex flex-col justify-between gap-5">
-          <!-- 3 Sleek Glass Pillars (100% / 24 hs. / HD) -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="mk-glass rounded-2xl p-6 text-center border-t-4 border-t-la97-red flex flex-col justify-center">
-              <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">100%</div>
-              <div class="text-xs text-la97-gray mt-1">programación <strong
-                  class="font-black uppercase block text-la97-yellow mt-0.5">PROPIA</strong></div>
-            </div>
-            <div
-              class="mk-glass rounded-2xl p-6 text-center border-t-4 border-t-la97-yellow flex flex-col justify-center">
-              <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">24 hs.</div>
-              <div class="text-xs text-la97-gray mt-1">en <strong
-                  class="font-black uppercase block text-la97-yellow mt-0.5">VIVO</strong></div>
-            </div>
-            <div
-              class="mk-glass rounded-2xl p-6 text-center border-t-4 border-t-la97-blue flex flex-col justify-center">
-              <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">HD</div>
-              <div class="text-xs text-la97-gray mt-1">transmisión de <strong
-                  class="font-black uppercase block text-la97-yellow mt-0.5">SONIDO DIGITAL</strong></div>
-            </div>
-          </div>
-
-          <!-- 1ros. en Prime Time Card -->
-          <div
-            class="mk-glass rounded-3xl p-7 sm:p-8 flex-1 bg-gradient-to-r from-la97-red/35 via-la97-navy/85 to-la97-blue/40 border border-la97-red/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span
-                class="inline-block bg-la97-yellow text-la97-navy text-[10px] font-black uppercase px-2.5 py-1 rounded mb-3">
-                LIDERAZGO EN FRANJA CENTRAL
-              </span>
-              <h3 class="text-2xl sm:text-4xl font-black text-white leading-none">
-                1ros. en prime time.
-              </h3>
-              <p class="text-sm sm:text-base font-bold text-la97-gray mt-2.5">
-                Con la franja de mayor audiencia de <span
-                  class="bg-la97-red text-white font-black px-2.5 py-0.5 rounded ml-1">6 a 17 hs.</span>
-              </p>
-            </div>
-            <div class="shrink-0 text-right hidden sm:block">
-              <div class="text-4xl sm:text-5xl font-black text-la97-yellow leading-none">06–17</div>
-              <div class="text-[10px] font-mono uppercase tracking-widest text-la97-gray mt-1.5">HORAS PICO</div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
@@ -810,170 +753,6 @@ get_header(); ?>
     </section>
 
     <!-- ===================================================================
-         SECTION 5: PRODUCTOS PUBLICITARIOS — SOLUCIONES COMERCIALES
-         =================================================================== -->
-    <section id="productos-comerciales" class="w-full px-6 lg:px-12 xl:px-16 py-16 bg-transparent text-white">
-
-      <!-- Clean Modern Header -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-        <div class="max-w-3xl">
-          <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
-            PRODUCTOS PUBLICITARIOS
-          </span>
-          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-            Hacé que tu marca sea parte de <span class="text-la97-yellow">La 97!</span>
-          </h2>
-          <p class="text-sm sm:text-base text-la97-gray mt-2 leading-relaxed">
-            Llegá a nuestra audiencia con propuestas publicitarias pensadas para conectar marcas con personas.
-            Traducimos cada formato en resultados concretos para tu empresa.
-          </p>
-        </div>
-
-        <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
-          class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-4 rounded-xl shadow-lg transition-colors shrink-0">
-          <span>SOLICITÁ UNA PROPUESTA COMERCIAL</span> <i class="ph-bold ph-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- Featured Product: Campañas Integrales (360°) -->
-      <div
-        class="mb-5 mk-glass rounded-3xl p-7 sm:p-8 bg-gradient-to-r from-la97-red/25 via-la97-navy/90 to-la97-blue/30 border-2 border-la97-yellow/60 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div class="space-y-2.5 max-w-3xl">
-          <span
-            class="inline-block bg-la97-yellow text-la97-navy text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
-            SOLUCIÓN INTEGRAL • MAYOR IMPACTO
-          </span>
-          <h3 class="text-2xl sm:text-3xl font-black text-white">
-            Campañas Integrales a medida
-          </h3>
-          <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
-            Combinamos aire FM, contenido en redes sociales, acciones presenciales con móviles y auspicios exclusivos en
-            una misma estrategia. Pensado para empresas que buscan posicionamiento sostenido y alto retorno, más allá de
-            segundos sueltos de tanda.
-          </p>
-        </div>
-        <div class="shrink-0">
-          <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
-            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-3.5 rounded-xl border border-white/20 transition-colors w-full lg:w-auto">
-            <span>Armar campaña 360°</span> <i class="ph-bold ph-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- 5 Core Commercial Solutions (2 Wide + 3 Medium) -->
-      <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4">
-
-        <!-- 1. Publicidad en radio -->
-        <div
-          class="md:col-span-3 lg:col-span-6 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-blue/30 via-la97-navy/85 to-la97-navy/95 border border-la97-blue/50 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-5">
-          <div class="flex items-center justify-between">
-            <span
-              class="bg-la97-blue text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">ALTA
-              FRECUENCIA • AIRE FM</span>
-            <div class="w-11 h-11 rounded-xl bg-white/10 text-sky-300 flex items-center justify-center"><i
-                class="ph-bold ph-broadcast text-xl"></i></div>
-          </div>
-          <div>
-            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">Publicidad en radio</h3>
-            <p class="text-xs sm:text-sm font-bold text-sky-300 mt-1.5">
-              Tu marca presente en la vida cotidiana de miles de personas.
-            </p>
-            <p class="text-xs sm:text-sm text-la97-gray mt-2 leading-relaxed">
-              Desarrollamos campañas de publicidad radial mediante spots comerciales, menciones, aperturas de tanda y presencia en diferentes programas y franjas horarias.
-            </p>
-            <p class="text-xs sm:text-sm text-la97-gray mt-2 leading-relaxed">
-              Adaptamos cada propuesta a los objetivos de comunicación, el público y la frecuencia que necesita tu empresa.
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10 text-[11px] font-bold text-la97-gray">
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">Tanda</span>
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">Apertura de tanda</span>
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">Spots rotativos</span>
-          </div>
-        </div>
-
-        <!-- 2. PNT y contenidos de marca -->
-        <div
-          class="md:col-span-3 lg:col-span-6 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-red/25 via-la97-navy/85 to-la97-navy/95 border border-la97-red/40 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-5">
-          <div class="flex items-center justify-between">
-            <span
-              class="bg-la97-red text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">CONFIANZA
-              • EN VIVO</span>
-            <div class="w-11 h-11 rounded-xl bg-white/10 text-la97-yellow flex items-center justify-center"><i
-                class="ph-bold ph-microphone-stage text-xl"></i></div>
-          </div>
-          <div>
-            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">PNT y contenidos
-              de marca</h3>
-            <p class="text-xs sm:text-sm text-la97-gray mt-2 leading-relaxed">
-              Integración orgánica de tu marca en la voz de nuestros conductores (Publicidad No Tradicional), notas
-              comerciales, entrevistas y propuestas especiales para generar cercanía y credibilidad real.
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10 text-[11px] font-bold text-la97-gray">
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">PNT en vivo</span>
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">Notas comerciales</span>
-            <span class="bg-white/5 px-2.5 py-1 rounded-md">Entrevistas</span>
-          </div>
-        </div>
-
-        <!-- 3. Auspicios exclusivos -->
-        <div
-          class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
-          <div class="flex items-center justify-between">
-            <div class="w-10 h-10 rounded-xl bg-la97-blue/25 text-sky-300 flex items-center justify-center"><i
-                class="ph-bold ph-crown text-lg"></i></div>
-            <span class="text-[10px] font-mono font-bold uppercase text-sky-300">POSICIONAMIENTO</span>
-          </div>
-          <div>
-            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Auspicios
-              exclusivos</h3>
-            <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">
-              Tu empresa acompaña programas, rankings (<strong class="text-white">Top Ten</strong>, <strong
-                class="text-white">Ranking 40x40</strong>, <strong class="text-white">Puesto N°1</strong>) y noticias dentro de la programación.
-            </p>
-          </div>
-        </div>
-
-        <!-- 4. Redes sociales y digital -->
-        <div
-          class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
-          <div class="flex items-center justify-between">
-            <div class="w-10 h-10 rounded-xl bg-la97-yellow/20 text-la97-yellow flex items-center justify-center"><i
-                class="ph-bold ph-instagram-logo text-lg"></i></div>
-            <span class="text-[10px] font-mono font-bold uppercase text-la97-yellow">IG +80K • FB +70K</span>
-          </div>
-          <div>
-            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Redes sociales</h3>
-            <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">
-              Publicaciones, reels, historias, sorteos y acciones de comunicación en Instagram (<code
-                class="text-white">@la97siempre</code>), Facebook y Streaming HD 24 hs.
-            </p>
-          </div>
-        </div>
-
-        <!-- 5. Experiencias y acciones especiales -->
-        <div
-          class="md:col-span-2 lg:col-span-4 mk-glass rounded-2xl p-6 hover:border-la97-yellow/60 transition-all group flex flex-col justify-between gap-4">
-          <div class="flex items-center justify-between">
-            <div class="w-10 h-10 rounded-xl bg-la97-red/20 text-white flex items-center justify-center"><i
-                class="ph-bold ph-van text-lg"></i></div>
-            <span class="text-[10px] font-mono font-bold uppercase text-la97-gray/75">TERRITORIAL</span>
-          </div>
-          <div>
-            <h3 class="text-lg font-black text-white group-hover:text-la97-yellow transition-colors">Experiencias y
-              acciones especiales</h3>
-            <p class="text-xs text-la97-gray mt-1.5 leading-relaxed">
-              Móviles en vivo en playas, paradores, teatros y eventos de Mar del Plata, activaciones presenciales,
-              líneas de juego y sorteos con participación directa de oyentes.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================================================================
          SECTION 6: TESTIMONIOS REALES & NUBE CONCEPTUAL (Page 11 of Media Kit)
          =================================================================== -->
     <section
@@ -985,18 +764,6 @@ get_header(); ?>
         <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
           Las marcas nos eligen. <span class="text-la97-yellow">La audiencia nos acompaña.</span>
         </h2>
-        <!-- Listener Quote Pills (Modern Editorial Strip) -->
-        <div class="py-5 flex flex-wrap items-center justify-center gap-2.5">
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-la97-yellow">“compañía”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-white">“la mejor”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-sky-300">“excelentes”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-la97-yellow">“buena onda”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-white">“expertos”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-sky-300">“genios”</span>
-          <span class="bg-white/10 border border-white/15 px-4 py-2 rounded-full text-xs sm:text-sm font-black text-la97-yellow">“12 horas diarias”</span>
-        </div>
-        <p class="text-sm font-extrabold text-white">Sus palabras nos representan. Sus mensajes son los que nos
-          impulsan.</p>
       </div>
 
       <!-- 1. ANUNCIANTES (Mayor visibilidad comercial) -->
@@ -1008,7 +775,7 @@ get_header(); ?>
             <span class="text-xs font-bold text-la97-gray uppercase tracking-wider hidden sm:inline">Experiencia
               comercial comprobada</span>
           </div>
-          <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
+          <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
             class="text-xs font-black text-la97-yellow hover:underline">
             Publicitá con nosotros →
           </a>
@@ -1030,7 +797,7 @@ get_header(); ?>
           </div>
           <div class="shrink-0 flex flex-col sm:items-end gap-2">
             <span class="text-[11px] font-black uppercase tracking-widest text-sky-300">RESPALDO COMERCIAL</span>
-            <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
+            <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
               class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors">
               Consultar pauta →
             </a>
@@ -1091,7 +858,7 @@ get_header(); ?>
               LATERAL A (480 × 120)</span>
             <div class="text-sm font-black text-white mt-1.5">Espacio Comercial Disponible</div>
           </div>
-          <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>"
+          <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>"
             class="text-xs font-black text-la97-yellow hover:underline shrink-0">Consultar →</a>
         </div>
         <div
@@ -1101,7 +868,7 @@ get_header(); ?>
               LATERAL B (480 × 120)</span>
             <div class="text-sm font-black text-white mt-1.5">Espacio Comercial Disponible</div>
           </div>
-          <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>"
+          <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>"
             class="text-xs font-black text-la97-yellow hover:underline shrink-0">Consultar →</a>
         </div>
       </div>
@@ -1138,7 +905,7 @@ get_header(); ?>
               <i class="ph-bold ph-whatsapp-logo text-base"></i><span>223 521-1023</span>
             </a>
           </div>
-          <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>" data-la97-nav
+          <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
             class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-lg transition-colors w-full sm:w-auto">
             <span>Solicitar propuesta comercial</span> <i class="ph-bold ph-arrow-right"></i>
           </a>

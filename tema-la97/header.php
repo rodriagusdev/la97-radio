@@ -246,9 +246,8 @@
             <li><a href="<?php echo esc_url(home_url('/programacion/')); ?>" onclick="window.la97CloseDrawer && window.la97CloseDrawer();"
                 class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PROGRAMACIÓN
                 OFICIAL</a></li>
-            <li><a href="<?php echo esc_url(home_url('/#productos-comerciales')); ?>" onclick="window.la97CloseDrawer && window.la97CloseDrawer();"
-                class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PRODUCTOS
-                & AUSPICIOS</a></li>
+            <li><a href="<?php echo esc_url(home_url('/publicita-ya/')); ?>" onclick="window.la97CloseDrawer && window.la97CloseDrawer();"
+                class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">PUBLICITÁ YA!</a></li>
             <li><a href="<?php echo esc_url(home_url('/contacto/')); ?>" onclick="window.la97CloseDrawer && window.la97CloseDrawer();"
                 class="block px-4 py-3 rounded-xl text-la97-gray hover:bg-white/10 hover:text-white transition-colors">CONTACTO
                 COMERCIAL</a></li>
@@ -313,7 +312,7 @@
         class="hidden lg:flex items-center gap-6 text-xs font-black uppercase tracking-wider text-la97-gray">
         <a href="<?php echo esc_url(home_url('/')); ?>" data-la97-nav class="<?php echo is_front_page() ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Inicio</a>
         <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav class="<?php echo is_page('programacion') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Programación</a>
-        <a href="<?php echo esc_url(home_url('/#productos-comerciales')); ?>" data-la97-nav class="hover:text-la97-yellow transition-colors">Publicidad</a>
+        <a href="<?php echo esc_url(home_url('/publicita-ya/')); ?>" data-la97-nav class="<?php echo is_page('publicita-ya') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Publicitá Ya!</a>
         <a href="<?php echo esc_url(home_url('/contacto/')); ?>" data-la97-nav class="<?php echo is_page('contacto') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Contacto</a>
       </nav>
 
