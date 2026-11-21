@@ -71,10 +71,10 @@
     }
 
     .mk-sched-row.is-on-air {
-      background: linear-gradient(135deg, rgba(3, 102, 162, 0.42) 0%, rgba(39, 53, 71, 0.92) 100%) !important;
+      background: linear-gradient(135deg, rgba(226, 5, 29, 0.22) 0%, rgba(3, 102, 162, 0.35) 55%, rgba(24, 35, 50, 0.94) 100%) !important;
       border-color: rgba(244, 183, 13, 0.55) !important;
       border-left: 6px solid #E2051D !important;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
     }
     .mk-sched-row .mk-live-pill {
       display: none;
@@ -183,17 +183,19 @@
     <section id="programacion-oficial" class="w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16 text-white">
 
       <!-- Header Banner -->
-      <div class="mk-glass text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden mb-10 shadow-xl">
-        <div class="w-44 h-28 mk-yellow-slashes absolute top-0 right-6 opacity-95 pointer-events-none hidden sm:block"></div>
-
+      <div class="mk-glass text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden mb-10 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div class="max-w-3xl relative z-10">
           <span class="text-xs font-black uppercase tracking-widest text-la97-gray">CONTENIDO Y REALIZACIÓN 100% LOCAL</span>
           <h1 class="text-3xl sm:text-5xl font-black text-la97-yellow tracking-tight uppercase mt-1">
             PROGRAMACIÓN
           </h1>
           <p class="text-sm sm:text-base text-la97-gray mt-2 leading-relaxed">
-            Conocemos la personalidad y preferencias de nuestros oyentes, y diagramamos una grilla con contenido y realización 100% local.
+            Una programación con identidad local, producida desde nuestros estudios en Mar del Plata y presente durante las 24 horas.
           </p>
+        </div>
+
+        <div class="hidden sm:flex items-center justify-center bg-white rounded-2xl p-3 w-28 h-28 shrink-0 shadow-xl ring-4 ring-white/10">
+          <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97! FM 97.3" class="w-full h-full object-contain">
         </div>
       </div>
 

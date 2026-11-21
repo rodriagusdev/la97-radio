@@ -313,8 +313,16 @@ input[type="range"].la97-volume-slider:focus-visible {
 /* ==========================================================================
    7. ACTIVE PROGRAM HIGHLIGHT IN GRILLA
    ========================================================================== */
-.la97-prog-row.is-on-air {
-  border-color: #E2051D !important;
-  box-shadow: 0 8px 24px rgba(226, 5, 29, 0.12) !important;
-  background: linear-gradient(to right, rgba(226, 5, 29, 0.03), #ffffff 30%) !important;
+.la97-prog-row.is-on-air,
+.mk-sched-row.is-on-air {
+  background: linear-gradient(135deg, rgba(226, 5, 29, 0.22) 0%, rgba(3, 102, 162, 0.35) 55%, rgba(24, 35, 50, 0.94) 100%) !important;
+  border-color: rgba(244, 183, 13, 0.55) !important;
+  border-left: 6px solid #E2051D !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
+}
+.mk-sched-row .mk-live-pill {
+  display: none;
+}
+.mk-sched-row.is-on-air .mk-live-pill {
+  display: inline-flex;
 }
