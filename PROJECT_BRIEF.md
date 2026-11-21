@@ -51,7 +51,7 @@ Based on the client brief from **Laura Spampinato (Lau Spampi — 14/11/2026)**:
 * **Sticky Glass Header:** Logo, `LA 97 SIEMPRE!`, nav links (`Inicio`, `Programación`, `Publicidad`, `Contacto`), `#topPlayMirrorBtn` (`EN VIVO 97.3`), and `¡SUMATE!` button.
 * **Hero (`#liderazgo`):** Headline `Somos la radio con mayor audiencia de la ciudad.`, stacked yellow/red ribbons, `20,1%` Kantar Ibope block, and right-hand Broadcast Console (`#la97NowPlayingImg`, `#la97NowPlayingTitle`, `#la97NowPlayingSub`, `#quantumWaveform`, `#playToggleBtn`, `#volumeSlider`, `#muteBtn`, `WHATSAPP 223 615-0000`).
 * **Commercial Banner 1:** Leaderboard slot (`970 × 120 px`) linking to `./contacto.html#formulario-publicidad`.
-* **Novedades & Noticias desde Instagram (`#novedades-instagram`):** Placed directly **before** `Productos Destacados` — `@la97siempre`, Facebook, YouTube buttons + 4-card Instagram news preview grid (ready for `[instagram-feed]` shortcode).
+* **Novedades & Noticias desde Instagram (`#novedades-instagram`):** Placed directly **before** `Productos Destacados` — `@la97siempre`, Facebook, X buttons + 4-card Instagram news preview grid (ready for `[instagram-feed]` shortcode). *(Note: YouTube excluded per client).*
 * **Productos Destacados (`#productos-comerciales`):** Yellow header banner, Auspicios Exclusivos bar (`Programas`, `Noticias`, `Top Ten`, `Puesto N°1`, `Ranking 40x40`), and 3×3 dark-glass checkerboard matrix.
 * **Testimonios Reales:** Word cloud + 3 real listener/advertiser reviews (Google, Instagram, Facebook).
 * **Espacios de Banners Laterales:** Dual Lateral Banners (`480 × 120 px`) below Testimonios.

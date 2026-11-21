@@ -16,28 +16,24 @@
   // Grilla Oficial de La 97 FM (Hora Argentina UTC-3)
   var SCHEDULE = {
     semana: [
-      { start: 0,  end: 6,  title: 'La Trasnoche',   sub: '00 a 06 hs • Clásicos de madrugada', img: './design_client_idea/latrasnoche.jpg' },
-      { start: 6,  end: 9,  title: 'Bim Bam Bum',    sub: '06 a 09 hs • Información y clásicos', img: './design_client_idea/bimbambum.jpg' },
-      { start: 9,  end: 13, title: 'Ranking 40X40',  sub: '09 a 13 hs • Los 40 más votados',     img: './design_client_idea/40x40.jpg' },
-      { start: 13, end: 18, title: 'Música Express', sub: '13 a 18 hs • Tardes y premios',       img: './design_client_idea/musicaexpress.jpg' },
-      { start: 18, end: 21, title: 'El Regreso',     sub: '18 a 21 hs • Actualidad y música',    img: './design_client_idea/elregreso.jpg' },
-      { start: 21, end: 22, title: 'Top Ten',        sub: '21 a 22 hs • Las 10 más votadas',     img: './design_client_idea/top10.jpg' },
-      { start: 22, end: 24, title: 'La Noche',       sub: '22 a 00 hs • Selección nocturna',     img: './design_client_idea/noche97.jpg' }
+      { start: 0,  end: 6,  title: 'La Trasnoche de La 97!', sub: '00 a 06 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
+      { start: 6,  end: 9,  title: 'Bim Bam Bum',             sub: '06 a 09 hs • Marina Gorosito',                 img: './design_client_idea/bimbambum.jpg' },
+      { start: 9,  end: 13, title: 'Ranking 40 x 40',         sub: '09 a 13 hs • Eugenia Martinez y Christian Carballo', img: './design_client_idea/40x40.jpg' },
+      { start: 13, end: 18, title: 'Música Express',          sub: '13 a 18 hs • Gerardo Reboredo',                img: './design_client_idea/musicaexpress.jpg' },
+      { start: 18, end: 24, title: 'El Regreso - Top Ten - La Noche', sub: '18 a 24 hs • Pablo Larsen',            img: './design_client_idea/elregreso.jpg' }
     ],
     sabado: [
-      { start: 0,  end: 6,  title: 'La Trasnoche',    sub: '00 a 06 hs • Sábados en La 97',      img: './design_client_idea/latrasnoche.jpg' },
-      { start: 6,  end: 10, title: 'Súper Clásicos',  sub: '06 a 10 hs • Éxitos de los 80s y +', img: './design_client_idea/superclasicos.jpg' },
-      { start: 10, end: 14, title: 'Ranking 40X40',   sub: '10 a 14 hs • Los 40 más votados',    img: './design_client_idea/40x40.jpg' },
-      { start: 14, end: 20, title: 'Música Express',  sub: '14 a 20 hs • Tardes de sábado',      img: './design_client_idea/musicaexpress.jpg' },
-      { start: 20, end: 24, title: 'Conexión Sábado', sub: '20 a 02 hs • La previa de la noche', img: './design_client_idea/conexionsabado.jpg' }
+      { start: 0,  end: 7,  title: 'La Trasnoche de La 97!',          sub: '00 a 07 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
+      { start: 7,  end: 10, title: 'Superclásicos',                   sub: '07 a 10 hs • Eugenia Martinez',                img: './design_client_idea/superclasicos.jpg' },
+      { start: 10, end: 14, title: 'Ranking 40 x 40',                 sub: '10 a 14 hs • Eugenia Martinez',                img: './design_client_idea/40x40.jpg' },
+      { start: 14, end: 20, title: 'Música Express de Fin de Semana', sub: '14 a 20 hs • Silvana Debenedetti',             img: './design_client_idea/musicaexpress.jpg' },
+      { start: 20, end: 24, title: 'Conexión Sábado',                 sub: '20 a 24 hs • La previa de la noche',           img: './design_client_idea/conexionsabado.jpg' }
     ],
     domingo: [
-      { start: 0,  end: 2,  title: 'Conexión Sábado',      sub: '20 a 02 hs • Noche de fin de semana', img: './design_client_idea/conexionsabado.jpg' },
-      { start: 2,  end: 6,  title: 'La Trasnoche',         sub: '02 a 06 hs • Madrugada de domingo',   img: './design_client_idea/latrasnoche.jpg' },
-      { start: 6,  end: 15, title: 'Súper Clásicos',       sub: '06 a 15 hs • Clásicos desde los 80s', img: './design_client_idea/superclasicos.jpg' },
-      { start: 15, end: 17, title: 'Top Latino',           sub: '15 a 17 hs • Las 20 en español',      img: 'https://la97.com.ar/wp-content/uploads/2023/01/top-latino.jpg' },
-      { start: 17, end: 20, title: 'La Tarde del Domingo', sub: '17 a 20 hs • Música para disfrutar',  img: './design_client_idea/tardedomingo.jpg' },
-      { start: 20, end: 24, title: 'La Noche del Domingo', sub: '20 a 00 hs • Siempre con vos',        img: './design_client_idea/lanochedomingo.jpg' }
+      { start: 0,  end: 8,  title: 'La Trasnoche de La 97!',            sub: '00 a 08 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
+      { start: 8,  end: 15, title: 'Superclásicos',                     sub: '08 a 15 hs • Marina Gorosito',                 img: './design_client_idea/superclasicos.jpg' },
+      { start: 15, end: 22, title: 'Top Latino - La Tarde del Domingo', sub: '15 a 22 hs • Música para disfrutar',           img: './design_client_idea/tardedomingo.jpg' },
+      { start: 22, end: 24, title: 'La Noche del Domingo',              sub: '22 a 24 hs • Siempre con vos',                 img: './design_client_idea/lanochedomingo.jpg' }
     ]
   };
 
@@ -139,7 +135,7 @@
         : '<path d="M8 5v14l11-7z" />';
     }
     if (playBtnText) {
-      playBtnText.textContent = isPlaying ? 'PAUSAR RADIO' : 'ESCUCHAR AHORA';
+      playBtnText.textContent = isPlaying ? 'PAUSAR RADIO' : 'ESCUCHANOS EN VIVO';
     }
     if (statusEl) {
       statusEl.textContent = isPlaying ? 'Reproduciendo en vivo • 97.3 MHz' : 'Listo para reproducir';
