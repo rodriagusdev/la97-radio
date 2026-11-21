@@ -309,7 +309,7 @@
 
       <!-- Center Navigation Links -->
       <nav aria-label="Navegación principal"
-        class="hidden lg:flex items-center gap-6 text-xs font-black uppercase tracking-wider text-la97-gray">
+        class="hidden lg:flex items-center gap-7 text-sm font-black uppercase tracking-wider text-la97-gray">
         <a href="<?php echo esc_url(home_url('/')); ?>" data-la97-nav class="<?php echo is_front_page() ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Inicio</a>
         <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav class="<?php echo is_page('programacion') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Programación</a>
         <a href="<?php echo esc_url(home_url('/publicita-ya/')); ?>" data-la97-nav class="<?php echo is_page('publicita-ya') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Publicitá Ya!</a>
