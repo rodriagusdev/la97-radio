@@ -222,7 +222,7 @@ get_header(); ?>
             class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase px-4 py-2.5 rounded-xl transition-colors">
             <i class="ph-bold ph-facebook-logo text-base"></i><span>Facebook</span>
           </a>
-          <a href="https://x.com/" target="_blank" rel="noopener"
+          <a href="https://x.com/La97Siempremdp" target="_blank" rel="noopener"
             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase px-4 py-2.5 rounded-xl border border-white/15 transition-colors">
             <i class="ph-bold ph-x-logo text-base"></i><span>X</span>
           </a>
@@ -476,16 +476,16 @@ get_header(); ?>
          =================================================================== -->
     <section id="oportunidad-comercial" aria-label="Propuesta comercial para anunciantes"
       class="w-full px-6 lg:px-12 xl:px-16 py-12 bg-transparent text-white">
-      <div class="mk-glass rounded-3xl p-8 sm:p-10 border-t-4 border-t-la97-yellow shadow-2xl space-y-8">
-        <!-- Header + 4 Official Stats -->
+      <div class="mk-glass rounded-3xl p-8 sm:p-10 border-t-4 border-t-la97-blue shadow-2xl space-y-8">
+        <!-- Header + 5 Official Stats -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div class="max-w-2xl">
             <span
-              class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+              class="bg-la97-blue text-white text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
               PUBLICITÁ CON NOSOTROS
             </span>
             <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-3">
-              Una audiencia que importa. <span class="text-la97-yellow">Conectá tu marca.</span>
+              Una audiencia que importa. <span class="text-sky-300">Conectá tu marca.</span>
             </h2>
             <p class="text-sm text-la97-gray mt-2 leading-relaxed">
               La audiencia no es solamente un número: es la posibilidad de conectar tu empresa con miles de personas
@@ -494,11 +494,11 @@ get_header(); ?>
           </div>
           <div class="flex flex-wrap items-center gap-3 shrink-0">
             <a href="https://wa.me/5492235211023" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-4 py-3 rounded-xl transition-colors">
+              class="inline-flex items-center gap-2 bg-white/10 hover:bg-la97-blue border border-white/15 text-white text-xs font-black uppercase tracking-wider px-4 py-3 rounded-xl transition-colors">
               <i class="ph-bold ph-whatsapp-logo text-base"></i><span>Comercial 223 521-1023</span>
             </a>
             <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
-              class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-colors">
+              class="inline-flex items-center gap-2 bg-white hover:bg-sky-300 text-la97-navy text-xs font-black uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg transition-colors">
               <span>Anunciá en La 97! →</span>
             </a>
           </div>
@@ -507,13 +507,13 @@ get_header(); ?>
         <!-- 5 Key Official Indicators -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
-            <div class="text-3xl sm:text-4xl font-black text-la97-yellow leading-none">20,1%</div>
-            <div class="text-xs font-black uppercase text-white mt-2">Share de audiencia</div>
+            <div class="text-3xl sm:text-4xl font-black text-white leading-none">20,1%</div>
+            <div class="text-xs font-black uppercase text-sky-300 mt-2">Share de audiencia</div>
             <div class="text-[11px] text-la97-gray mt-0.5">Kantar Ibope Media (2024)</div>
           </div>
           <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
             <div class="text-3xl sm:text-4xl font-black text-white leading-none">24 hs.</div>
-            <div class="text-xs font-black uppercase text-la97-yellow mt-2">Programación propia</div>
+            <div class="text-xs font-black uppercase text-sky-300 mt-2">Programación propia</div>
             <div class="text-[11px] text-la97-gray mt-0.5">Aire FM 97.3 HD & Streaming</div>
           </div>
           <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
@@ -522,13 +522,13 @@ get_header(); ?>
             <div class="text-[11px] text-la97-gray mt-0.5">Acompañando a MDQ en 2026</div>
           </div>
           <div class="bg-black/30 border border-white/10 rounded-2xl p-5">
-            <div class="text-3xl sm:text-4xl font-black text-la97-yellow leading-none">+80.000</div>
-            <div class="text-xs font-black uppercase text-white mt-2">Seguidores en Instagram</div>
+            <div class="text-3xl sm:text-4xl font-black text-white leading-none">+80.000</div>
+            <div class="text-xs font-black uppercase text-sky-300 mt-2">Seguidores en Instagram</div>
             <div class="text-[11px] text-la97-gray mt-0.5">@la97siempre</div>
           </div>
           <div class="bg-black/30 border border-white/10 rounded-2xl p-5 col-span-2 md:col-span-1">
-            <div class="text-3xl sm:text-4xl font-black text-sky-300 leading-none">+70.000</div>
-            <div class="text-xs font-black uppercase text-white mt-2">Seguidores en Facebook</div>
+            <div class="text-3xl sm:text-4xl font-black text-white leading-none">+70.000</div>
+            <div class="text-xs font-black uppercase text-sky-300 mt-2">Seguidores en Facebook</div>
             <div class="text-[11px] text-la97-gray mt-0.5">Comunidad oficial</div>
           </div>
         </div>
@@ -537,28 +537,28 @@ get_header(); ?>
         <div id="cobertura-alcance" class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
           <div class="lg:col-span-7 bg-black/30 border border-white/10 rounded-2xl p-6 flex flex-col justify-between gap-4">
             <div>
-              <span class="text-[11px] font-black uppercase tracking-widest text-la97-yellow">DE MAR DEL PLATA A TODA LA REGIÓN</span>
+              <span class="text-[11px] font-black uppercase tracking-widest text-sky-300">DE MAR DEL PLATA A TODA LA REGIÓN</span>
               <h3 class="text-2xl sm:text-3xl font-black tracking-tight mt-1.5 leading-tight text-white">
-                Una radio de Mar del Plata con <span class="text-la97-yellow">alcance regional.</span>
+                Una radio de Mar del Plata con <span class="text-sky-300">alcance regional.</span>
               </h3>
               <p class="text-xs sm:text-sm text-la97-gray leading-relaxed mt-2">
                 Desde nuestros estudios en Mar del Plata, llevamos música, información y entretenimiento a distintos puntos de la costa y el sudeste bonaerense.
               </p>
             </div>
             <div class="pt-3 border-t border-white/10 space-y-1.5">
-              <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-300">Llegamos a comunidades de:</div>
+              <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-la97-gray">Llegamos a comunidades de:</div>
               <p class="text-xs sm:text-sm font-bold text-white leading-relaxed">
                 Mar del Plata · Batán · Chapadmalal · Miramar · Balcarce · Santa Clara del Mar · Mar Chiquita · Coronel Vidal · Lobería.
               </p>
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-gradient-to-br from-la97-red/30 via-la97-navy/85 to-la97-blue/35 border border-la97-red/40 rounded-2xl p-6 flex flex-col justify-between gap-4">
+          <div class="lg:col-span-5 bg-black/30 border border-la97-red/40 rounded-2xl p-6 flex flex-col justify-between gap-4">
             <div>
-              <span class="inline-block bg-la97-yellow text-la97-navy text-[10px] font-black uppercase px-2.5 py-1 rounded mb-2.5">
+              <span class="text-[11px] font-black uppercase tracking-widest text-la97-red">
                 LIDERAZGO EN FRANJA CENTRAL
               </span>
-              <h3 class="text-2xl sm:text-3xl font-black text-white leading-none">
+              <h3 class="text-2xl sm:text-3xl font-black text-white leading-none mt-2">
                 1ros. en prime time.
               </h3>
               <p class="text-xs sm:text-sm font-bold text-la97-gray mt-2.5 leading-relaxed">
@@ -766,79 +766,49 @@ get_header(); ?>
         </h2>
       </div>
 
-      <!-- 1. ANUNCIANTES (Mayor visibilidad comercial) -->
-      <div class="mt-10 space-y-4">
-        <div class="flex items-center justify-between gap-3">
-          <div class="inline-flex items-center gap-2">
-            <span
-              class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">ANUNCIANTES</span>
-            <span class="text-xs font-bold text-la97-gray uppercase tracking-wider hidden sm:inline">Experiencia
-              comercial comprobada</span>
-          </div>
-          <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
-            class="text-xs font-black text-la97-yellow hover:underline">
-            Publicitá con nosotros →
-          </a>
-        </div>
-
+      <!-- 1. ANUNCIANTE DESTACADO -->
+      <div class="mt-10">
         <div
-          class="mk-glass border-2 border-la97-yellow/60 rounded-3xl p-7 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
-          <div class="space-y-3 max-w-3xl">
-            <div class="flex flex-wrap items-center gap-2.5">
+          class="mk-glass border border-la97-yellow/45 border-l-4 border-l-la97-yellow bg-la97-yellow/[0.04] rounded-3xl p-7 sm:p-8 shadow-2xl">
+          <div class="space-y-3 max-w-4xl">
+            <div class="flex flex-wrap items-center gap-2.5 text-xs">
+              <span class="bg-la97-yellow/15 text-la97-yellow border border-la97-yellow/40 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full">Anunciante</span>
               <span class="font-black text-white text-base sm:text-lg">Adrian Vecchio</span>
-              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-0.5 rounded">GOOGLE
-                ★★★★★</span>
-              <span class="text-[11px] text-la97-gray">• Enero 2026</span>
+              <span class="text-la97-yellow font-bold">★★★★★</span>
+              <span class="text-la97-gray">Google · Enero 2026</span>
             </div>
-            <p class="text-base sm:text-xl font-bold text-la97-yellow leading-relaxed">
-              "Gente de radio. Mucho trabajo y profesionalismo en lo que hacen. Excelente para publicitar. Es muy
-              escuchada."
+            <p class="text-base sm:text-xl font-bold text-white leading-relaxed">
+              "Gente de radio. Mucho trabajo y profesionalismo en lo que hacen. Excelente para publicitar. Es muy escuchada."
             </p>
-          </div>
-          <div class="shrink-0 flex flex-col sm:items-end gap-2">
-            <span class="text-[11px] font-black uppercase tracking-widest text-sky-300">RESPALDO COMERCIAL</span>
-            <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
-              class="inline-flex items-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors">
-              Consultar pauta →
-            </a>
           </div>
         </div>
       </div>
 
-      <!-- 2. OYENTES (Comunidad y cercanía) -->
-      <div class="mt-8 space-y-4">
-        <div class="inline-flex items-center gap-2">
-          <span
-            class="bg-la97-blue text-white text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">OYENTES</span>
-          <span class="text-xs font-bold text-la97-gray uppercase tracking-wider">Comunidad y compañía diaria</span>
+      <!-- 2. OYENTES -->
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="mk-glass border border-white/15 border-l-4 border-l-sky-400/70 rounded-2xl p-6 flex flex-col justify-between gap-4">
+          <p class="text-sm text-white/90 leading-relaxed">
+            "Yo los escucho desde hace 20 años desde Buenos Aires por internet y ahora por App. Me encanta, son lo massss, 24hs con la 97."
+          </p>
+          <div class="flex items-center justify-between gap-2 text-xs pt-3 border-t border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="bg-sky-400/15 text-sky-300 border border-sky-400/30 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full">Oyente</span>
+              <span class="font-black text-white">@collectorcarshop</span>
+            </div>
+            <span class="text-la97-gray/80">Instagram · Agosto 2025</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="mk-glass border border-white/15 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="font-black text-white text-sm">@collectorcarshop</span>
-                <span class="bg-la97-red text-white text-[10px] font-black px-2 py-0.5 rounded">INSTAGRAM</span>
-              </div>
-              <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
-                "Yo los escucho desde hace 20 años desde Buenos Aires por internet y ahora por App. Me encanta, son lo
-                massss, 24hs con la 97."
-              </p>
+        <div class="mk-glass border border-white/15 border-l-4 border-l-sky-400/70 rounded-2xl p-6 flex flex-col justify-between gap-4">
+          <p class="text-sm text-white/90 leading-relaxed">
+            "La mejor compañía siempre. 💛 Sigan alegrando siempre mis días."
+          </p>
+          <div class="flex items-center justify-between gap-2 text-xs pt-3 border-t border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="bg-sky-400/15 text-sky-300 border border-sky-400/30 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full">Oyente</span>
+              <span class="font-black text-white">Roxii Zarate</span>
             </div>
-            <div class="text-[11px] text-la97-gray/75 mt-4 pt-3 border-t border-white/10">Instagram. Agosto 2025.</div>
-          </div>
-
-          <div class="mk-glass border border-white/15 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="font-black text-white text-sm">Roxii Zarate</span>
-                <span class="bg-la97-blue text-white text-[10px] font-black px-2 py-0.5 rounded">FACEBOOK</span>
-              </div>
-              <p class="text-xs sm:text-sm text-la97-gray leading-relaxed">
-                "La mejor compañía siempre. 💛 Sigan alegrando siempre mis días."
-              </p>
-            </div>
-            <div class="text-[11px] text-la97-gray/75 mt-4 pt-3 border-t border-white/10">Facebook. Marzo 2026.</div>
+            <span class="text-la97-gray/80">Facebook · Marzo 2026</span>
           </div>
         </div>
       </div>
@@ -894,19 +864,9 @@ get_header(); ?>
           </p>
         </div>
 
-        <div class="shrink-0 flex flex-col sm:items-end gap-3">
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="tel:02234916607"
-              class="inline-flex items-center gap-2 bg-white/10 hover:bg-la97-blue text-white text-sm font-black px-5 py-3.5 rounded-xl border border-white/15 transition-colors">
-              <i class="ph-bold ph-phone text-la97-yellow text-base"></i><span>223 491-6607</span>
-            </a>
-            <a href="https://wa.me/5492235211023" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-sm font-black px-5 py-3.5 rounded-xl transition-colors">
-              <i class="ph-bold ph-whatsapp-logo text-base"></i><span>223 521-1023</span>
-            </a>
-          </div>
+        <div class="shrink-0">
           <a href="<?php echo esc_url(home_url('/publicita-ya/#formulario-publicidad')); ?>" data-la97-nav
-            class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-lg transition-colors w-full sm:w-auto">
+            class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-4 rounded-xl shadow-lg transition-colors w-full sm:w-auto">
             <span>Solicitar propuesta comercial</span> <i class="ph-bold ph-arrow-right"></i>
           </a>
         </div>
