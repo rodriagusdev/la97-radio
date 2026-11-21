@@ -441,9 +441,9 @@
           navLinks.forEach(function (a) {
             var aPath = new URL(a.href, window.location.origin).pathname;
             if (aPath === currentPath && !a.hash) {
-              a.classList.add('text-la97-yellow');
+              a.classList.add('text-la97-red');
             } else {
-              a.classList.remove('text-la97-yellow');
+              a.classList.remove('text-la97-red', 'text-la97-yellow');
             }
           });
 
