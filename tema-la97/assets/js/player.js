@@ -13,27 +13,29 @@
   var audio = null;
   var isPlayingState = false;
 
+  var SHOWS_BASE = window.LA97_SHOWS_BASE || './design_client_idea/';
+
   // Grilla Oficial de La 97 FM (Hora Argentina UTC-3)
   var SCHEDULE = {
     semana: [
-      { start: 0,  end: 6,  title: 'La Trasnoche de La 97!', sub: '00 a 06 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
-      { start: 6,  end: 9,  title: 'Bim Bam Bum',             sub: '06 a 09 hs • Marina Gorosito',                 img: './design_client_idea/bimbambum.jpg' },
-      { start: 9,  end: 13, title: 'Ranking 40 x 40',         sub: '09 a 13 hs • Eugenia Martinez y Christian Carballo', img: './design_client_idea/40x40.jpg' },
-      { start: 13, end: 18, title: 'Música Express',          sub: '13 a 18 hs • Gerardo Reboredo',                img: './design_client_idea/musicaexpress.jpg' },
-      { start: 18, end: 24, title: 'El Regreso - Top Ten - La Noche', sub: '18 a 24 hs • Pablo Larsen',            img: './design_client_idea/elregreso.jpg' }
+      { start: 0,  end: 6,  title: 'La Trasnoche de La 97!', sub: '00 a 06 hs • La mejor música para acompañarte', img: SHOWS_BASE + 'latrasnoche.jpg' },
+      { start: 6,  end: 9,  title: 'Bim Bam Bum',             sub: '06 a 09 hs • Marina Gorosito',                 img: SHOWS_BASE + 'bimbambum.jpg' },
+      { start: 9,  end: 13, title: 'Ranking 40 x 40',         sub: '09 a 13 hs • Eugenia Martinez y Christian Carballo', img: SHOWS_BASE + '40x40.jpg' },
+      { start: 13, end: 18, title: 'Música Express',          sub: '13 a 18 hs • Gerardo Reboredo',                img: SHOWS_BASE + 'musicaexpress.jpg' },
+      { start: 18, end: 24, title: 'El Regreso - Top Ten - La Noche', sub: '18 a 24 hs • Pablo Larsen',            img: SHOWS_BASE + 'elregreso.jpg' }
     ],
     sabado: [
-      { start: 0,  end: 7,  title: 'La Trasnoche de La 97!',          sub: '00 a 07 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
-      { start: 7,  end: 10, title: 'Superclásicos',                   sub: '07 a 10 hs • Eugenia Martinez',                img: './design_client_idea/superclasicos.jpg' },
-      { start: 10, end: 14, title: 'Ranking 40 x 40',                 sub: '10 a 14 hs • Eugenia Martinez',                img: './design_client_idea/40x40.jpg' },
-      { start: 14, end: 20, title: 'Música Express de Fin de Semana', sub: '14 a 20 hs • Silvana Debenedetti',             img: './design_client_idea/musicaexpress.jpg' },
-      { start: 20, end: 24, title: 'Conexión Sábado',                 sub: '20 a 24 hs • La previa de la noche',           img: './design_client_idea/conexionsabado.jpg' }
+      { start: 0,  end: 7,  title: 'La Trasnoche de La 97!',          sub: '00 a 07 hs • La mejor música para acompañarte', img: SHOWS_BASE + 'latrasnoche.jpg' },
+      { start: 7,  end: 10, title: 'Superclásicos',                   sub: '07 a 10 hs • Eugenia Martinez',                img: SHOWS_BASE + 'superclasicos.jpg' },
+      { start: 10, end: 14, title: 'Ranking 40 x 40',                 sub: '10 a 14 hs • Eugenia Martinez',                img: SHOWS_BASE + '40x40.jpg' },
+      { start: 14, end: 20, title: 'Música Express de Fin de Semana', sub: '14 a 20 hs • Silvana Debenedetti',             img: SHOWS_BASE + 'musicaexpress.jpg' },
+      { start: 20, end: 24, title: 'Conexión Sábado',                 sub: '20 a 24 hs • La previa de la noche',           img: SHOWS_BASE + 'conexionsabado.jpg' }
     ],
     domingo: [
-      { start: 0,  end: 8,  title: 'La Trasnoche de La 97!',            sub: '00 a 08 hs • La mejor música para acompañarte', img: './design_client_idea/latrasnoche.jpg' },
-      { start: 8,  end: 15, title: 'Superclásicos',                     sub: '08 a 15 hs • Marina Gorosito',                 img: './design_client_idea/superclasicos.jpg' },
-      { start: 15, end: 22, title: 'Top Latino - La Tarde del Domingo', sub: '15 a 22 hs • Música para disfrutar',           img: './design_client_idea/tardedomingo.jpg' },
-      { start: 22, end: 24, title: 'La Noche del Domingo',              sub: '22 a 24 hs • Siempre con vos',                 img: './design_client_idea/lanochedomingo.jpg' }
+      { start: 0,  end: 8,  title: 'La Trasnoche de La 97!',            sub: '00 a 08 hs • La mejor música para acompañarte', img: SHOWS_BASE + 'latrasnoche.jpg' },
+      { start: 8,  end: 15, title: 'Superclásicos',                     sub: '08 a 15 hs • Marina Gorosito',                 img: SHOWS_BASE + 'superclasicos.jpg' },
+      { start: 15, end: 22, title: 'Top Latino - La Tarde del Domingo', sub: '15 a 22 hs • Música para disfrutar',           img: SHOWS_BASE + 'tardedomingo.jpg' },
+      { start: 22, end: 24, title: 'La Noche del Domingo',              sub: '22 a 24 hs • Siempre con vos',                 img: SHOWS_BASE + 'lanochedomingo.jpg' }
     ]
   };
 
