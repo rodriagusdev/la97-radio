@@ -8,7 +8,7 @@ get_header(); ?>
   <main id="main-content" class="flex-1 w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16">
     <article class="mk-glass max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 border-t-4 border-t-la97-yellow space-y-6">
       <div>
-        <span class="bg-la97-yellow text-la97-navy text-[11px] font-black px-3 py-1 rounded uppercase tracking-wider">
+        <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
           INFORMACIÓN LEGAL • LEY 25.326
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">

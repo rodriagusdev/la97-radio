@@ -80,7 +80,14 @@ function la97_handle_contact_form() {
         : (isset($_POST['adCompany']) ? sanitize_text_field(wp_unslash($_POST['adCompany'])) : '');
     $phone   = isset($_POST['adPhone']) ? sanitize_text_field(wp_unslash($_POST['adPhone'])) : '';
     $email   = isset($_POST['adEmail']) ? sanitize_email(wp_unslash($_POST['adEmail'])) : '';
-    $product = isset($_POST['adProduct']) ? sanitize_text_field(wp_unslash($_POST['adProduct'])) : '';
+    $product = isset($_POST['adProduct']) ? sanitize_text_field(wp_unslash($_POST['adProduct'])) : 'integral';
+    $product_labels = array(
+        'integral' => 'Servicio Integral Omnicanal (Tanda + Vivo + Redes)',
+        'auspicio' => 'Servicio Integral + Auspicio de Programa / Sección',
+        'movil'    => 'Servicio Integral + Móvil o Nota Comercial',
+        'mensual'  => 'Servicio Integral + Acción Mensual / Fecha Especial',
+    );
+    $product_label = isset($product_labels[$product]) ? $product_labels[$product] : $product;
     $message = isset($_POST['adMessage']) ? sanitize_textarea_field(wp_unslash($_POST['adMessage'])) : '';
 
     if (empty($name) || empty($email) || !is_email($email)) {
@@ -104,7 +111,7 @@ function la97_handle_contact_form() {
         "Empresa / Marca: $company",
         "Teléfono: $phone",
         "Correo: $email",
-        "Formato de interés: $product",
+        "Enfoque de campaña: $product_label",
         "",
         "Mensaje:",
         $message,

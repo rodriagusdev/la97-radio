@@ -59,14 +59,14 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Bim Bam Bum</h3>
                     <span class="text-xs font-bold text-sky-300">/ Marina Gorosito</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Todo lo que necesitás saber para estar bien informado, acompañado de clásicos cargados de energía.</p>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Marina Gorosito">
                 <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">MG</div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Marina Gorosito</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Marina Gorosito</span>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Ranking 40 x 40</h3>
                     <span class="text-xs font-bold text-sky-300">/ Eugenia Martinez y Christian Carballo</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El listado de los 40 éxitos más votados, ¡arriba la energía! A jugar y divertirnos.</p>
                 </div>
@@ -97,14 +97,14 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Música Express</h3>
                     <span class="text-xs font-bold text-sky-300">/ Gerardo Reboredo</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Gerardo Reboredo">
                 <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">GR</div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Gerardo Reboredo</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Gerardo Reboredo</span>
               </div>
             </div>
 
@@ -116,14 +116,14 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">El Regreso - Top Ten - La Noche</h3>
                     <span class="text-xs font-bold text-sky-300">/ Pablo Larsen</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La compañía ideal para finalizar la jornada con El Regreso, las 10 más votadas del Top Ten y la selección de La Noche.</p>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Pablo Larsen">
                 <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">PL</div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Pablo Larsen</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Pablo Larsen</span>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ get_header(); ?>
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">La Trasnoche de La 97!</h3>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La mejor música para acompañarte.</p>
                 </div>
@@ -158,7 +158,7 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Superclásicos</h3>
                     <span class="text-xs font-bold text-sky-300">/ Eugenia Martinez</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Éxitos indiscutibles que jamás nos cansamos de escuchar. Un repaso de la mejor música desde los 80' en adelante.</p>
                 </div>
@@ -174,7 +174,7 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Ranking 40 x 40</h3>
                     <span class="text-xs font-bold text-sky-300">/ Eugenia Martinez</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El listado de los 40 éxitos más votados. ¡Arriba la energía! ¡Llegó el fin de semana! ¡A distendernos, jugando y bailando!</p>
                 </div>
@@ -190,7 +190,7 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Música Express de Fin de Semana</h3>
                     <span class="text-xs font-bold text-sky-300">/ Silvana Debenedetti</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
                 </div>
@@ -215,7 +215,7 @@ get_header(); ?>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Superclásicos</h3>
                     <span class="text-xs font-bold text-sky-300">/ Marina Gorosito</span>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Disfrutemos juntos de nuestros recuerdos, te proponemos un recorrido por los éxitos desde los 80' en adelante.</p>
                 </div>
@@ -230,7 +230,7 @@ get_header(); ?>
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
                     <h3 class="text-base font-black text-white">Top Latino - La Tarde del Domingo</h3>
-                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
+                    <span class="mk-live-pill items-center gap-1 bg-la97-red text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">● AHORA AL AIRE</span>
                   </div>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Las mejores canciones en español y la compañía ideal para disfrutar la tarde del domingo.</p>
                 </div>
@@ -244,7 +244,7 @@ get_header(); ?>
       <!-- Commercial Banner Slot in Programación (Oculto por defecto hasta que se contrate el espacio) -->
       <div class="hidden mt-12 mk-glass rounded-2xl p-5 sm:px-8 sm:py-6 border border-dashed border-la97-yellow/50 flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 text-center md:text-left">
-          <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
+          <span class="bg-la97-yellow text-la97-navy text-xs font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
             ESPACIO PUBLICITARIO
           </span>
           <div>
@@ -328,13 +328,13 @@ get_header(); ?>
           msgBtn.href = 'https://wa.me/5492236150000?text=' + encodeURIComponent('Hola La 97! Les escribo por ' + showName + ': ');
           msgBtn.target = '_blank';
           msgBtn.rel = 'noopener';
-          msgBtn.className = 'inline-flex items-center gap-1.5 bg-la97-yellow hover:bg-white text-la97-navy text-[11px] font-black uppercase tracking-wider px-3 py-2 rounded-xl transition-colors';
+          msgBtn.className = 'inline-flex items-center gap-1.5 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-3 py-2 rounded-xl transition-colors';
           msgBtn.innerHTML = '<i class="ph-bold ph-whatsapp-logo text-sm"></i><span>Mensaje</span>';
 
           const sponsorBtn = document.createElement('a');
           sponsorBtn.href = './contacto.html?programa=' + encodeURIComponent(showName) + '#formulario-publicidad';
           sponsorBtn.setAttribute('data-la97-nav', '');
-          sponsorBtn.className = 'inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-blue text-white text-[11px] font-black uppercase tracking-wider px-3 py-2 rounded-xl border border-white/15 transition-colors';
+          sponsorBtn.className = 'inline-flex items-center gap-1.5 bg-white/10 hover:bg-la97-blue text-white text-xs font-black uppercase tracking-wider px-3 py-2 rounded-xl border border-white/15 transition-colors';
           sponsorBtn.innerHTML = '<i class="ph-bold ph-megaphone text-sm"></i><span>Auspiciar</span>';
 
           actionsWrap.appendChild(msgBtn);
