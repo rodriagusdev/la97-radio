@@ -45,7 +45,7 @@ get_header(); ?>
               <img src="<?php echo esc_url($fb_img); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             <?php endif; ?>
           </div>
-          <div class="text-[11px] font-extrabold uppercase tracking-wider mb-2 <?php echo esc_attr($txt_cls); ?>"><?php echo $nombre_cat; ?></div>
+          <div class="text-xs font-extrabold uppercase tracking-wider mb-2 <?php echo esc_attr($txt_cls); ?>"><?php echo $nombre_cat; ?></div>
           <h2 class="text-base font-extrabold text-la97-navy leading-snug mb-2.5">
             <a href="<?php the_permalink(); ?>" data-la97-nav class="hover:text-la97-red transition-colors"><?php the_title(); ?></a>
           </h2>

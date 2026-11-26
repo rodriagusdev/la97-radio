@@ -87,19 +87,28 @@
       background: linear-gradient(180deg, #1b2636 0%, #273547 50%, #1a2433 100%);
     }
 
-    /* Hero Studio Backdrop — background.webp ONLY in the first part, fading smoothly into #1b2636 */
+    /* Hero Studio Backdrop — background.webp ONLY in the first part, fading smoothly into transparent */
     .mk-hero-surface {
-      background-color: #1b2636;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mk-hero-surface::after {
+      content: '';
+      position: absolute;
+      inset: 0;
       background-image:
-        linear-gradient(to bottom, rgba(27, 38, 54, 0.12) 0%, rgba(27, 38, 54, 0) 58%, #1b2636 100%),
         radial-gradient(ellipse at 70% 30%, rgba(3, 102, 162, 0.48) 0%, transparent 60%),
         radial-gradient(ellipse at 20% 70%, rgba(226, 5, 29, 0.28) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(39, 53, 71, 0.42) 0%, rgba(27, 38, 54, 0.86) 100%),
         url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/background.webp');
       background-size: cover;
       background-position: center;
-      position: relative;
-      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, rgba(0, 0, 0, 0.72) 72%, rgba(0, 0, 0, 0.28) 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 50%, rgba(0, 0, 0, 0.72) 72%, rgba(0, 0, 0, 0.28) 88%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .mk-hero-surface::before {
@@ -109,6 +118,8 @@
       background-image:
         linear-gradient(125deg, transparent 42%, rgba(39, 53, 71, 0.22) 42.2%, rgba(39, 53, 71, 0.22) 72%, transparent 72.2%),
         linear-gradient(215deg, transparent 58%, rgba(244, 183, 13, 0.1) 58.2%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -229,7 +240,7 @@
               </div>
               <div>
                 <div class="text-white text-base font-black tracking-wide leading-tight">LA 97 FM</div>
-                <div class="text-la97-yellow text-[10px] font-bold tracking-wider uppercase">97.3 MHz • RADIO N°1</div>
+                <div class="text-la97-yellow text-xs font-bold tracking-wider uppercase">97.3 MHz • RADIO N°1</div>
               </div>
             </div>
             <button type="button" id="drawer-close"
@@ -255,7 +266,7 @@
         </div>
 
         <div class="pt-6 border-t border-white/10 space-y-3">
-          <div class="text-[11px] font-bold text-la97-gray/80 uppercase tracking-wider">Estudios Moreno 2976</div>
+          <div class="text-xs font-bold text-la97-gray/80 uppercase tracking-wider">Estudios Moreno 2976</div>
           <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
             class="flex items-center justify-between bg-la97-yellow text-la97-navy px-4 py-2.5 rounded-xl text-xs font-black">
             <span>WhatsApp Oyentes</span>
@@ -297,10 +308,10 @@
             <div class="flex items-center gap-2">
               <span class="text-white text-lg sm:text-xl font-black tracking-tight uppercase leading-none">LA 97
                 SIEMPRE!</span>
-              <span class="bg-la97-yellow text-la97-navy text-[10px] font-black px-2 py-0.5 rounded uppercase">RADIO
+              <span class="bg-la97-yellow text-la97-navy text-xs font-black px-2 py-0.5 rounded uppercase">RADIO
                 N°1</span>
             </div>
-            <div class="text-la97-gray text-[11px] font-bold tracking-wider uppercase mt-1">
+            <div class="text-la97-gray text-xs font-bold tracking-wider uppercase mt-1">
               97.3 MHz • MORENO 2976 • MAR DEL PLATA
             </div>
           </div>
@@ -319,7 +330,7 @@
       <!-- Right Live Show Pill & Commercial CTA -->
       <div class="flex items-center gap-2.5">
         <div
-          class="hidden xl:inline-flex items-center gap-2 text-[11px] font-bold text-la97-gray bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+          class="hidden xl:inline-flex items-center gap-2 text-xs font-bold text-la97-gray bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
           <span class="w-1.5 h-1.5 rounded-full bg-la97-yellow"></span>
           <span>Al aire: <strong id="la97HeaderShow" class="text-white font-black">La 97 FM</strong></span>
         </div>
