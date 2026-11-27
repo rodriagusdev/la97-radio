@@ -8,11 +8,11 @@ get_header(); ?>
   <main id="main-content" class="flex-1 w-full">
     <section id="programacion-oficial" class="w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16 text-white">
 
-      <!-- Header Banner -->
-      <div class="mk-glass text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden mb-10 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-        <div class="max-w-3xl relative z-10">
-          <span class="text-xs font-black uppercase tracking-widest text-la97-gray">CONTENIDO Y REALIZACIÓN 100% LOCAL</span>
-          <h1 class="text-3xl sm:text-5xl font-black text-la97-yellow tracking-tight uppercase mt-1">
+      <!-- Open Editorial Header (matching other pages) -->
+      <div class="mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div class="max-w-3xl">
+          <span class="text-xs font-black uppercase tracking-widest text-sky-300">CONTENIDO Y REALIZACIÓN 100% LOCAL</span>
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mt-1.5">
             PROGRAMACIÓN
           </h1>
           <p class="text-sm sm:text-base text-la97-gray mt-2 leading-relaxed">
@@ -20,14 +20,14 @@ get_header(); ?>
           </p>
         </div>
 
-        <div class="hidden sm:flex items-center justify-center bg-white rounded-2xl p-3 w-28 h-28 shrink-0 shadow-xl ring-4 ring-white/10">
+        <div class="hidden sm:flex items-center justify-center bg-white rounded-2xl p-3 w-24 h-24 shrink-0 shadow-xl ring-4 ring-white/10">
           <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97! FM 97.3" class="w-full h-full object-contain">
         </div>
       </div>
 
       <!-- Day Filter Tabs -->
       <div class="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filtrar programación por día">
-        <button type="button" data-sched-tab="all" class="sched-tab-btn bg-la97-yellow text-la97-navy text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
+        <button type="button" data-sched-tab="all" class="sched-tab-btn bg-white/15 text-white border border-white/20 text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
           Toda la Semana
         </button>
         <button type="button" data-sched-tab="semana" class="sched-tab-btn bg-white/10 hover:bg-white/20 text-white text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors cursor-pointer">
@@ -46,14 +46,14 @@ get_header(); ?>
 
         <!-- LUNES A VIERNES -->
         <div data-sched-block="semana" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-yellow lg:sticky lg:top-28">
+          <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-blue lg:sticky lg:top-28">
             <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Lunes a Viernes</h2>
-            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">24 HS EN VIVO • 97.3 MHz</p>
+            <p class="text-xs font-bold text-sky-300 uppercase tracking-wider mt-1">24 HS EN VIVO • 97.3 MHz</p>
           </div>
           <div class="lg:col-span-9 space-y-3">
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="6" data-end="9">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">06 A 09HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">06 A 09HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/bimbambum.jpg" alt="Bim Bam Bum" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -65,14 +65,14 @@ get_header(); ?>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Marina Gorosito">
-                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">MG</div>
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300">MG</div>
                 <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Marina Gorosito</span>
               </div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="9" data-end="13">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">09 A 13HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">09 A 13HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/40x40.jpg" alt="Ranking 40 x 40" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -84,14 +84,14 @@ get_header(); ?>
                 </div>
               </div>
               <div class="flex items-center -space-x-2 shrink-0" title="Espacio para fotos de Eugenia Martinez y Christian Carballo">
-                <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white">EM</div>
-                <div class="w-11 h-11 rounded-full bg-la97-blue/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">CC</div>
+                <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-white/20 flex items-center justify-center text-xs font-black text-white">EM</div>
+                <div class="w-11 h-11 rounded-full bg-la97-blue/40 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300">CC</div>
               </div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="13" data-end="18">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">13 A 18HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">13 A 18HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/musicaexpress.jpg" alt="Música Express" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -103,14 +103,14 @@ get_header(); ?>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Gerardo Reboredo">
-                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">GR</div>
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300">GR</div>
                 <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Gerardo Reboredo</span>
               </div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="1,2,3,4,5" data-start="18" data-end="24">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">18 A 24HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">18 A 24HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/elregreso.jpg" alt="El Regreso - Top Ten - La Noche" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -122,7 +122,7 @@ get_header(); ?>
                 </div>
               </div>
               <div class="flex items-center gap-2.5 shrink-0" title="Espacio para foto de Pablo Larsen">
-                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow">PL</div>
+                <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300">PL</div>
                 <span class="text-xs font-bold uppercase tracking-wider text-la97-gray/70 sm:hidden">Pablo Larsen</span>
               </div>
             </div>
@@ -133,12 +133,12 @@ get_header(); ?>
         <div data-sched-block="sabado" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-6 border-t border-white/15">
           <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-red lg:sticky lg:top-28">
             <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Sábado</h2>
-            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">FIN DE SEMANA • 97.3 MHz</p>
+            <p class="text-xs font-bold text-sky-300 uppercase tracking-wider mt-1">FIN DE SEMANA • 97.3 MHz</p>
           </div>
           <div class="lg:col-span-9 space-y-3">
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="0" data-end="7">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">00 A 07HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">00 A 07HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/latrasnoche.jpg" alt="La Trasnoche de La 97" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -152,7 +152,7 @@ get_header(); ?>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="7" data-end="10">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">07 A 10HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">07 A 10HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/superclasicos.jpg" alt="Superclásicos" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -163,12 +163,12 @@ get_header(); ?>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Éxitos indiscutibles que jamás nos cansamos de escuchar. Un repaso de la mejor música desde los 80' en adelante.</p>
                 </div>
               </div>
-              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
+              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-white/20 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="10" data-end="14">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">10 A 14HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">10 A 14HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/40x40.jpg" alt="Ranking 40 x 40" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -179,12 +179,12 @@ get_header(); ?>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">El listado de los 40 éxitos más votados. ¡Arriba la energía! ¡Llegó el fin de semana! ¡A distendernos, jugando y bailando!</p>
                 </div>
               </div>
-              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
+              <div class="w-11 h-11 rounded-full bg-la97-red/40 border-2 border-white/20 flex items-center justify-center text-xs font-black text-white shrink-0" title="Espacio para foto de Eugenia Martinez">EM</div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="6" data-start="14" data-end="20">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">14 A 20HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">14 A 20HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/musicaexpress.jpg" alt="Música Express de Fin de Semana" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -195,7 +195,7 @@ get_header(); ?>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">La tarde es más entretenida cuando escuchamos música juntos y participamos por premios increíbles.</p>
                 </div>
               </div>
-              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Silvana Debenedetti">SD</div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300 shrink-0" title="Espacio para foto de Silvana Debenedetti">SD</div>
             </div>
           </div>
         </div>
@@ -204,12 +204,12 @@ get_header(); ?>
         <div data-sched-block="domingo" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-6 border-t border-white/15">
           <div class="lg:col-span-3 mk-glass text-white rounded-2xl p-6 border-t-4 border-t-la97-blue lg:sticky lg:top-28">
             <h2 class="text-2xl sm:text-3xl font-black uppercase leading-tight">Domingo</h2>
-            <p class="text-xs font-bold text-la97-yellow uppercase tracking-wider mt-1">CLÁSICOS & COMPAÑÍA</p>
+            <p class="text-xs font-bold text-sky-300 uppercase tracking-wider mt-1">CLÁSICOS & COMPAÑÍA</p>
           </div>
           <div class="lg:col-span-9 space-y-3">
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="0" data-start="8" data-end="15">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">08 A 15HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">08 A 15HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/superclasicos.jpg" alt="Superclásicos" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -220,12 +220,12 @@ get_header(); ?>
                   <p class="text-xs sm:text-sm text-la97-gray/90 mt-1">Disfrutemos juntos de nuestros recuerdos, te proponemos un recorrido por los éxitos desde los 80' en adelante.</p>
                 </div>
               </div>
-              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-la97-yellow/70 flex items-center justify-center text-xs font-black text-la97-yellow shrink-0" title="Espacio para foto de Marina Gorosito">MG</div>
+              <div class="w-11 h-11 rounded-full bg-la97-blue/30 border-2 border-white/20 flex items-center justify-center text-xs font-black text-sky-300 shrink-0" title="Espacio para foto de Marina Gorosito">MG</div>
             </div>
 
             <div class="mk-sched-row la97-prog-row mk-glass rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all" data-days="0" data-start="15" data-end="22">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1">
-                <div class="w-28 shrink-0 font-black text-lg text-la97-yellow leading-tight">15 A 22HS.</div>
+                <div class="w-28 shrink-0 font-black text-lg text-sky-300 leading-tight">15 A 22HS.</div>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shows/tardedomingo.jpg" alt="Top Latino - La Tarde del Domingo" class="w-14 h-14 rounded-xl object-cover border border-white/15 shrink-0 hidden sm:block">
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
@@ -242,9 +242,9 @@ get_header(); ?>
       </div>
 
       <!-- Commercial Banner Slot in Programación (Oculto por defecto hasta que se contrate el espacio) -->
-      <div class="hidden mt-12 mk-glass rounded-2xl p-5 sm:px-8 sm:py-6 border border-dashed border-la97-yellow/50 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="hidden mt-12 mk-glass rounded-2xl p-5 sm:px-8 sm:py-6 border border-dashed border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 text-center md:text-left">
-          <span class="bg-la97-yellow text-la97-navy text-xs font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
+          <span class="bg-white/15 text-white border border-white/20 text-xs font-black px-2.5 py-1 rounded uppercase tracking-wider shrink-0">
             ESPACIO PUBLICITARIO
           </span>
           <div>
@@ -253,7 +253,7 @@ get_header(); ?>
           </div>
         </div>
         <a href="<?php echo esc_url(home_url('/contacto/#formulario-publicidad')); ?>"
-          class="bg-la97-blue hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-xl transition-colors shrink-0">
+          class="bg-la97-blue hover:bg-white hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-xl transition-colors shrink-0">
           Publicitá con nosotros →
         </a>
       </div>
@@ -294,11 +294,11 @@ get_header(); ?>
           btn.addEventListener('click', () => {
             const target = btn.getAttribute('data-sched-tab');
             tabs.forEach((b) => {
-              b.classList.remove('bg-la97-yellow', 'text-la97-navy');
+              b.classList.remove('bg-la97-red', 'text-white');
               b.classList.add('bg-white/10', 'text-white');
             });
             btn.classList.remove('bg-white/10', 'text-white');
-            btn.classList.add('bg-la97-yellow', 'text-la97-navy');
+            btn.classList.add('bg-la97-red', 'text-white');
 
             blocks.forEach((blk) => {
               const bKey = blk.getAttribute('data-sched-block');
@@ -328,7 +328,7 @@ get_header(); ?>
           msgBtn.href = 'https://wa.me/5492236150000?text=' + encodeURIComponent('Hola La 97! Les escribo por ' + showName + ': ');
           msgBtn.target = '_blank';
           msgBtn.rel = 'noopener';
-          msgBtn.className = 'inline-flex items-center gap-1.5 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-3 py-2 rounded-xl transition-colors';
+          msgBtn.className = 'inline-flex items-center gap-1.5 bg-white hover:bg-la97-red text-la97-navy hover:text-white text-xs font-black uppercase tracking-wider px-3 py-2 rounded-xl transition-colors';
           msgBtn.innerHTML = '<i class="ph-bold ph-whatsapp-logo text-sm"></i><span>Mensaje</span>';
 
           const sponsorBtn = document.createElement('a');

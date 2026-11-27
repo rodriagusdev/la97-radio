@@ -80,14 +80,6 @@ function la97_handle_contact_form() {
         : (isset($_POST['adCompany']) ? sanitize_text_field(wp_unslash($_POST['adCompany'])) : '');
     $phone   = isset($_POST['adPhone']) ? sanitize_text_field(wp_unslash($_POST['adPhone'])) : '';
     $email   = isset($_POST['adEmail']) ? sanitize_email(wp_unslash($_POST['adEmail'])) : '';
-    $product = isset($_POST['adProduct']) ? sanitize_text_field(wp_unslash($_POST['adProduct'])) : 'integral';
-    $product_labels = array(
-        'integral' => 'Servicio Integral Omnicanal (Tanda + Vivo + Redes)',
-        'auspicio' => 'Servicio Integral + Auspicio de Programa / Sección',
-        'movil'    => 'Servicio Integral + Móvil o Nota Comercial',
-        'mensual'  => 'Servicio Integral + Acción Mensual / Fecha Especial',
-    );
-    $product_label = isset($product_labels[$product]) ? $product_labels[$product] : $product;
     $message = isset($_POST['adMessage']) ? sanitize_textarea_field(wp_unslash($_POST['adMessage'])) : '';
 
     if (empty($name) || empty($email) || !is_email($email)) {
@@ -96,12 +88,20 @@ function la97_handle_contact_form() {
     }
 
     // Whitelist estricta de destinatarios en el servidor
-    $recipients = ($region === 'bsas')
-        ? array('elizabeth@vocacion.net', 'claudia@vocacion.net')
-        : array('comercial@la97.com.ar');
-
-    $region_label = ($region === 'bsas') ? 'Buenos Aires (Vocación)' : 'Mar del Plata (La 97)';
-    $subject      = sprintf('[La 97 Comercial - %s] Consulta de %s', $region_label, $company ? $company : $name);
+    if ($region === 'bsas_elizabeth') {
+        $recipients   = array('elizabeth@vocacion.net');
+        $region_label = 'Buenos Aires (Vocación - Elizabeth)';
+    } elseif ($region === 'bsas_claudia') {
+        $recipients   = array('claudia@vocacion.net');
+        $region_label = 'Buenos Aires (Vocación - Claudia)';
+    } elseif ($region === 'bsas') {
+        $recipients   = array('elizabeth@vocacion.net', 'claudia@vocacion.net');
+        $region_label = 'Buenos Aires (Vocación)';
+    } else {
+        $recipients   = array('comercial@la97.com.ar');
+        $region_label = 'Mar del Plata (La 97)';
+    }
+    $subject = sprintf('[La 97 Comercial - %s] Consulta de %s', $region_label, $company ? $company : $name);
 
     $body = implode("\n", array(
         "Nueva consulta comercial desde el sitio web de La 97! FM 97.3",
@@ -111,7 +111,6 @@ function la97_handle_contact_form() {
         "Empresa / Marca: $company",
         "Teléfono: $phone",
         "Correo: $email",
-        "Enfoque de campaña: $product_label",
         "",
         "Mensaje:",
         $message,

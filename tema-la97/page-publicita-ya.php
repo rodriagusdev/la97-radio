@@ -11,167 +11,108 @@ get_header(); ?>
          =================================================================== -->
     <section id="productos-comerciales" class="w-full px-6 lg:px-12 xl:px-16 pt-12 pb-6 bg-transparent text-white">
 
-      <!-- Clean Modern Header -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-        <div class="max-w-3xl">
-          <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
-            SERVICIO INTEGRAL • OMNICANAL
-          </span>
-          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-            Tu marca en todo el ecosistema de <span class="text-la97-yellow">La 97!</span>
-          </h1>
-          <p class="text-sm sm:text-base text-la97-gray mt-2 leading-relaxed">
-            Contamos con producción propia, una estructura fija, programas propios y transmisión en vivo los <strong class="text-white">365 días del año</strong>.
-          </p>
-        </div>
-
-        <a href="#formulario-publicidad"
-          class="inline-flex items-center justify-center gap-2 bg-la97-yellow hover:bg-white text-la97-navy text-xs font-black uppercase tracking-wider px-6 py-4 rounded-xl shadow-lg transition-colors shrink-0">
-          <span>SOLICITÁ TU PROPUESTA INTEGRAL</span> <i class="ph-bold ph-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- Featured Positioning Banner: Todo Integral (Tanda + Vivo + Redes) -->
-      <div
-        class="mb-6 mk-glass rounded-3xl p-7 sm:p-8 bg-gradient-to-r from-la97-blue/30 via-la97-navy/90 to-la97-red/20 border-2 border-la97-yellow/60 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div class="space-y-2.5 max-w-4xl">
-          <span
-            class="inline-block bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-            PROPUESTA 360° • SIN ACCIONES AISLADAS
-          </span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white">
-            Un servicio integral que combina Tanda, Vivo y Redes Sociales
-          </h2>
-          <p class="text-sm text-la97-gray leading-relaxed">
-            No trabajamos formatos sueltos ni piezas individuales: cada empresa accede a un <strong class="text-white">ecosistema omnicanal completo</strong> donde el aire grabado, la cercanía de nuestros locutores en vivo y la comunidad digital potencian tu marca todos los días.
-          </p>
-        </div>
-        <div class="shrink-0">
+      <!-- Clean Centered Hero (Apple-style Editorial Intro) -->
+      <div class="max-w-3xl mx-auto text-center space-y-4 pt-2 pb-10">
+        <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.04]">
+          Tu marca en todo el ecosistema de <span class="text-sky-300">La 97!</span>
+        </h1>
+        <p class="text-sm sm:text-lg text-la97-gray leading-relaxed">
+          Producción propia y programas en vivo los 365 días del año.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
           <a href="#formulario-publicidad"
-            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-la97-yellow hover:text-la97-navy text-white text-xs font-black uppercase tracking-wider px-5 py-3.5 rounded-xl border border-white/20 transition-colors w-full lg:w-auto">
-            <span>Consultar propuesta</span> <i class="ph-bold ph-arrow-right"></i>
+            class="bg-la97-blue hover:bg-white text-white hover:text-la97-navy text-sm font-black uppercase tracking-wider px-7 py-3 rounded-full shadow-lg transition-colors">
+            Solicitar propuesta
           </a>
         </div>
       </div>
 
-      <!-- 3 Pillars Included in the Integral Service -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+      <!-- Section Title before 2x2 Showcase (Integrating Servicio Integral) -->
+      <div id="que-incluye" class="max-w-3xl mx-auto text-center pt-4 pb-8 space-y-3 scroll-mt-24">
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          ¿Qué te ofrecemos con nuestra <span class="text-sky-300">campaña integral?</span>
+        </h2>
+        <p class="text-base sm:text-lg text-la97-gray leading-relaxed">
+          Tanda, productos en vivo y redes sociales funcionando juntos en una misma estrategia omnicanal.
+        </p>
+      </div>
 
-        <!-- 1. TANDA -->
-        <div
-          class="lg:col-span-4 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-blue/25 via-la97-navy/85 to-la97-navy/95 border border-la97-blue/50 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-5">
-          <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-la97-blue text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                01 · TANDA PUBLICITARIA
-              </span>
-              <div class="w-11 h-11 rounded-xl bg-white/10 text-sky-300 flex items-center justify-center">
-                <i class="ph-bold ph-broadcast text-xl"></i>
-              </div>
-            </div>
-            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">
-              Spots y promociones con producción propia
+      <!-- Apple-style 2x2 Full-Bleed Editorial Showcase Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Tile 1: Tanda Publicitaria (Full-bleed mic AIRE photo + centered bottom copy) -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-center group bg-[#101824]">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/radio01.jpg" alt="Micrófono y cartel AIRE en La 97!"
+            class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-[#0d1520]/85 to-[#0d1520]/15"></div>
+          <div class="relative z-10 p-8 sm:p-10 max-w-lg mx-auto space-y-3.5">
+            <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Tanda Publicitaria.
             </h3>
-            <p class="text-sm text-la97-gray mt-3 leading-relaxed">
-              Bloques publicitarios donde se emiten anuncios comerciales y promociones con mensajes y audios pregrabados de alta calidad.
+            <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+              Espacio publicitario de anuncios comerciales que se emiten de manera rotativa a lo largo de toda la programación donde la radio conecta las marcas con los oyentes.
             </p>
-            <ul class="mt-4 space-y-2.5 text-sm text-la97-gray">
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-check-circle text-sky-300 mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Edición propia:</strong> cada pieza es creada y editada por nuestro sector de edición.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-check-circle text-sky-300 mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Voces de la radio:</strong> locución profesional con nuestros locutores propios.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-check-circle text-sky-300 mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Presencia constante:</strong> rotación estratégica en toda la grilla diaria.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="pt-4 border-t border-white/10 text-xs font-mono uppercase tracking-wider text-sky-300">
-            Incluido en el servicio integral
           </div>
         </div>
 
-        <!-- 2. EN VIVO (365 días) -->
-        <div
-          class="lg:col-span-4 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-red/20 via-la97-navy/85 to-la97-navy/95 border border-la97-red/45 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-5">
-          <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-la97-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                02 · EN VIVO 365 DÍAS
-              </span>
-              <div class="w-11 h-11 rounded-xl bg-white/10 text-la97-yellow flex items-center justify-center">
-                <i class="ph-bold ph-microphone-stage text-xl"></i>
-              </div>
-            </div>
-            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">
-              Cercanía real con oyentes todos los días
+        <!-- Tile 2: Productos en vivo (Full-bleed photo + centered bottom copy) -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-center group bg-[#101824]">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/ig/post-5.jpg" alt="Locutores en vivo en La 97!"
+            class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-[#0d1520]/85 to-[#0d1520]/15"></div>
+          <div class="relative z-10 p-8 sm:p-10 max-w-lg mx-auto space-y-3.5">
+            <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Productos en vivo.
             </h3>
-            <p class="text-sm text-la97-gray mt-3 leading-relaxed">
-              Locutores en vivo los 365 días del año interactuando con la audiencia para conectar marcas y personas de forma orgánica:
+            <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+              Líneas de juego, PNTs, Notas Comerciales, Auspicios (HTH, noticias, Puesto N°1 del Ranking, programas, Apertura de Tanda) y Acciones Mensuales.
             </p>
-            <ul class="mt-4 space-y-2 text-sm text-la97-gray">
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-game-controller text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Líneas de juego y PNTs:</strong> juegos en vivo con premios de tu marca y menciones de hasta 8 líneas contando quiénes son y qué hacen.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-van text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Móviles en vivo:</strong> vamos físicamente a tu empresa para dialogar y dar visibilidad en el lugar.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-phone-call text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Notas comerciales:</strong> charla informal al aire con un representante de tu marca.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-crown text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Auspicios:</strong> HTH (clima), noticias, Puesto N° 1, programas y apertura de tanda.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-calendar-star text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Acciones mensuales:</strong> fechas especiales (Día del Niño, de la Madre, etc.) con premios y menciones reforzadas.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="pt-4 border-t border-white/10 text-xs font-mono uppercase tracking-wider text-la97-yellow">
-            Incluido en el servicio integral
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+              <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav
+                class="border border-white/30 hover:border-white bg-black/25 text-white text-sm font-black uppercase tracking-wider px-6 py-2.5 rounded-full transition-colors">
+                Ver programas
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 3. REDES SOCIALES -->
-        <div
-          class="lg:col-span-4 mk-glass rounded-3xl p-7 bg-gradient-to-br from-la97-yellow/15 via-la97-navy/85 to-la97-navy/95 border border-white/15 hover:border-la97-yellow/70 transition-all group flex flex-col justify-between gap-5">
-          <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                03 · REDES SOCIALES
-              </span>
-              <div class="w-11 h-11 rounded-xl bg-white/10 text-la97-yellow flex items-center justify-center">
-                <i class="ph-bold ph-instagram-logo text-xl"></i>
-              </div>
-            </div>
-            <h3 class="text-2xl font-black text-white group-hover:text-la97-yellow transition-colors">
-              Comunidad activa en Instagram y Facebook
+        <!-- Tile 3: Experiencias y Acciones Especiales (Full-bleed photo + centered bottom copy) -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-center group bg-[#101824]">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/radio03.webp" alt="Experiencias y móviles en vivo de La 97! FM 97.3"
+            class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-[#0d1520]/85 to-[#0d1520]/15"></div>
+          <div class="relative z-10 p-8 sm:p-10 max-w-lg mx-auto space-y-3.5">
+            <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Experiencias y Acciones Especiales.
             </h3>
-            <p class="text-sm text-la97-gray mt-3 leading-relaxed">
-              Amplificamos cada campaña más allá del dial conectando con nuestra comunidad digital (+80K en IG y +70K en FB):
+            <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+              Móviles en vivo en playas, paradores, teatros y eventos, junto a activaciones presenciales que potencian el alcance y la presencia de nuestros anunciantes.
             </p>
-            <ul class="mt-4 space-y-3 text-sm text-la97-gray">
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-instagram-logo text-la97-yellow mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Instagram (@la97siempre):</strong> historias semanales, posteos en el feed, reels con visualización para tu marca y sorteos que impulsan nuevos seguidores.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i class="ph-bold ph-facebook-logo text-sky-300 mt-0.5 shrink-0"></i>
-                <span><strong class="text-white">Facebook:</strong> historias y publicaciones diarias con una comunidad fiel que participa activamente en nuestras líneas de juego junto a las marcas.</span>
-              </li>
-            </ul>
           </div>
-          <div class="pt-4 border-t border-white/10 text-xs font-mono uppercase tracking-wider text-sky-300">
-            Incluido en el servicio integral
+        </div>
+
+        <!-- Tile 4: Redes Sociales (Full-bleed photo + centered bottom copy) -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-center group bg-[#101824]">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/radio02.jpg" alt="Estudio central y redes sociales de La 97! FM"
+            class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-[#0d1520]/85 to-[#0d1520]/15"></div>
+          <div class="relative z-10 p-8 sm:p-10 max-w-lg mx-auto space-y-3.5">
+            <h3 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Instagram y Facebook.
+            </h3>
+            <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+              Historias semanales, feed, reels, sorteos para sumar seguidores en Instagram (@la97siempre) y publicaciones diarias con líneas de juego en Facebook (+150K seguidores).
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+              <a href="https://www.instagram.com/la97siempre/" target="_blank" rel="noopener"
+                class="bg-la97-blue hover:bg-white text-white hover:text-la97-navy text-sm font-black uppercase tracking-wider px-6 py-2.5 rounded-full transition-colors">
+                @la97siempre
+              </a>
+              <a href="https://www.facebook.com/la97siempre" target="_blank" rel="noopener"
+                class="border border-white/30 hover:border-white bg-black/25 text-white text-sm font-black uppercase tracking-wider px-6 py-2.5 rounded-full transition-colors">
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
 
@@ -193,7 +134,7 @@ get_header(); ?>
             class="mb-8 pb-6 border-b border-white/10">
             <div>
               <span
-                class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
+                class="bg-white/15 text-white border border-white/20 text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
                 PUBLICITÁ CON NOSOTROS
               </span>
               <h2 class="text-2xl sm:text-3xl font-black text-white mt-3">
@@ -214,14 +155,14 @@ get_header(); ?>
                 <label for="adName" class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Nombre
                   y Apellido *</label>
                 <input id="adName" name="adName" type="text" required placeholder="Ej: Juan Pérez"
-                  class="w-full bg-black/30 border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                  class="w-full bg-black/30 border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
               </div>
               <div>
                 <label for="adBrand"
                   class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Empresa / Marca
                   *</label>
                 <input id="adBrand" name="adBrand" type="text" required placeholder="Ej: Mi Empresa"
-                  class="w-full bg-black/30 border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                  class="w-full bg-black/30 border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
               </div>
             </div>
 
@@ -230,38 +171,26 @@ get_header(); ?>
                 <label for="adEmail" class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Email
                   *</label>
                 <input id="adEmail" name="adEmail" type="email" required placeholder="nombre@empresa.com"
-                  class="w-full bg-black/30 border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                  class="w-full bg-black/30 border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
               </div>
               <div>
                 <label for="adPhone"
                   class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Teléfono / WhatsApp
                   *</label>
                 <input id="adPhone" name="adPhone" type="tel" required placeholder="Ej: 223 555-0000"
-                  class="w-full bg-black/30 border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                  class="w-full bg-black/30 border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors">
               </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label for="adRegion" class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Vía
-                  de Contacto *</label>
-                <select id="adRegion" name="adRegion"
-                  class="w-full bg-la97-navy border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white outline-none transition-colors">
-                  <option value="mdp">Mar del Plata — Comercial Directo (comercial@la97.com.ar)</option>
-                  <option value="bsas">Buenos Aires — Vocación (elizabeth@vocacion.net / claudia@vocacion.net)</option>
-                </select>
-              </div>
-              <div>
-                <label for="adProduct"
-                  class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Enfoque de la campaña integral</label>
-                <select id="adProduct" name="adProduct"
-                  class="w-full bg-la97-navy border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white outline-none transition-colors">
-                  <option value="integral">Servicio Integral Omnicanal (Tanda + Vivo + Redes)</option>
-                  <option value="auspicio">Servicio Integral + Auspicio de Programa / Sección</option>
-                  <option value="movil">Servicio Integral + Móvil o Nota Comercial</option>
-                  <option value="mensual">Servicio Integral + Acción Mensual / Fecha Especial</option>
-                </select>
-              </div>
+            <div>
+              <label for="adRegion" class="block text-xs font-black uppercase tracking-wider text-la97-gray mb-2">Vía
+                de Contacto *</label>
+              <select id="adRegion" name="adRegion"
+                class="w-full bg-la97-navy border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white outline-none transition-colors">
+                <option value="mdp">Mar del Plata — Comercial Directo (comercial@la97.com.ar)</option>
+                <option value="bsas_elizabeth">Buenos Aires — Vocación: Elizabeth (elizabeth@vocacion.net)</option>
+                <option value="bsas_claudia">Buenos Aires — Vocación: Claudia (claudia@vocacion.net)</option>
+              </select>
             </div>
 
             <div>
@@ -270,16 +199,16 @@ get_header(); ?>
                 *</label>
               <textarea id="adMessage" name="adMessage" rows="4" required
                 placeholder="Contanos qué querés comunicar y te asesoramos con la mejor propuesta..."
-                class="w-full bg-black/30 border border-white/15 focus:border-la97-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors"></textarea>
+                class="w-full bg-black/30 border border-white/15 focus:border-sky-300 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors"></textarea>
             </div>
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
               <div id="adFormSuccess"
-                class="hidden text-xs font-bold text-la97-yellow bg-la97-yellow/10 border border-la97-yellow/40 px-4 py-2.5 rounded-xl">
+                class="hidden text-xs font-bold text-la97-yellow bg-la97-yellow/10 border border-white/20 px-4 py-2.5 rounded-xl">
                 ✅ ¡Consulta lista! En WordPress este formulario enviará directamente al mail seleccionado.
               </div>
               <button type="submit"
-                class="sm:ml-auto bg-la97-yellow hover:bg-white text-la97-navy font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-colors cursor-pointer">
+                class="sm:ml-auto bg-white hover:bg-la97-red text-la97-navy hover:text-white font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-colors cursor-pointer">
                 Enviar Consulta Comercial →
               </button>
             </div>

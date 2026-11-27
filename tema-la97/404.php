@@ -25,7 +25,7 @@ get_header(); ?>
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
         <a href="<?php echo esc_url(home_url('/')); ?>" data-la97-nav
-          class="bg-la97-yellow hover:bg-white text-la97-navy font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow-lg transition-colors">
+          class="bg-white hover:bg-la97-red text-la97-navy hover:text-white font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow-lg transition-colors">
           ← Volver al Inicio
         </a>
         <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav
