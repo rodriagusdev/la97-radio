@@ -215,12 +215,136 @@
     .mk-sched-row.is-on-air .mk-live-pill {
       display: inline-flex;
     }
+
+    /* Modern Cinematic Intro Splash (<= 1.5s, logo-only) */
+    #la97IntroSplash {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(3, 102, 162, 0.28) 0%, transparent 55%),
+        radial-gradient(circle at 35% 60%, rgba(226, 5, 29, 0.14) 0%, transparent 50%),
+        #0c121c;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1), filter 0.48s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    #la97IntroSplash.is-leaving {
+      opacity: 0;
+      transform: scale(1.07);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .la97-cinema-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: la97ModernIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .la97-cinema-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
+      transform: translateX(-120%);
+      animation: la97LightSweep 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      -webkit-mask-image: radial-gradient(circle, #000 48%, transparent 86%);
+      mask-image: radial-gradient(circle, #000 48%, transparent 86%);
+    }
+
+    .la97-cinema-logo {
+      position: relative;
+      z-index: 2;
+      width: min(84vw, 480px);
+      height: auto;
+      object-fit: contain;
+      -webkit-mask-image: radial-gradient(circle, #000 52%, transparent 94%);
+      mask-image: radial-gradient(circle, #000 52%, transparent 94%);
+      filter: drop-shadow(0 0 42px rgba(56, 189, 248, 0.28));
+    }
+
+    @keyframes la97ModernIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.86);
+        filter: blur(12px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+    }
+
+    @keyframes la97LightSweep {
+      0% { transform: translateX(-120%); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateX(120%); opacity: 0; }
+    }
+
+    /* "Llegada del Salvador" cinematic entrance for TU RADIO, TU MÚSICA */
+    .la97-salvador-entrance {
+      animation: la97Salvador 1.45s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+    }
+
+    @keyframes la97Salvador {
+      0% {
+        opacity: 0;
+        transform: translateY(-24px) scale(1.08);
+        filter: blur(10px);
+        letter-spacing: 0.14em;
+        text-shadow: 0 0 40px rgba(244, 183, 13, 0.9), 0 0 80px rgba(255, 255, 255, 0.8);
+      }
+      60% {
+        opacity: 1;
+        filter: blur(0px);
+        text-shadow: 0 0 28px rgba(255, 255, 255, 0.65), 0 0 50px rgba(56, 189, 248, 0.4);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+        letter-spacing: -0.025em;
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
   </style>
   <?php wp_head(); ?>
 </head>
 
 <body
   class="page-default-bg text-white antialiased selection:bg-[#E2051D] selection:text-white min-h-screen flex flex-col overflow-x-hidden">
+
+  <?php if (is_front_page()) : ?>
+  <!-- Home Page Modern Intro Splash (<= 1.5s, logo-only) -->
+  <div id="la97IntroSplash" aria-hidden="true">
+    <div class="la97-cinema-wrap">
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/radiologo.png" alt="La 97! FM 97.3" fetchpriority="high" class="la97-cinema-logo">
+    </div>
+  </div>
+  <script>
+    (function () {
+      var splash = document.getElementById('la97IntroSplash');
+      if (!splash) return;
+      var dismiss = function () {
+        if (!splash || splash.classList.contains('is-leaving')) return;
+        splash.classList.add('is-leaving');
+        setTimeout(function () { splash.style.display = 'none'; }, 480);
+      };
+      splash.addEventListener('click', dismiss);
+      setTimeout(dismiss, 950);
+    })();
+  </script>
+  <?php endif; ?>
 
   <!-- Persistent Live Audio Stream (ShockMedia) -->
   <audio id="la97Audio" src="https://streaming01.shockmedia.com.ar:10586/stream" preload="none"></audio>
@@ -268,14 +392,14 @@
         <div class="pt-6 border-t border-white/10 space-y-3">
           <div class="text-xs font-bold text-la97-gray/80 uppercase tracking-wider">Estudios Moreno 2976</div>
           <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
-            class="flex items-center justify-between bg-la97-yellow text-la97-navy px-4 py-2.5 rounded-xl text-xs font-black">
+            class="flex items-center justify-between bg-white/15 text-white border border-white/20 px-4 py-2.5 rounded-xl text-xs font-black">
             <span>WhatsApp Oyentes</span>
             <span>223 615-0000</span>
           </a>
           <a href="tel:02234916607"
             class="flex items-center justify-between bg-white/10 text-white px-4 py-2.5 rounded-xl text-xs font-bold">
             <span>Comercial MDP</span>
-            <span class="text-la97-yellow">223 491-6607</span>
+            <span class="text-sky-300">223 491-6607</span>
           </a>
         </div>
       </nav>
@@ -300,7 +424,7 @@
 
         <a href="#top" class="flex items-center gap-3.5 group">
           <div
-            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1.5 border-2 border-la97-yellow shadow-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1.5 border-2 border-white/25 shadow-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
             <img src="https://la97.com.ar/wp-content/uploads/2025/01/logo97-ws2.png" alt="La 97 FM 97.3 MHz"
               class="w-full h-full object-contain">
           </div>
@@ -308,7 +432,7 @@
             <div class="flex items-center gap-2">
               <span class="text-white text-lg sm:text-xl font-black tracking-tight uppercase leading-none">LA 97
                 SIEMPRE!</span>
-              <span class="bg-la97-yellow text-la97-navy text-xs font-black px-2 py-0.5 rounded uppercase">RADIO
+              <span class="bg-white/15 text-white border border-white/20 text-xs font-black px-2 py-0.5 rounded uppercase">RADIO
                 N°1</span>
             </div>
             <div class="text-la97-gray text-xs font-bold tracking-wider uppercase mt-1">
@@ -321,10 +445,10 @@
       <!-- Center Navigation Links -->
       <nav aria-label="Navegación principal"
         class="hidden lg:flex items-center gap-7 text-sm font-black uppercase tracking-wider text-la97-gray">
-        <a href="<?php echo esc_url(home_url('/')); ?>" data-la97-nav class="<?php echo is_front_page() ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Inicio</a>
-        <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav class="<?php echo is_page('programacion') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Programación</a>
-        <a href="<?php echo esc_url(home_url('/publicita-ya/')); ?>" data-la97-nav class="<?php echo is_page('publicita-ya') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Publicitá Ya!</a>
-        <a href="<?php echo esc_url(home_url('/contacto/')); ?>" data-la97-nav class="<?php echo is_page('contacto') ? 'text-la97-red' : 'hover:text-la97-yellow'; ?> transition-colors">Contacto</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>" data-la97-nav class="<?php echo is_front_page() ? 'text-la97-red' : 'hover:text-sky-300'; ?> transition-colors">Inicio</a>
+        <a href="<?php echo esc_url(home_url('/programacion/')); ?>" data-la97-nav class="<?php echo is_page('programacion') ? 'text-la97-red' : 'hover:text-sky-300'; ?> transition-colors">Programación</a>
+        <a href="<?php echo esc_url(home_url('/publicita-ya/')); ?>" data-la97-nav class="<?php echo is_page('publicita-ya') ? 'text-la97-red' : 'hover:text-sky-300'; ?> transition-colors">Publicitá Ya!</a>
+        <a href="<?php echo esc_url(home_url('/contacto/')); ?>" data-la97-nav class="<?php echo is_page('contacto') ? 'text-la97-red' : 'hover:text-sky-300'; ?> transition-colors">Contacto</a>
       </nav>
 
       <!-- Right Live Show Pill & Commercial CTA -->

@@ -6,9 +6,9 @@
 get_header(); ?>
 
   <main id="main-content" class="flex-1 w-full px-6 lg:px-12 xl:px-16 py-12 lg:py-16">
-    <article class="mk-glass max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 border-t-4 border-t-la97-yellow space-y-6">
+    <article class="mk-glass max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 border-t-4 border-t-la97-blue space-y-6">
       <div>
-        <span class="bg-la97-yellow text-la97-navy text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
+        <span class="bg-white/15 text-white border border-white/20 text-xs font-black px-3 py-1 rounded uppercase tracking-wider">
           INFORMACIÓN LEGAL • LEY 25.326
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
@@ -42,7 +42,7 @@ get_header(); ?>
         <section>
           <h2 class="text-lg font-black text-la97-yellow mb-2">4. Derechos de Acceso, Rectificación y Supresión</h2>
           <p>
-            El titular de los datos personales tiene la facultad de ejercer el derecho de acceso, rectificación, actualización o supresión de sus datos enviando un correo a <a href="mailto:comercial@la97.com.ar" class="text-la97-yellow font-bold hover:underline">comercial@la97.com.ar</a>.
+            El titular de los datos personales tiene la facultad de ejercer el derecho de acceso, rectificación, actualización o supresión de sus datos enviando un correo a <a href="mailto:comercial@la97.com.ar" class="text-sky-300 font-bold hover:underline">comercial@la97.com.ar</a>.
           </p>
         </section>
       </div>

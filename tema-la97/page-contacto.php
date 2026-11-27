@@ -32,7 +32,7 @@ get_header(); ?>
             La radio más efectiva para hacer publicidad.
           </h1>
           <p class="text-sm sm:text-base font-bold text-la97-gray mt-2">
-            Trayectoria, posicionamiento, calidad de audio y creatividad. <strong
+            Trayectoria, posicionamiento, cercanía y creatividad. <strong
               class="text-sky-300 font-black">¡Sumate!</strong>
           </p>
         </div>
@@ -45,7 +45,7 @@ get_header(); ?>
               <div class="flex items-center justify-between gap-3 mb-6">
                 <span class="bg-la97-blue text-white text-xs font-black px-3 py-1 rounded uppercase">SEDE
                   CENTRAL</span>
-                <span class="text-xs font-mono text-la97-yellow font-bold">97.3 MHz</span>
+                <span class="text-xs font-mono text-sky-300 font-bold">97.3 MHz</span>
               </div>
               <h2 class="text-2xl font-black text-white uppercase">MAR DEL PLATA</h2>
               <p class="text-lg font-extrabold text-sky-300 mt-1">Moreno 2976 . Centro</p>
@@ -144,10 +144,6 @@ get_header(); ?>
             <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
               class="inline-flex items-center gap-2 bg-white text-la97-navy hover:bg-sky-300 font-black text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors">
               <span>💬 Aire Oyentes: 223 615-0000</span>
-            </a>
-            <a href="https://wa.me/5492235221079" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 bg-white/10 hover:bg-la97-blue text-white font-black text-xs uppercase tracking-wider px-5 py-3 rounded-xl border border-white/15 transition-colors">
-              <span>📲 Radio Digital: +54 9 223 522-1079</span>
             </a>
           </div>
         </div>

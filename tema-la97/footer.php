@@ -25,7 +25,7 @@
           class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white hover:text-la97-navy px-3 py-1.5 rounded-lg font-bold transition-colors"><i
             class="ph-bold ph-x-logo"></i> X</a>
         <a href="https://wa.me/5492236150000" target="_blank" rel="noopener"
-          class="inline-flex items-center gap-1.5 bg-la97-yellow text-la97-navy px-3 py-1.5 rounded-lg font-black hover:bg-white transition-colors"><i
+          class="inline-flex items-center gap-1.5 bg-white text-la97-navy px-3 py-1.5 rounded-lg font-black hover:bg-la97-red hover:text-white transition-colors"><i
             class="ph-bold ph-whatsapp-logo"></i> WhatsApp</a>
       </div>
       <div class="text-la97-gray font-bold flex flex-wrap items-center gap-3">
